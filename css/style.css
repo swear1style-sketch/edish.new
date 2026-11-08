@@ -1,7 +1,6 @@
 /* ===================================================================
    EDISH CONNECT — BESPOKE EDITORIAL & ARCHITECTURAL DESIGN SYSTEM
    Creative Typography (Syne + Fraunces + Outfit) & Deep Navy Blue Palette
-   Human-Crafted, Anti-AI Agency Aesthetic
    =================================================================== */
 
 :root {
@@ -178,7 +177,7 @@ button, input, select, textarea {
   color: #94A3B8;
 }
 
-/* Creative Editorial Section Header (Anti-AI, No Centered Generic Pill) */
+/* Editorial Section Header */
 .editorial-header {
   margin-bottom: 56px;
 }
