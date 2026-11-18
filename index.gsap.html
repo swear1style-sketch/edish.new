@@ -7,13 +7,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Edish Connect — Where Engineering Meets Inspiration</title>
-<meta name="description" content="Edish Connect partners with engineering leaders to build product, platform and AI capability inside their organizations — not to staff a project and step away.">
+<title>Edish Connect | We build global capabilities in India</title>
+<meta name="description" content="We build global capabilities in India across engineering and specialist business functions, from a handful of experts to a full capability centre.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Edish Connect — Where Engineering Meets Inspiration">
-<meta property="og:description" content="Edish Connect partners with engineering leaders to build product, platform and AI capability inside their organizations — not to staff a project and step away.">
+<meta property="og:title" content="Edish Connect | Where Engineering Meets Execution and Inspiration">
+<meta property="og:description" content="We build global capabilities in India across engineering and specialist business functions, from a handful of experts to a full capability centre.">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%3Crect%20width%3D'64'%20height%3D'64'%20rx%3D'14'%20fill%3D'%231a2333'%2F%3E%3Ctext%20x%3D'32'%20y%3D'44'%20font-family%3D'system-ui%2C-apple-system%2Csans-serif'%20font-size%3D'36'%20font-weight%3D'700'%20text-anchor%3D'middle'%20fill%3D'%23c89538'%3EE%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logos/EI-app-icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/logos/EI-app-icon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/logos/EI-app-icon-180.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
 /* cyrillic-ext */
@@ -69,13 +71,13 @@
 @layer tokens {
 :root {
   --color-1: #ffffff;
-  --color-2: #0b1019;
-  --color-3: #1a2333;
-  --color-4: #dbe4ec;
-  --color-5: #9db1c4;
-  --color-6: #536477;
-  --color-7: #c89538;
-  --color-8: #edf2f6;
+  --color-2: #1d2e48;
+  --color-3: #1d2e48;
+  --color-4: color-mix(in srgb, #6b7585 9%, #fafaf8);
+  --color-5: #cca04a;
+  --color-6: #6b7585;
+  --color-7: color-mix(in srgb, #cca04a 70%, #1d2e48);
+  --color-8: #fafaf8;
   --font-1: "Geist", "Geist Fallback", system-ui, Arial, sans-serif;
   --radius-1: 999px;
   --shadow-1: 0 40px 90px -50px color-mix(in srgb, var(--color-3) 60%, transparent);
@@ -92,12 +94,7 @@
 @font-face { font-family: "Geist Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 104.8%; ascent-override: 96.4%; descent-override: 28.6%; line-gap-override: 0%; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; background: var(--color-4); }
-html.lenis, html.lenis body { height: auto; }
-.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
-.lenis [data-lenis-prevent], .lenis [data-lenis-prevent-wheel], .lenis [data-lenis-prevent-touch] { overscroll-behavior: contain; }
-.lenis.lenis-smooth iframe { pointer-events: none; }
-.lenis.lenis-autoToggle { transition-property: overflow; transition-duration: 1ms; transition-behavior: allow-discrete; }
-body {
+html.lenis, html.lenis body {
   margin: 0; min-height: 100vh; overflow-x: clip;
   font-family: var(--font-1); font-size: 16px; line-height: 1.55; font-weight: 400;
   color: var(--color-2);
@@ -108,9 +105,9 @@ body::before {
     radial-gradient(circle at 64% 42%, transparent 0 calc(44vmax - 1px), color-mix(in srgb, var(--color-1) 60%, transparent) calc(44vmax - 1px) 44vmax, transparent calc(44vmax + 1px)),
     radial-gradient(circle at 22% 78%, transparent 0 calc(30vmax - 1px), color-mix(in srgb, var(--color-1) 45%, transparent) calc(30vmax - 1px) 30vmax, transparent calc(30vmax + 1px)),
     radial-gradient(55% 45% at 78% 18%, color-mix(in srgb, var(--color-1) 70%, transparent), transparent 70%),
-    radial-gradient(60% 55% at 12% 88%, color-mix(in srgb, var(--color-5) 80%, transparent), transparent 72%),
+    radial-gradient(60% 55% at 12% 88%, color-mix(in srgb, var(--color-3) 14%, transparent), transparent 72%),
     radial-gradient(40% 40% at 40% 55%, color-mix(in srgb, var(--color-8) 70%, transparent), transparent 70%),
-    linear-gradient(165deg, var(--color-8), var(--color-4) 45%, var(--color-5));
+    linear-gradient(165deg, var(--color-8), var(--color-4) 45%, color-mix(in srgb, var(--color-3) 18%, var(--color-4)));
 }
 img { display: block; max-width: 100%; }
 h1, h2, h3, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
@@ -146,7 +143,7 @@ sup { font-size: .32em; vertical-align: top; position: relative; top: .35em; let
 .m-btn { background: var(--color-2); color: var(--color-1); }
 .m-btn__label { display: block; }
 
-.m-btn-2 { background: var(--color-1); color: var(--color-2); }
+.m-btn-2 { background: var(--color-5); color: var(--color-2); }
 
 @keyframes m-streak-label { 0% { transform: none; } 44% { transform: translateX(140%) skewX(-24deg); } 45% { transform: translateX(-140%) skewX(-24deg); } 100% { transform: none; } }
 @media (hover: hover) {
@@ -194,15 +191,19 @@ sup { font-size: .32em; vertical-align: top; position: relative; top: .35em; let
   box-shadow: var(--shadow-2);
 }
 
+.brand-lockup { display: block; aspect-ratio: 1422 / 302; overflow: hidden; }
+.brand-lockup img { width: calc(100% * 1824 / 1422); max-width: none; height: auto; margin: calc(-100% * 160 / 1422) 0 0 calc(-100% * 192 / 1422); }
+
 .m-chip { display: block; aspect-ratio: 1; width: 1em; height: auto; border-radius: 50%; object-fit: cover; filter: saturate(.5); }
 
 .m-field { display: grid; gap: 6px; }
 .m-field__label { font-family: var(--font-1); font-size: 13px; line-height: 1.35; font-weight: 500; letter-spacing: 0; text-transform: none; font-style: normal; color: var(--color-6); }
 .m-field input, .m-field select, .m-field textarea {
-  width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--color-5); border-radius: 0; background: var(--color-8); color: var(--color-2);
+  width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--color-2) 35%, transparent); border-radius: 0; background: var(--color-8); color: var(--color-2);
   font-family: var(--font-1); font-size: 16px; line-height: 1.4; font-weight: 400; letter-spacing: -0.005em; text-transform: none; font-style: normal;
 }
 .m-field textarea { min-height: 112px; resize: vertical; }
+.m-field input[type="file"] { padding: 11px 14px; cursor: pointer; }
 .m-field :focus-visible { outline-offset: 0; border-color: var(--color-7); }
 }
 </style>
@@ -218,12 +219,13 @@ main { overflow-x: clip; }
 #navigation .nav__bar {
   pointer-events: auto; margin: 12px var(--space-2) 0; height: 56px; padding: 0 8px 0 20px;
   display: flex; align-items: center; gap: 24px;
-  background: color-mix(in srgb, var(--color-1) 72%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--color-8) 94%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius-1); box-shadow: var(--shadow-1);
   transition: transform .45s cubic-bezier(.6, 0, .2, 1);
 }
 #navigation .nav__bar[data-hidden] { transform: translateY(calc(-100% - 16px)); }
-#navigation .nav__logo { font-size: 22px; font-weight: 600; letter-spacing: -0.06em; line-height: 1; }
+#navigation .nav__logo { flex: none; height: 46px; }
+#navigation .nav__logo img { mix-blend-mode: multiply; }
 #navigation .nav__line { color: var(--color-6); white-space: nowrap; }
 #navigation .nav__links { display: flex; gap: 22px; margin-left: auto; }
 #navigation .nav__links .m-link { background-size: 0 1px; }
@@ -235,10 +237,11 @@ main { overflow-x: clip; }
 }
 #navigation .menu[hidden] { display: none; }
 #navigation .menu__close { position: absolute; top: 18px; right: var(--space-2); }
+#navigation .menu__mark { position: absolute; top: 26px; left: var(--space-2); width: 26px; height: auto; }
 #navigation .menu__links { display: grid; gap: 4px; }
 #navigation .menu__links a { display: block; padding: 6px 0; font-size: clamp(40px, 12vw, 64px); line-height: 1; }
 #navigation .menu__cta { margin-top: 32px; }
-@media (max-width: 1100px) { #navigation .nav__line { display: none; } }
+@media (max-width: 1360px) { #navigation .nav__line { display: none; } }
 @media (max-width: 900px) {
   #navigation .nav__links, #navigation .nav__cta { display: none; }
   #navigation .nav__menu { display: inline-grid; margin-left: auto; }
@@ -252,15 +255,17 @@ main { overflow-x: clip; }
 #hero .op-s1 { position: sticky; top: 0; height: 100svh; padding: 84px var(--space-2) var(--space-2); }
 #hero .op-ground {
   position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--color-5) 85%, transparent), color-mix(in srgb, var(--color-5) 30%, transparent) 70%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-3) 30%, transparent), color-mix(in srgb, var(--color-3) 10%, transparent) 70%, transparent);
 }
 #hero .op-frame { position: relative; height: 100%; }
 #hero .op-slide { position: relative; height: 100%; overflow: hidden; container-type: inline-size; }
 #hero .op-photo { position: absolute; inset: 0 42% 0 0; overflow: hidden; }
-#hero .op-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 38% 50%; filter: saturate(.4) contrast(1.06); }
+#hero .op-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 60%; filter: saturate(.35) contrast(1.1) brightness(.85); }
+#hero .op-photo img, #hero .op-cap li { opacity: 0; transition: opacity 1.2s ease; }
+#hero .op-photo img.is-on, #hero .op-cap li.is-on { opacity: 1; }
 #hero .op-photo::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--color-3) 30%, transparent) 0%, color-mix(in srgb, var(--color-3) 45%, transparent) 70%, var(--color-3) 100%);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-3) 58%, transparent) 0%, color-mix(in srgb, var(--color-3) 66%, transparent) 70%, var(--color-3) 100%);
 }
 #hero .op-dim { position: absolute; inset: 0; z-index: 4; background: var(--color-3); opacity: 0; pointer-events: none; }
 #hero .op-ring {
@@ -268,43 +273,55 @@ main { overflow-x: clip; }
   border: 1px solid color-mix(in srgb, var(--color-1) 28%, transparent); border-radius: 50%; pointer-events: none;
 }
 #hero .op-ring__orb { position: absolute; width: 4.6cqw; left: 50%; top: 0; margin: -2.3cqw 0 0 -2.3cqw; }
-#hero .op-title { position: absolute; z-index: 2; left: 5.5%; top: 14%; right: 3%; color: var(--color-1); font-size: 10.4cqw; }
+#hero .op-title { position: absolute; z-index: 2; left: 5.5%; top: 14%; right: 3%; color: var(--color-1); font-size: calc(10.4cqw * var(--op-fit, 1)); }
 #hero .op-line { display: block; width: max-content; max-width: 100%; font-size: min(1em, calc(86cqw / (var(--len) * .52))); }
-#hero .op-line--2 { margin-left: 2.7em; }
+#hero .op-line--2 { margin-left: 2.7em; color: var(--color-5); }
 #hero .op-line--3 { margin-left: 1.25em; }
 #hero .op-line__in { display: block; }
 #hero .op-meta { position: absolute; z-index: 2; right: var(--space-1); bottom: var(--space-1); width: min(400px, 36%); display: grid; gap: 22px; }
 #hero .op-meta .m-text-5 { color: var(--color-1); }
+#hero .op-meta .op-tag { color: var(--color-5); }
+#hero .op-meta .op-more { color: color-mix(in srgb, var(--color-1) 78%, transparent); }
+#hero .op-meta.is-compact .op-more { display: none; }
+@media (max-height: 480px) { #hero .op-meta .op-tag { display: none; } }
+#hero .op-cap { position: absolute; z-index: 2; left: var(--space-1); bottom: var(--space-1); width: min(320px, 34%); display: grid; color: var(--color-1); }
+#hero .op-cap li { grid-area: 1 / 1; align-self: end; display: grid; gap: 4px; padding-left: 14px; border-left: 2px solid var(--color-5); }
+#hero .op-cap .m-text-4 { color: var(--color-5); }
 #hero .op-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
 #hero .op-actions .m-btn-2 { min-height: 53px; padding: 0 27px; font-size: 16.5px; }
 #hero .op-s2 { position: relative; z-index: 2; min-height: 100svh; padding: 84px var(--space-2) var(--space-2); display: flex; }
 #hero .op-card {
   position: relative; width: 74%; min-height: calc(100svh - 84px - var(--space-2)); padding: var(--space-1);
-  display: grid; grid-template-rows: auto 1fr auto; gap: 24px; container-type: inline-size;
+  display: grid; grid-template-rows: auto minmax(120px, 1fr) auto; gap: 24px; container-type: inline-size;
 }
 #hero .op-title2 { position: relative; z-index: 2; font-size: min(15cqw, calc(92cqw / (var(--len) * .5))); }
 #hero .op-orb { position: absolute; z-index: 1; width: clamp(220px, 27vw, 400px); right: -9%; top: 27%; }
-#hero .op-chip { position: absolute; z-index: 2; font-size: clamp(72px, 7vw, 104px); left: 47%; top: 50%; }
-#hero .op-cols { position: relative; z-index: 2; grid-row: 3; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px; max-width: 600px; }
+#hero .op-chip { position: relative; z-index: 2; grid-row: 2; align-self: center; justify-self: center; font-size: clamp(72px, 7vw, 104px); }
+#hero .op-cols { position: relative; z-index: 2; grid-row: 3; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 28px; max-width: 660px; }
 #hero .op-cols .m-text { color: var(--color-6); }
 #hero .op-cols .m-link { grid-column: 1 / -1; justify-self: start; }
+#hero .op-cols .op-close { grid-column: 1 / -1; }
+#hero .op-cols .op-quote { grid-column: 1 / -1; padding-top: 18px; border-top: 1px solid var(--color-5); color: var(--color-2); }
 @media (max-width: 767px) {
   #hero .op-s1 { padding-top: 76px; }
   #hero .op-photo { inset: 0 0 46% 0; }
   #hero .op-photo::after { background: linear-gradient(180deg, color-mix(in srgb, var(--color-3) 30%, transparent), color-mix(in srgb, var(--color-3) 64%, transparent) 42%, color-mix(in srgb, var(--color-3) 72%, transparent) 75%, var(--color-3)); }
   #hero .op-ring { width: 120cqw; margin: -60cqw 0 0 -70cqw; top: 46%; }
   #hero .op-ring__orb { width: 9cqw; margin: -4.5cqw 0 0 -4.5cqw; }
-  #hero .op-title { top: 30%; left: 6%; font-size: 15.5cqw; }
+  #hero .op-title { top: 30%; left: 6%; font-size: calc(15.5cqw * var(--op-fit, 1)); }
   #hero .op-line { font-size: min(1em, calc(88cqw / (var(--len) * .52))); }
   #hero .op-line--2 { margin-left: 1.3em; }
   #hero .op-line--3 { margin-left: .6em; }
-  #hero .op-meta { left: var(--space-1); width: auto; gap: 18px; }
+  #hero .op-meta { left: var(--space-1); width: auto; gap: 14px; }
+  #hero .op-meta .op-more { display: none; }
+  #hero .op-cap { top: var(--space-1); bottom: auto; right: var(--space-1); width: auto; }
+  #hero .op-cap li { align-self: start; }
   #hero .op-s2 { padding-top: 76px; }
   #hero .op-card { width: 100%; min-height: calc(100svh - 76px - var(--space-2)); }
   #hero .op-title2 { font-size: min(19cqw, calc(92cqw / (var(--len) * .5))); }
   #hero .op-card { padding-bottom: 44px; }
   #hero .op-orb { width: 62vw; right: -22%; top: 19%; }
-  #hero .op-chip { font-size: 64px; left: var(--space-1); top: 30%; }
+  #hero .op-chip { font-size: 64px; justify-self: start; }
   #hero .op-cols { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -327,12 +344,12 @@ main { overflow-x: clip; }
 #culture { position: relative; overflow: hidden; }
 #culture .mt-slide { width: min(100%, 1180px); margin-left: auto; display: grid; grid-template-columns: minmax(240px, 30%) 1fr; min-height: 620px; }
 #culture .mt-side { position: relative; overflow: hidden; padding: var(--space-1); display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(165deg, var(--color-8), var(--color-4)); }
-#culture .mt-orb { position: absolute; width: 54%; left: 30%; top: 6%; }
+#culture .mt-orb { display: none; }
 #culture .mt-steps { position: relative; display: grid; gap: 22px; }
 #culture .mt-steps li { display: grid; grid-template-columns: 30px 1fr; gap: 6px 10px; }
 #culture .mt-num { grid-row: span 2; padding-top: 5px; color: var(--color-6); }
 #culture .mt-steps .m-text { color: var(--color-6); font-size: 15px; }
-#culture .mt-main { padding: calc(var(--space-1) + 12px) var(--space-1) var(--space-1) clamp(24px, 4vw, 64px); display: grid; grid-template-rows: 1fr auto; gap: 48px; }
+#culture .mt-main { padding: calc(var(--space-1) + 12px) var(--space-1) var(--space-1) clamp(24px, 4vw, 64px); display: grid; grid-template-rows: auto auto; align-content: start; gap: 48px; }
 #culture .mt-title { font-size: clamp(34px, 6.1vw, 92px); }
 #culture .mt-row { display: block; white-space: nowrap; }
 #culture .mt-row:nth-child(2) { padding-left: 1.3em; }
@@ -342,6 +359,8 @@ main { overflow-x: clip; }
 #culture .mt-after { display: inline-block; will-change: transform; }
 #culture .mt-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 40px; }
 #culture .mt-foot .m-text-5 { max-width: 470px; }
+#culture .mt-copy { display: grid; gap: 14px; max-width: 560px; }
+#culture .mt-copy .m-text { color: var(--color-6); }
 @media (max-width: 860px) {
   #culture .mt-slide { grid-template-columns: 1fr; min-height: 0; }
   #culture .mt-side { order: 2; padding-top: 140px; }
@@ -355,7 +374,8 @@ main { overflow-x: clip; }
 <style data-module="section:capabilities">
 @layer sections {
 #capabilities .ds-slide { padding: var(--space-1); container-type: inline-size; }
-#capabilities .ds-title { display: flex; justify-content: space-between; gap: .3em; padding: 18px 0 clamp(28px, 4vw, 56px); font-size: min(9.6cqw, calc(88cqw / (var(--len) * .34))); }
+#capabilities .ds-title .ds-break { flex-basis: 100%; height: 0; }
+#capabilities .ds-title { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 0 .3em; padding: 18px 0 clamp(28px, 4vw, 56px); font-size: calc(min(9.6cqw, calc(88cqw / (var(--len) * .34))) * .95); }
 #capabilities .ds-grid {
   position: relative; display: grid; gap: clamp(10px, 1.3vw, 18px);
   grid-template-columns: repeat(6, 1fr); grid-auto-rows: clamp(110px, 11.5vw, 150px);
@@ -381,165 +401,321 @@ main { overflow-x: clip; }
 #capabilities .ds-copy { grid-area: copy; display: grid; align-content: start; gap: 12px; padding-top: 4px; position: relative; z-index: 9; background: var(--color-1); }
 #capabilities .ds-copy .m-text { font-size: 14px; color: var(--color-6); }
 #capabilities .ds-note { grid-area: note; align-self: end; max-width: 380px; }
+#capabilities .ds-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 40px clamp(24px, 4vw, 64px); padding-top: clamp(48px, 6vw, 88px); }
+#capabilities .ds-pillar { display: grid; gap: 14px; align-content: start; }
+#capabilities .ds-pillar > .m-text { color: var(--color-6); max-width: 520px; }
+#capabilities .ds-list { display: grid; margin-top: 8px; border-top: 1px solid var(--color-5); }
+#capabilities .ds-list li { display: grid; grid-template-columns: 34px 1fr; gap: 2px 10px; padding: 14px 0; border-bottom: 1px solid color-mix(in srgb, var(--color-2) 12%, transparent); }
+#capabilities .ds-list .m-text-4 { grid-row: span 2; padding-top: 3px; color: var(--color-6); }
+#capabilities .ds-list h4 { margin: 0; font-weight: 500; }
+#capabilities .ds-list p { font-size: 15px; color: var(--color-6); }
+#capabilities .ds-pillar .ds-caveat { font-size: 14px; padding-top: 6px; }
 @media (hover: hover) { #capabilities .ds-tile--link:hover { background: var(--color-5); } }
 @media (max-width: 860px) {
-  #capabilities .ds-title { flex-wrap: wrap; justify-content: flex-start; gap: 0 .3em; font-size: 15cqw; }
+  #capabilities .ds-title { flex-wrap: wrap; justify-content: flex-start; gap: 0 .3em; font-size: 11cqw; }
   #capabilities .ds-grid {
     grid-template-columns: 1fr 1fr; grid-auto-rows: 118px;
     grid-template-areas: "run run" "run run" "lift mark" "swim swim" "ride kit" "ride link" "court court" "copy copy" "note note";
   }
   #capabilities .ds-copy, #capabilities .ds-note { padding-top: 12px; }
   #capabilities .ds-grid > .ds-copy, #capabilities .ds-grid > .ds-note { grid-row: auto; }
-}
-}
-</style>
-<style data-module="section:leadership">
-@layer sections {
-#leadership .co-slide { width: min(100%, 1120px); padding: var(--space-1); overflow: hidden; }
-#leadership .co-ring { position: absolute; width: min(620px, 70vw); right: -12%; top: -18%; pointer-events: none; }
-#leadership .co-ring circle { fill: none; stroke: var(--color-5); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
-#leadership .co-head { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px 48px; align-items: end; padding: 18px 0 clamp(36px, 5vw, 72px); }
-#leadership .co-head .m-text-5 { color: var(--color-6); }
-#leadership .co-list { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 2vw, 28px); align-items: start; }
-#leadership .co-person:nth-child(2) { margin-top: 72px; }
-#leadership .co-person:nth-child(3) { margin-top: 24px; }
-#leadership .co-person:nth-child(4) { margin-top: 112px; }
-#leadership .co-photo { overflow: hidden; aspect-ratio: 3 / 4; background: var(--color-8); }
-#leadership .co-person:nth-child(2) .co-photo { aspect-ratio: 3 / 4.6; }
-#leadership .co-person:nth-child(3) .co-photo { aspect-ratio: 1 / 1.1; }
-#leadership .co-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
-#leadership .co-person:nth-child(3) .co-photo img { object-position: 50% 12%; }
-#leadership figcaption { display: grid; gap: 4px; padding-top: 12px; }
-#leadership figcaption .m-text-4 { color: var(--color-6); }
-@media (max-width: 860px) {
-  #leadership .co-head { grid-template-columns: 1fr; }
-  #leadership .co-list { grid-template-columns: 1fr 1fr; }
-  #leadership .co-person:nth-child(2) { margin-top: 48px; }
-  #leadership .co-person:nth-child(3) { margin-top: 0; }
-  #leadership .co-person:nth-child(4) { margin-top: 48px; }
+  #capabilities .ds-pillars { grid-template-columns: 1fr; }
 }
 }
 </style>
 <style data-module="section:process">
 @layer sections {
-#process .lb-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 32px; align-items: center; }
-#process .lb-text { display: grid; gap: 22px; align-content: start; justify-items: start; padding: 18px 0; }
-#process .lb-text .m-text { color: var(--color-5); max-width: 420px; }
-#process .lb-stage { position: relative; width: min(100%, 640px); justify-self: center; aspect-ratio: 1; container-type: inline-size; }
-#process .lb-lens { position: absolute; inset: 20cqw; overflow: hidden; clip-path: circle(50% at 50% 50%); }
-#process .lb-lens img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; filter: saturate(.5); }
-#process .lb-ring { position: absolute; inset: 4cqw; width: 92cqw; height: 92cqw; overflow: visible; }
-#process .lb-ring circle { fill: none; stroke: color-mix(in srgb, var(--color-1) 35%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
-#process .lb-note {
+#council .lb-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 32px; align-items: center; }
+#council .lb-text { display: grid; gap: 22px; align-content: start; justify-items: start; padding: 18px 0; }
+#council .lb-text .m-text { color: var(--color-5); max-width: 420px; }
+#council .lb-stage { position: relative; width: min(100%, 640px); justify-self: center; aspect-ratio: 1; container-type: inline-size; }
+#council .lb-lens { position: absolute; inset: 20cqw; overflow: hidden; clip-path: circle(50% at 50% 50%); }
+#council .lb-lens img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; filter: saturate(.5); }
+#council .lb-ring { position: absolute; inset: 4cqw; width: 92cqw; height: 92cqw; overflow: visible; }
+#council .lb-ring circle { fill: none; stroke: color-mix(in srgb, var(--color-1) 35%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+#council .lb-note {
   position: absolute; left: 50%; top: 50%; width: 30cqw; padding: 10px 12px; display: grid; gap: 4px;
   background: var(--color-3); transform-origin: 0 0;
   transform: rotate(var(--a)) translateX(46cqw) rotate(calc(var(--a) * -1)) translate(-50%, -50%);
 }
-#process .lb-note .m-text-6 { font-size: clamp(17px, 1.6vw, 22px); }
-#process .lb-note .m-text-4 { color: var(--color-5); }
+#council .lb-note .m-text-6 { font-size: clamp(17px, 1.6vw, 22px); }
+#council .lb-note .m-text-4 { color: var(--color-5); }
+#council .lb-more { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 32px clamp(24px, 4vw, 64px); margin-top: 16px; padding-top: 32px; border-top: 1px solid color-mix(in srgb, var(--color-1) 25%, transparent); }
+#council .lb-more > div { display: grid; gap: 16px; align-content: start; }
+#council .lb-more .m-text { color: color-mix(in srgb, var(--color-1) 78%, transparent); }
+#council .lb-list { display: grid; border-top: 1px solid color-mix(in srgb, var(--color-1) 25%, transparent); }
+#council .lb-list--2 { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+#council .lb-list li { padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--color-1) 14%, transparent); }
+#council .lb-list--2 li { color: var(--color-1); }
+#council .lb-more .lb-close { grid-column: 1 / -1; max-width: 640px; color: var(--color-5); }
 @media (max-width: 860px) {
-  #process .lb-slide { grid-template-columns: 1fr; }
-  #process .lb-stage { width: 100%; aspect-ratio: auto; display: grid; gap: 16px; }
-  #process .lb-lens { position: relative; inset: auto; width: 76cqw; aspect-ratio: 1; margin: 12cqw auto; }
-  #process .lb-ring { inset: 0 auto auto 4cqw; }
-  #process .lb-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  #process .lb-note { position: static; width: auto; transform: none; padding: 12px 0 0; border-top: 1px solid color-mix(in srgb, var(--color-1) 30%, transparent); }
+  #council .lb-slide { grid-template-columns: 1fr; }
+  #council .lb-stage { width: 100%; aspect-ratio: auto; display: grid; gap: 16px; }
+  #council .lb-lens { position: relative; inset: auto; width: 76cqw; aspect-ratio: 1; margin: 12cqw auto; }
+  #council .lb-ring { inset: 0 auto auto 4cqw; }
+  #council .lb-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  #council .lb-more, #council .lb-list--2 { grid-template-columns: 1fr; }
+  #council .lb-note { position: static; width: auto; transform: none; padding: 12px 0 0; border-top: 1px solid color-mix(in srgb, var(--color-1) 30%, transparent); }
 }
 }
 </style>
 <style data-module="section:growth">
 @layer sections {
-#growth { padding-inline: 0; }
-#growth .wk-stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 4vw, 48px); padding: 84px 0 var(--space-2); min-height: 100svh; align-content: center; }
-#growth .wk-head { padding-inline: var(--space-2); display: grid; grid-template-columns: 1fr minmax(0, 460px); gap: 20px 48px; align-items: end; }
-#growth .wk-view { min-width: 0; overflow-x: auto; padding-inline: var(--space-2); }
-#growth[data-scrubbed] { height: var(--wk-height, auto); }
-#growth[data-scrubbed] .wk-stage { position: sticky; top: 0; }
-#growth[data-scrubbed] .wk-view { overflow: visible; }
-#growth .wk-track { display: flex; gap: clamp(12px, 1.6vw, 24px); width: max-content; padding-bottom: 8px; }
-#growth .wk-day { width: clamp(250px, 24vw, 330px); min-height: clamp(360px, 46vh, 440px); padding: 22px; display: flex; flex-direction: column; gap: 10px; }
-#growth .wk-day--rest { background: var(--color-8); }
-#growth .wk-name { color: var(--color-6); }
-#growth .wk-photo { margin-top: auto; overflow: hidden; aspect-ratio: 16 / 10; }
-#growth .wk-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.45); }
-#growth .wk-day .m-text { color: var(--color-6); font-size: 15px; }
-#growth .wk-time { color: var(--color-2); }
-#growth .wk-progress { margin-inline: var(--space-2); height: 1px; background: color-mix(in srgb, var(--color-2) 18%, transparent); }
-#growth .wk-progress span { display: block; height: 100%; background: var(--color-2); transform-origin: 0 50%; }
+#approach { padding-inline: 0; }
+#approach .wk-stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 4vw, 48px); padding: 84px 0 var(--space-2); min-height: 100svh; align-content: center; }
+#approach .wk-head { padding-inline: var(--space-2); display: grid; grid-template-columns: 1fr; gap: 20px 48px; align-items: start; }
+#approach .wk-view { min-width: 0; overflow-x: auto; padding-inline: var(--space-2); }
+#approach[data-scrubbed] { height: var(--wk-height, auto); }
+#approach[data-scrubbed] .wk-stage { position: sticky; top: 0; }
+#approach[data-scrubbed] .wk-view { overflow: visible; }
+#approach .wk-track { display: flex; gap: clamp(12px, 1.6vw, 24px); width: max-content; padding-bottom: 8px; }
+#approach .wk-day { width: clamp(250px, 24vw, 330px); min-height: clamp(360px, 46vh, 440px); padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+#approach .wk-name { color: var(--color-6); }
+#approach .wk-intro { display: grid; gap: 14px; max-width: 680px; }
+#approach .wk-stair { margin-top: auto; height: 96px; display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; gap: 4px; }
+#approach .wk-stair i { display: block; background: color-mix(in srgb, var(--color-3) 10%, transparent); }
+#approach .wk-stair i:nth-child(1) { height: 20%; } #approach .wk-stair i:nth-child(2) { height: 40%; } #approach .wk-stair i:nth-child(3) { height: 60%; } #approach .wk-stair i:nth-child(4) { height: 80%; } #approach .wk-stair i:nth-child(5) { height: 100%; }
+#approach .wk-stair[data-lv="2"] i:nth-child(-n+1), #approach .wk-stair[data-lv="3"] i:nth-child(-n+2), #approach .wk-stair[data-lv="4"] i:nth-child(-n+3), #approach .wk-stair[data-lv="5"] i:nth-child(-n+4) { background: var(--color-3); }
+#approach .wk-stair[data-lv="1"] i:nth-child(1), #approach .wk-stair[data-lv="2"] i:nth-child(2), #approach .wk-stair[data-lv="3"] i:nth-child(3), #approach .wk-stair[data-lv="4"] i:nth-child(4), #approach .wk-stair[data-lv="5"] i:nth-child(5) { background: var(--color-5); }
+#approach .wk-day .m-text { color: var(--color-6); font-size: 15px; }
+#approach .wk-time { color: var(--color-2); font-weight: 500; }
+#approach .wk-progress { margin-inline: var(--space-2); height: 1px; background: color-mix(in srgb, var(--color-2) 18%, transparent); }
+#approach .wk-progress span { display: block; height: 100%; background: var(--color-2); transform-origin: 0 50%; }
 @media (max-width: 860px) {
-  #growth .wk-head { grid-template-columns: 1fr; }
-  #growth .wk-day { width: 78vw; min-height: 380px; }
+  #approach .wk-head { grid-template-columns: 1fr; }
+  #approach .wk-day { width: 78vw; min-height: 380px; }
 }
 }
 </style>
-<style data-module="section:heritage">
+<style data-module="section:brief">
 @layer sections {
-#heritage .st-slide { width: min(100%, 1040px); padding: var(--space-1); display: grid; gap: clamp(36px, 5vw, 72px); }
-#heritage .st-label { padding-top: 6px; color: var(--color-6); }
-#heritage .st-chip { display: inline-block; font-size: 1.15em; vertical-align: -.26em; margin-right: .12em; }
-#heritage .st-main { display: grid; gap: 20px; max-width: 900px; }
-#heritage .st-main figcaption { color: var(--color-6); }
-#heritage .st-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; max-width: 760px; margin-left: auto; padding-top: 24px; border-top: 1px solid var(--color-5); }
-#heritage .st-notes li { display: grid; gap: 8px; }
-#heritage .st-notes .m-text-4 { color: var(--color-6); }
-@media (max-width: 860px) { #heritage .st-notes { grid-template-columns: 1fr; } }
+/* Industries: six image-led cards */
+#industries .in-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 20px); }
+#industries .in-card { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-content: start; padding-bottom: 6px; }
+#industries .in-photo { grid-column: 1 / -1; aspect-ratio: 10 / 7; overflow: hidden; margin-bottom: 10px; background: var(--color-4); }
+#industries .in-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.55) contrast(1.04); transition: transform .8s cubic-bezier(.2, .7, .2, 1), filter .5s; }
+#industries .in-num { padding-top: .35em; color: var(--color-7); }
+#industries .in-card h3 { font-size: clamp(19px, 1.6vw, 23px); }
+#industries .in-card .m-text { grid-column: 2; color: var(--color-6); }
+@media (hover: hover) { #industries .in-card:hover .in-photo img { transform: scale(1.04); filter: saturate(.85) contrast(1.04); } }
+@media (max-width: 960px) { #industries .in-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { #industries .in-grid { grid-template-columns: 1fr; } }
+
+/* What we build: two visual panels with expandable detail */
+#capabilities .ds-pillar { gap: 12px; }
+#capabilities .ds-panel { position: relative; aspect-ratio: 3 / 2; overflow: hidden; margin-bottom: 8px; background: var(--color-4); }
+#capabilities .ds-panel img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.5) contrast(1.04); }
+#capabilities .ds-panel__num { position: absolute; left: 14px; top: 14px; padding: 6px 10px; background: var(--color-3); color: var(--color-5); }
+#capabilities .ds-more { border-top: 1px solid var(--color-5); border-bottom: 1px solid color-mix(in srgb, var(--color-2) 12%, transparent); }
+#capabilities .ds-more summary { list-style: none; display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; cursor: pointer; color: var(--color-2); letter-spacing: .01em; }
+#capabilities .ds-more summary::-webkit-details-marker { display: none; }
+#capabilities .ds-more summary::after { content: ""; flex: none; width: 13px; height: 13px; margin-top: .15em; background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat; transition: transform .3s; }
+#capabilities .ds-more[open] summary::after { transform: rotate(45deg); }
+#capabilities .ds-more .ds-list { margin-top: 0; }
+#capabilities .ds-more .ds-list li:last-child { border-bottom: 0; }
+
+/* How we build: capability-growth ladder (alternative starting points) */
+#models .lad { position: relative; display: grid; grid-template-columns: 1fr minmax(220px, 250px); gap: clamp(16px, 2vw, 28px); align-items: end; }
+#models .lad-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; align-items: end; }
+#models .lad-step { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 20px 16px 18px; min-height: calc(230px + var(--lv) * 46px); background: var(--color-8); border-top: 3px solid var(--color-5); }
+#models .lad-step::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--lv) * 9px); background: color-mix(in srgb, var(--color-5) 28%, transparent); }
+#models .lad-step .m-text { font-size: 15px; color: var(--color-6); }
+#models .lad-step .m-link { margin-top: auto; margin-bottom: calc(var(--lv) * 9px); align-self: flex-start; font-size: 14px; }
+#models .lad-step h3 { font-size: clamp(19px, 1.5vw, 22px); }
+#models .lad-tag { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-7); }
+#models .lad-step--featured { background: var(--color-3); color: var(--color-1); }
+#models .lad-step--featured .m-text, #models .lad-step--featured .lad-tag { color: var(--color-5); }
+#models .lad-step--featured :focus-visible { outline-color: var(--color-1); }
+#models .lad-alt { display: flex; flex-direction: column; gap: 12px; padding: 20px 16px 18px; min-height: 260px; border: 1px dashed color-mix(in srgb, var(--color-2) 40%, transparent); }
+#models .lad-alt .m-text { font-size: 15px; color: var(--color-6); }
+#models .lad-alt .m-link { margin-top: auto; align-self: flex-start; font-size: 14px; }
+#models .fw { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 24px clamp(24px, 4vw, 64px); margin-top: clamp(40px, 5vw, 72px); padding-top: clamp(28px, 3vw, 40px); border-top: 1px solid var(--color-5); }
+#models .fw-head { display: grid; gap: 14px; align-content: start; }
+#models .fw-label { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-7); }
+#models .fw-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+#models .fw-list li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 12px 0; border-bottom: 1px solid color-mix(in srgb, var(--color-2) 12%, transparent); }
+#models .fw-list .m-text-4 { padding-top: 3px; color: var(--color-7); }
+#models .fw-list .m-text { font-size: 15px; }
+@media (max-width: 1100px) { #models .lad { grid-template-columns: 1fr; } #models .lad-alt { min-height: 0; } }
+@media (max-width: 860px) {
+  #models .lad-steps { grid-template-columns: 1fr; }
+  #models .lad-step { min-height: 0; padding-left: calc(16px + var(--lv) * 10px); }
+  #models .lad-step::before { top: 0; right: auto; height: auto; width: calc(var(--lv) * 10px); }
+  #models .lad-step .m-link { margin-bottom: 0; }
+  #models .fw, #models .fw-list { grid-template-columns: 1fr; }
+}
+
+/* Expert Council: Edish at the centre of the specialist network */
+#council .lb-stage--net .lb-lens { background: color-mix(in srgb, var(--color-1) 7%, var(--color-3)); }
+#council .lb-stage--net .lb-lens img { object-fit: contain; padding: 22%; filter: none; }
+#council .lb-stage--net .lb-note { width: 23cqw; padding: 9px 10px; text-align: center; border: 1px solid color-mix(in srgb, var(--color-5) 45%, transparent); }
+#council .lb-stage--net .lb-note .m-text-4 { color: var(--color-1); font-size: clamp(11px, 1vw, 13px); }
+#council .lb-flow { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; border-top: 1px solid color-mix(in srgb, var(--color-1) 25%, transparent); }
+#council .lb-flow li { display: grid; grid-template-columns: 28px 1fr; gap: 2px 8px; padding: 12px 0; border-bottom: 1px solid color-mix(in srgb, var(--color-1) 14%, transparent); }
+#council .lb-flow .m-text-4 { grid-row: span 2; padding-top: 3px; color: var(--color-5); }
+#council .lb-flow strong { color: var(--color-1); font-weight: 500; }
+#council .lb-flow p { font-size: 14px; }
+#council .lb-more > div > .m-text-5 { color: color-mix(in srgb, var(--color-1) 85%, transparent); }
+@media (max-width: 860px) {
+  #council .lb-stage--net .lb-note { width: auto; text-align: left; border: 0; border-top: 1px solid color-mix(in srgb, var(--color-1) 30%, transparent); }
+  #council .lb-stage--net .lb-lens { width: 56cqw; }
+  #council .lb-flow { grid-template-columns: 1fr; }
+}
+
+/* Culture: symbol, short expression, practical behaviour */
+#culture .mt-steps { gap: 18px; }
+#culture .mt-steps li { grid-template-columns: 34px 1fr; gap: 2px 12px; }
+#culture .mt-sym { grid-row: span 3; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--color-3); color: var(--color-5); }
+#culture .mt-sym svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+#culture .mt-steps h3 { font-size: clamp(18px, 1.5vw, 21px); }
+#culture .mt-steps .mt-say { color: var(--color-7); font-weight: 500; font-size: 15px; }
+#culture .mt-steps .m-text:not(.mt-say) { font-size: 14px; }
+
+/* India talent ecosystems map */
+#india .ia-slide { width: min(100%, 1180px); padding: var(--space-1); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 32px clamp(24px, 4vw, 64px); align-items: center; }
+#india .ia-text { display: grid; gap: 22px; align-content: start; padding: 18px 0; }
+#india .ia-text .m-text-3 { font-size: clamp(36px, 4.6vw, 72px); }
+#india .ia-text .m-text-5 { color: color-mix(in srgb, var(--color-1) 80%, transparent); max-width: 460px; }
+#india .ia-list { display: grid; border-top: 1px solid color-mix(in srgb, var(--color-1) 25%, transparent); }
+#india .ia-list li { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--color-1) 14%, transparent); }
+#india .ia-list li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--color-5); transform: translateY(-2px); }
+#india .ia-fine { color: var(--color-5); max-width: 460px; }
+#india .ia-map { position: relative; width: min(100%, 520px); justify-self: center; aspect-ratio: 558 / 620; }
+#india .ia-land { position: absolute; inset: 0; width: 100%; height: 100%; }
+#india .ia-land path { fill: color-mix(in srgb, var(--color-1) 7%, transparent); stroke: color-mix(in srgb, var(--color-5) 70%, transparent); stroke-width: 1.2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+#india .ia-pins li { position: absolute; left: var(--x); top: var(--y); }
+#india .ia-pin { position: relative; display: block; transform: translate(-7px, -50%); padding: 4px 8px 4px 20px; border: 0; background: transparent; color: color-mix(in srgb, var(--color-1) 80%, transparent); font: 500 13px/1.2 var(--font-1); white-space: nowrap; cursor: pointer; }
+#india .ia-pin::before { content: ""; position: absolute; left: 2px; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: var(--color-5); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-5) 22%, transparent); transition: transform .3s, box-shadow .3s; }
+#india .ia-pin--left { transform: translate(calc(-100% + 7px), -50%); padding: 4px 20px 4px 8px; }
+#india .ia-pin--left::before { left: auto; right: 2px; }
+#india .ia-pin[aria-pressed="true"] { color: var(--color-1); }
+#india .ia-pin[aria-pressed="true"]::before { transform: scale(1.3); box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-5) 30%, transparent); }
+@media (hover: hover) { #india .ia-pin:hover { color: var(--color-1); } }
+#india .ia-pin:focus-visible { outline-color: var(--color-1); }
+#india .ia-read { position: absolute; right: 0; top: 52%; width: min(38%, 220px); display: grid; gap: 6px; padding: 14px 16px; background: color-mix(in srgb, var(--color-1) 8%, var(--color-3)); border-top: 2px solid var(--color-5); }
+#india .ia-read__note { font-size: 14px; color: color-mix(in srgb, var(--color-1) 78%, transparent); }
+#india .ia-read__note:empty { display: none; }
+@media (max-width: 860px) {
+  #india .ia-slide { grid-template-columns: 1fr; }
+  #india .ia-read { position: relative; right: auto; bottom: auto; width: 100%; margin-top: 12px; }
+  #india .ia-map { aspect-ratio: auto; }
+  #india .ia-land { position: relative; display: block; height: auto; aspect-ratio: 558 / 620; }
+  #india .ia-pins { position: absolute; inset: 0 0 auto 0; aspect-ratio: 558 / 620; }
+}
 }
 </style>
-<style data-module="section:foundations">
+<style data-module="section:visuals">
 @layer sections {
-#foundations .rc-slide { padding: var(--space-1); display: grid; grid-template-columns: 1fr minmax(0, 520px); gap: clamp(28px, 4vw, 64px); }
-#foundations .rc-text { display: grid; gap: 28px; align-content: start; padding-top: 18px; }
-#foundations .rc-row { display: block; }
-#foundations .rc-row:nth-child(2) { padding-left: 1.2em; }
-#foundations .rc-row:nth-child(3) { padding-left: .6em; }
-#foundations .rc-text .m-text-5 { max-width: 520px; color: var(--color-6); }
-#foundations .rc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; max-width: 620px; }
-#foundations .rc-list li { display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--color-5); }
-#foundations .rc-list .m-text { color: var(--color-6); font-size: 15px; }
-#foundations .rc-window { position: relative; overflow: hidden; aspect-ratio: 4 / 5; align-self: stretch; }
-#foundations .rc-sky { position: absolute; inset: 0 0 40% 0; overflow: hidden; background: var(--color-3); }
-#foundations .rc-cool { position: absolute; inset: 0; background: linear-gradient(180deg, var(--color-5), var(--color-8)); }
-#foundations .rc-sun { position: absolute; width: 46%; left: 27%; bottom: 0; translate: 0 46%; }
-#foundations .rc-sea { position: absolute; inset: 60% 0 0 0; }
-#foundations .rc-sea img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; filter: saturate(.6); }
-@media (max-width: 860px) {
-  #foundations .rc-slide { grid-template-columns: 1fr; }
-  #foundations .rc-window { aspect-ratio: 1; order: -1; }
-  #foundations .rc-list { grid-template-columns: 1fr; }
+/* One navy/gold photographic grade across the page */
+#industries .in-photo { position: relative; isolation: isolate; }
+:is(#industries .in-photo, #capabilities .ds-tile:not(.ds-tile--mark):not(.ds-tile--link), #capabilities .ds-panel)::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(165deg, color-mix(in srgb, var(--color-5) 26%, transparent), transparent 42%, color-mix(in srgb, var(--color-3) 62%, transparent));
+  mix-blend-mode: multiply; transition: opacity .5s;
 }
+:is(#industries .in-photo, #capabilities .ds-tile, #capabilities .ds-panel) img { filter: grayscale(.25) sepia(.22) saturate(.85) contrast(1.06); }
+#hero .op-photo img { filter: grayscale(.3) sepia(.2) saturate(.75) contrast(1.08) brightness(.88); }
+#capabilities .ds-tile .m-badge, #capabilities .ds-panel__num { z-index: 2; }
+@media (hover: hover) { #industries .in-card:hover .in-photo::after { opacity: .55; } #industries .in-card:hover .in-photo img { filter: grayscale(0) sepia(.12) saturate(1) contrast(1.06); } }
+
+/* Capability growth: a glowing path rising across the ladder */
+#models .lad-path { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 2; }
+#models .lad-path__line { fill: none; stroke: var(--color-5); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 5px color-mix(in srgb, var(--color-5) 80%, transparent)); }
+#models .lad-path__dots circle { fill: var(--color-1); stroke: var(--color-5); stroke-width: 2.5; filter: drop-shadow(0 0 7px var(--color-5)); }
+@media (max-width: 1100px) { #models .lad-path { display: none; } }
+
+/* Expert ecosystem: people connected to Edish at the centre */
+#council .lb-spokes { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+#council .lb-spokes line { stroke: var(--color-5); stroke-width: 1.4; vector-effect: non-scaling-stroke; opacity: .75; filter: drop-shadow(0 0 4px var(--color-5)); }
+#council .lb-stage--net .lb-note { display: grid; justify-items: center; gap: 7px; padding: 8px 8px 10px; }
+#council .lb-face { width: 10cqw; height: 10cqw; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-5); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-5) 16%, transparent), 0 0 24px color-mix(in srgb, var(--color-5) 45%, transparent); filter: grayscale(.25) sepia(.2) contrast(1.05); }
+@media (max-width: 860px) {
+  #council .lb-spokes { display: none; }
+  #council .lb-stage--net .lb-note { grid-template-columns: 44px 1fr; justify-items: start; align-items: center; gap: 10px; padding-top: 12px; }
+  #council .lb-face { width: 44px; height: 44px; }
+}
+
+/* Global-to-India: demand from around the world arriving in India */
+#india .gi-band { grid-column: 1 / -1; padding-bottom: clamp(16px, 2vw, 28px); border-bottom: 1px solid color-mix(in srgb, var(--color-1) 14%, transparent); }
+#india .gi-svg { display: block; width: 100%; height: auto; overflow: visible; }
+#india .gi-land { fill: none; stroke: color-mix(in srgb, var(--color-1) 28%, transparent); stroke-width: 3.4; stroke-linecap: round; }
+#india .gi-india { fill: none; stroke: var(--color-5); stroke-width: 3.8; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--color-5)); }
+#india .gi-arcs path { fill: none; stroke: var(--color-5); stroke-width: 1.6; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--color-5)); stroke-dasharray: 1; stroke-dashoffset: 0; }
+#india .gi-nodes circle { fill: var(--color-1); filter: drop-shadow(0 0 4px var(--color-1)); }
+#india .gi-hub { fill: var(--color-5); filter: drop-shadow(0 0 8px var(--color-5)); }
+#india .gi-hub-ring { fill: none; stroke: var(--color-5); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; }
+#india .gi-band[data-armed] .gi-arcs path { stroke-dashoffset: 1; }
+#india .gi-band[data-armed].is-in .gi-arcs path { animation: gi-draw 2.2s var(--d) cubic-bezier(.6, 0, .2, 1) forwards; }
+#india .gi-band[data-armed].is-in .gi-hub-ring { animation: gi-pulse 2.6s ease-out infinite; }
+@keyframes gi-draw { to { stroke-dashoffset: 0; } }
+@keyframes gi-pulse { 0% { transform: scale(.4); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
 }
 </style>
 <style data-module="section:models">
 @layer sections {
-#models .mb-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); overflow: hidden; }
-#models .mb-ring { position: absolute; width: min(560px, 80vw); left: -14%; bottom: -30%; pointer-events: none; }
-#models .mb-ring circle { fill: none; stroke: var(--color-5); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
-#models .mb-head { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 440px); gap: 20px 48px; align-items: end; padding: 18px 0 clamp(32px, 4vw, 56px); }
-#models .mb-head .m-text-5 { color: var(--color-6); }
-#models .mb-plans { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-5); }
-#models .mb-plan { display: flex; flex-direction: column; gap: 18px; padding: 24px; background: var(--color-1); }
-#models .mb-plan + .mb-plan { border-left: 1px solid var(--color-5); }
-#models .mb-plan--featured { background: var(--color-3); color: var(--color-1); border-left-color: var(--color-3); }
-#models .mb-plan--featured :focus-visible { outline-color: var(--color-1); }
-#models .mb-price { display: flex; align-items: baseline; gap: 8px; }
-#models .mb-price .m-text-3 { font-size: clamp(36px, 3.6vw, 52px); line-height: 1; }
-#models .mb-for { color: var(--color-6); }
-#models .mb-plan--featured .mb-for { color: var(--color-5); }
-#models .mb-inc { display: grid; margin-bottom: auto; }
-#models .mb-inc li { padding: 10px 0; border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent); font-size: 15px; }
-#models .mb-plan .m-btn, #models .mb-plan .m-btn-2 { align-self: flex-start; }
+:is(#models, #industries) .mb-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); overflow: hidden; }
+:is(#models, #industries) .mb-ring { position: absolute; width: min(560px, 80vw); left: -14%; bottom: -30%; pointer-events: none; }
+:is(#models, #industries) .mb-ring circle { fill: none; stroke: var(--color-5); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+:is(#models, #industries) .mb-head { position: relative; display: grid; grid-template-columns: 1fr; gap: 20px 48px; align-items: start; padding: 18px 0 clamp(32px, 4vw, 56px); }
+:is(#models, #industries) .mb-head .m-text-5 { color: var(--color-6); max-width: 680px; }
+:is(#models, #industries) .mb-plans { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-5); }
+:is(#models, #industries) .mb-plan { display: flex; flex-direction: column; gap: 18px; padding: 24px; background: var(--color-1); }
+:is(#models, #industries) .mb-plan + .mb-plan { border-left: 1px solid var(--color-5); }
+:is(#models, #industries) .mb-plan:nth-child(3n+1) { border-left: 0; }
+:is(#models, #industries) .mb-plan:nth-child(n+4) { border-top: 1px solid var(--color-5); }
+:is(#models, #industries) .mb-plan .m-link { align-self: flex-start; }
+:is(#models, #industries) .mb-note { position: relative; display: grid; gap: 12px; max-width: 680px; padding-top: clamp(28px, 4vw, 48px); }
+:is(#models, #industries) .mb-note .m-text { color: var(--color-6); }
+#industries .mb-plan { background: transparent; }
+#industries .mb-head .m-text-3 { font-size: clamp(36px, 4.6vw, 72px); }
+:is(#models, #industries) .mb-plan--featured { background: var(--color-3); color: var(--color-1); border-left-color: var(--color-3); }
+:is(#models, #industries) .mb-plan--featured :focus-visible { outline-color: var(--color-1); }
+:is(#models, #industries) .mb-price { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+#models .mb-price .m-text-4 { font-size: 12px; line-height: 1; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--color-7); }
+#models .mb-plan--featured .mb-price .m-text-4 { color: var(--color-5); }
+:is(#models, #industries) .mb-price .m-text-3 { font-size: clamp(34px, 3.3vw, 48px); line-height: 1; white-space: nowrap; }
+:is(#models, #industries) .mb-head h2 { text-wrap: balance; }
+@media (min-width: 861px) { :is(#models, #industries) .mb-plan h3 { min-height: 2.16em; } }
+#models .mb-plan h3 { min-height: 0; }
+:is(#models, #industries) .mb-for { color: var(--color-6); }
+:is(#models, #industries) .mb-plan--featured .mb-for { color: var(--color-5); }
+:is(#models, #industries) .mb-inc { display: grid; margin-bottom: auto; }
+:is(#models, #industries) .mb-inc li { padding: 10px 0; border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent); font-size: 15px; }
+:is(#models, #industries) .mb-plan .m-btn, :is(#models, #industries) .mb-plan .m-btn-2 { align-self: flex-start; }
 @media (max-width: 860px) {
-  #models .mb-head { grid-template-columns: 1fr; }
-  #models .mb-plans { grid-template-columns: 1fr; }
-  #models .mb-plan + .mb-plan { border-left: 0; border-top: 1px solid var(--color-5); }
+  :is(#models, #industries) .mb-head { grid-template-columns: 1fr; }
+  :is(#models, #industries) .mb-plans { grid-template-columns: 1fr; }
+  :is(#models, #industries) .mb-plan + .mb-plan { border-left: 0; border-top: 1px solid var(--color-5); }
 }
 }
 </style>
 <style data-module="section:faq">
 @layer sections {
 #faq .fq-slide { width: min(100%, 1080px); padding: var(--space-1); }
-#faq .fq-head { display: grid; grid-template-columns: 1fr minmax(0, 400px); gap: 20px 48px; align-items: end; padding: 18px 0 clamp(32px, 4vw, 56px); }
-#faq .fq-head .m-text { color: var(--color-6); }
+#faq .fq-head { display: grid; grid-template-columns: 1fr; gap: 20px 48px; align-items: start; padding: 18px 0 clamp(32px, 4vw, 56px); }
+#faq .fq-head .m-text { color: var(--color-6); max-width: 680px; }
+#faq .fq-proof { display: grid; gap: clamp(36px, 5vw, 64px); padding-bottom: 20px; }
+#faq .fq-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px clamp(16px, 2.4vw, 32px); }
+#faq .fq-pillars li { display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: 2px solid var(--color-5); }
+#faq .fq-pillars .m-text-4 { color: var(--color-6); }
+#faq .fq-pillars .m-text { font-size: 15px; color: var(--color-6); }
+#faq .fq-cases { display: grid; gap: 20px; }
+#faq .fq-cases__head { display: grid; grid-template-columns: 1fr; gap: 12px 48px; align-items: start; }
+#faq .fq-cases__head .m-text { color: var(--color-6); max-width: 680px; }
+#faq .fq-cases__head h3 { font-size: clamp(30px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.045em; }
+#faq .fq-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 20px); }
+#faq .fq-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; background: var(--color-1); border-top: 3px solid var(--color-3); box-shadow: var(--shadow-1); }
+#faq .fq-card .fq-tag { color: var(--color-6); }
+#faq .fq-card h4 { margin: 0; }
+#faq .fq-card dl { display: grid; gap: 12px; margin: 0; }
+#faq .fq-card dl div { display: grid; gap: 4px; padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--color-2) 12%, transparent); }
+#faq .fq-card dt { color: var(--color-6); }
+#faq .fq-card dd { margin: 0; font-size: 15px; }
+#faq .fq-card .fq-note { margin-top: auto; padding-top: 6px; color: var(--color-6); font-style: italic; }
+#faq .fq-sub { padding-top: 8px; }
+@media (max-width: 1024px) { #faq .fq-pillars { grid-template-columns: 1fr 1fr; } #faq .fq-cards { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { #faq .fq-cases__head { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { #faq .fq-pillars { grid-template-columns: 1fr; } }
 #faq .fq-body { display: grid; grid-template-columns: clamp(36px, 5vw, 72px) 1fr; gap: clamp(16px, 3vw, 40px); }
 #faq .fq-rail { position: relative; justify-self: center; width: 1px; background: var(--color-5); }
 #faq .fq-ball { position: absolute; left: 50%; top: 0; width: clamp(30px, 3.4vw, 44px); margin-left: calc(clamp(30px, 3.4vw, 44px) / -2); }
@@ -558,9 +734,11 @@ main { overflow-x: clip; }
 @layer sections {
 #contact .ct-slide { padding: var(--space-1); }
 #contact .ct-run { position: relative; display: flex; justify-content: flex-end; padding: 18px 0 18px; }
-#contact .ct-title { font-size: clamp(38px, 7.4vw, 112px); white-space: nowrap; }
+#contact .ct-title { font-size: clamp(34px, 5.6vw, 88px); max-width: 16ch; }
 #contact .ct-line { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--color-2); transform-origin: 0 50%; }
 #contact .ct-grid { display: grid; grid-template-columns: 1fr minmax(0, 560px); gap: 40px 64px; padding-top: clamp(32px, 4vw, 56px); }
+#contact .ct-side { display: grid; gap: 32px; align-content: start; }
+#contact .ct-hint { color: var(--color-6); font-size: 14px; }
 #contact .ct-info { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; align-content: start; }
 #contact .ct-info dt { color: var(--color-6); margin-bottom: 6px; }
 #contact .ct-info dd { margin: 0; }
@@ -578,7 +756,7 @@ main { overflow-x: clip; }
 @layer sections {
 #footer { padding: var(--space-3) var(--space-2) var(--space-2); }
 #footer .ft-slide { padding: var(--space-1); container-type: inline-size; overflow: hidden; }
-#footer .ft-word { display: block; pointer-events: none; width: max-content; max-width: 100%; padding: 18px 0 clamp(28px, 4vw, 56px); font-size: calc(92cqw / (var(--len) * .55)); line-height: .8; white-space: nowrap; }
+#footer .ft-word { pointer-events: none; width: min(100%, 760px); margin: 18px 0 clamp(28px, 4vw, 56px); }
 #footer .ft-cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 28px 32px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--color-1) 25%, transparent); }
 #footer .ft-cols .m-text, #footer .ft-cols .m-text-4 { color: var(--color-5); }
 #footer .ft-cols ul { display: grid; gap: 8px; align-content: start; }
@@ -590,35 +768,30 @@ main { overflow-x: clip; }
 <body>
 <header id="navigation" data-section="navigation">
   <div class="nav__bar">
-    <a class="nav__logo" href="#hero" aria-label="Edish Connect, back to the top">edish connect</a>
-    <p class="nav__line m-text-4">Where Engineering Meets Inspiration</p>
+    <a class="nav__logo brand-lockup" href="#hero" aria-label="Edish Connect, back to the top"><img src="assets/logos/EI-lockup-light.png" alt="" width="1824" height="624"></a>
     <nav aria-label="Main">
       <ul class="nav__links" data-items=":scope > li">
-        <li><a class="m-link" href="#culture">Philosophy</a></li>
-        <li><a class="m-link" href="#capabilities">Models</a></li>
-        <li><a class="m-link" href="#process">Capabilities</a></li>
-        <li><a class="m-link" href="#growth">Delivery</a></li>
-        <li><a class="m-link" href="#foundations">Why Edish</a></li>
-        <li><a class="m-link" href="#faq">FAQ</a></li>
+        <li><a class="m-link" href="#capabilities">What we build</a></li>
+        <li><a class="m-link" href="#industries">Industries</a></li>
+        <li><a class="m-link" href="#models">How we build</a></li>
+        <li><a class="m-link" href="#council">Expert Council</a></li>
       </ul>
     </nav>
-    <a class="m-btn nav__cta" href="#contact"><span class="m-btn__label">Start the Conversation</span></a>
+    <a class="m-btn nav__cta" href="#contact"><span class="m-btn__label">Build with Edish</span></a>
     <button class="m-iconbtn nav__menu" type="button" aria-expanded="false" aria-controls="menu"><span class="sr-only">Open the menu</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></svg></button>
   </div>
   <div class="menu" id="menu" hidden>
+    <img class="menu__mark" src="assets/logos/edish-connect-EI-mark-white.svg" alt="" width="160" height="182">
     <button class="m-iconbtn menu__close" type="button"><span class="sr-only">Close the menu</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav aria-label="Menu">
       <ul class="menu__links" data-items=":scope > li">
-        <li><a class="m-text-3" href="#culture">Philosophy</a></li>
-        <li><a class="m-text-3" href="#capabilities">Models</a></li>
-        <li><a class="m-text-3" href="#process">Capabilities</a></li>
-        <li><a class="m-text-3" href="#growth">Delivery</a></li>
-        <li><a class="m-text-3" href="#foundations">Why Edish</a></li>
-        <li><a class="m-text-3" href="#faq">FAQ</a></li>
-        <li><a class="m-text-3" href="#contact">Contact</a></li>
+        <li><a class="m-text-3" href="#capabilities">What we build</a></li>
+        <li><a class="m-text-3" href="#industries">Industries</a></li>
+        <li><a class="m-text-3" href="#models">How we build</a></li>
+        <li><a class="m-text-3" href="#council">Expert Council</a></li>
       </ul>
     </nav>
-    <a class="m-btn-2 menu__cta" href="#contact"><span class="m-btn__label">Start the Conversation</span></a>
+    <a class="m-btn-2 menu__cta" href="#contact"><span class="m-btn__label">Build with Edish</span></a>
   </div>
 </header>
 <main>
@@ -627,169 +800,162 @@ main { overflow-x: clip; }
     <div class="op-ground" aria-hidden="true"></div>
     <div class="op-frame">
       <div class="op-slide m-slide-2">
-        <div class="op-photo"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f580?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Abstract microchip precision circuitry in engineering navy" width="1600" height="1025" fetchpriority="high"></div>
+        <div class="op-photo">
+          <img class="is-on" data-banner="0" src="https://images.unsplash.com/photo-1630555464837-e1279432b898?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="The Samrat Yantra sundial at Jantar Mantar, Jaipur" width="1600" height="1067" fetchpriority="high">
+          <img data-banner="0" data-src="https://images.unsplash.com/photo-1650530777057-3a7dbc24bf6c?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="The pink sandstone facade of Hawa Mahal, Jaipur" width="1600" height="1067">
+          <img data-banner="0" data-src="https://images.unsplash.com/photo-1666634157070-6fd830fb5672?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="A metal part being machined on a precision lathe" width="1600" height="1067">
+          <img data-banner="1" data-src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="Robots assembling a car body on a factory line" width="1600" height="1067">
+          <img data-banner="1" data-src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="An electric vehicle plugged in to charge" width="1600" height="1067">
+          <img data-banner="1" data-src="https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="An industrial robot arm on an automated production line" width="1600" height="1067">
+          <img data-banner="1" data-src="https://images.unsplash.com/photo-1509391111737-9b07f052f6b6?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="An electrical substation lit up at night" width="1600" height="1067">
+          <img data-banner="1" data-src="https://images.unsplash.com/photo-1579165466949-3180a3d056d5?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="A scientist using a pipette in a pharmaceutical laboratory" width="1600" height="1067">
+          <img data-banner="1" data-src="https://images.unsplash.com/photo-1485920694980-9c5db37b0d44?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="People crossing a street in a financial district" width="1600" height="1067">
+          <img data-banner="2" data-src="https://images.unsplash.com/photo-1696834137451-f52f471a58bc?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="A developer wearing headphones writing code" width="1600" height="1067">
+          <img data-banner="2" data-src="https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="Server racks in a data centre" width="1600" height="1067">
+          <img data-banner="2" data-src="https://images.unsplash.com/photo-1758728119257-d88284600a48?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="A professional reviewing work on a laptop" width="1600" height="1067">
+          <img data-banner="2" data-src="https://images.unsplash.com/photo-1774898988393-5c752e4d55e9?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="A statue of justice, a gavel and an open law book" width="1600" height="1067">
+          <img data-banner="2" data-src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="Colleagues in a team meeting at an office" width="1600" height="1067">
+          <img data-banner="2" data-src="https://images.unsplash.com/photo-1603201667230-bd139210db18?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="A team working together around a laptop" width="1600" height="1067">
+        </div>
         <div class="op-ring" aria-hidden="true"><span class="op-ring__orb m-orb"></span></div>
         <h1 class="op-title m-text-2" id="hero-title">
-          <span class="op-line op-line--1" style="--len:8"><span class="op-line__in">We build</span></span>
-          <span class="op-line op-line--2" style="--len:11"><span class="op-line__in">engineering</span></span>
-          <span class="op-line op-line--3" style="--len:10"><span class="op-line__in">capability</span></span>
+          <span class="op-line op-line--1" style="--len:15"><span class="op-line__in">We build global</span></span>
+          <span class="op-line op-line--2" style="--len:12"><span class="op-line__in">capabilities</span></span>
+          <span class="op-line op-line--3" style="--len:9"><span class="op-line__in">in India.</span></span>
         </h1>
+        <ol class="op-cap" aria-label="Three stories behind Edish">
+          <li class="is-on"><span class="m-text-4">Engineering heritage</span><span class="m-text">Where German engineering excellence meets India’s timeless legacy.</span></li>
+          <li><span class="m-text-4">Industries and enterprise</span><span class="m-text">Capabilities built for the industries that shape our world.</span></li>
+          <li><span class="m-text-4">People, expertise and technology</span><span class="m-text">From a single engineering team to capabilities across the whole enterprise.</span></li>
+        </ol>
         <div class="op-meta">
-          <p class="m-text-5">Edish Connect partners with engineering leaders to build product, platform and AI capability inside their organizations — not to staff a project and step away.</p>
+          <p class="op-tag m-text-4">Where Engineering Meets Execution and Inspiration.</p>
+          <p class="m-text-5">We help global businesses establish and scale specialised teams, functions and capability centres in India—from engineering and AI to finance, taxation and business operations.</p>
           <div class="op-actions">
-            <a class="m-btn-2" href="#contact"><span class="m-btn__label">Start the Conversation</span></a>
-            <a class="m-link" href="#capabilities">See Engineering Models</a>
+            <a class="m-btn-2" href="#contact"><span class="m-btn__label">Build your capability in India</span></a>
+            <a class="m-link" href="#approach">Explore how we work</a>
           </div>
         </div>
         <div class="op-dim" aria-hidden="true"></div>
       </div>
     </div>
   </div>
-  <div class="op-s2">
+  <div class="op-s2" id="philosophy">
     <div class="op-card m-slide-3">
-      <h2 class="op-title2 m-text-2" style="--len:27">Two forces, one discipline.</h2>
+      <h2 class="op-title2 m-text-2" style="--len:21">Three forces.<br> One Edish philosophy.</h2>
       <span class="op-orb m-orb" aria-hidden="true"></span>
-      <img class="op-chip m-chip" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=120&amp;h=120&amp;q=80" alt="Portrait of an engineering leader" width="400" height="400" loading="lazy">
-      <div class="op-cols">
-        <p class="m-text"><strong>Engineering (The E):</strong> Precision, execution, craftsmanship, systems thinking, and production reliability.</p>
-        <p class="m-text"><strong>Inspiration (The I):</strong> Curiosity, innovation, ideas, growth, and human potential. Engineering without inspiration creates systems; inspiration without engineering creates ideas. Together, they build the future.</p>
-        <a class="m-link" href="#culture">Explore our philosophy</a>
+      <img class="op-chip m-chip" src="https://images.unsplash.com/photo-1578999935853-4ec5fa6c1f60?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="Hawa Mahal, Jaipur" width="240" height="240" loading="lazy">
+      <div class="op-cols" data-items=":scope > *" data-motion="rise" data-enter="90%">
+        <p class="m-text"><strong>Engineering</strong><br>The expertise to create.</p>
+        <p class="m-text"><strong>Execution</strong><br>The ability to make it happen.</p>
+        <p class="m-text"><strong>Inspiration</strong><br>The purpose behind the work.</p>
+        <p class="op-quote m-text-5">Engineering creates the capability. Execution brings it to life. Inspiration gives it purpose.</p>
+        <p class="op-close m-text">The E and the I in our logo are Engineering and Inspiration, the two ideas Edish was founded on. Execution is how we make them real. We bring all three to every build.</p>
+        <a class="m-link" href="#culture">Why culture matters to us</a>
       </div>
     </div>
   </div>
 </section>
-<section id="culture" class="l-sec" data-section="culture" aria-labelledby="culture-title">
-  <div class="mt-slide m-slide">
-    <div class="mt-side">
-      <span class="mt-orb m-orb" aria-hidden="true"></span>
-      <ol class="mt-steps" data-items=":scope > li" data-fixed="3" data-motion="rise" data-enter="86%">
-        <li><span class="mt-num m-text-4">01</span><h3 class="m-text-6">Precision</h3><p class="m-text">Systems thinking from day one. Conversations start with your architecture and constraints, not a rate card.</p></li>
-        <li><span class="mt-num m-text-4">02</span><h3 class="m-text-6">Execution</h3><p class="m-text">Senior engineers who have owned distributed systems in production, embedded directly into your workflows.</p></li>
-        <li><span class="mt-num m-text-4">03</span><h3 class="m-text-6">Retention</h3><p class="m-text">We measure success by capability retained inside your organization, not hours billed or tickets closed.</p></li>
-      </ol>
+
+<section id="industries" class="l-sec" data-section="industries" aria-labelledby="industries-title">
+  <div class="mb-slide m-slide-3">
+    <div class="mb-head">
+      <h2 class="m-text-3" id="industries-title" data-motion="streak">Different industries, different challenges, one capability partner.</h2>
+      <p class="m-text-5">Every industry has its own complexity, its own technology priorities and its own way of working.</p>
     </div>
-    <div class="mt-main">
-      <h2 class="mt-title m-text-3" id="culture-title">
-        <span class="mt-row">Built <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=40&amp;h=40&amp;q=80" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">to scale.</span></span>
-        <span class="mt-row">Owned <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=40&amp;h=40&amp;q=80" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">by</span></span>
-        <span class="mt-row">your team. <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=40&amp;h=40&amp;q=80" alt="" width="240" height="240" loading="lazy"></span></span>
-      </h2>
-      <div class="mt-foot">
-        <p class="m-text-5">Every engagement starts with your real architectural constraints and ends with lasting leverage. You see the progress in code you own, not in slide decks.</p>
-        <a class="m-btn" href="#capabilities"><span class="m-btn__label">Explore Engineering Models</span></a>
-      </div>
+    <div class="in-grid" data-items=":scope > .in-card" data-motion="rise" data-enter="86%">
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1739036868260-c26b292cd85d?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An AI processor chip on a circuit board" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">01</span>
+        <h3 class="m-text-6">Technology, software &amp; AI</h3>
+        <p class="m-text">Products, platforms and intelligent systems</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1742934029122-511b3b28e9f3?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An engineer working at a computer on a factory floor" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">02</span>
+        <h3 class="m-text-6">Manufacturing &amp; industrial</h3>
+        <p class="m-text">Connected operations and industrial technology</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1509391111737-9b07f052f6b6?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An electrical substation lit up at night" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">03</span>
+        <h3 class="m-text-6">Energy, utilities &amp; infrastructure</h3>
+        <p class="m-text">Digital and engineering capability</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1579165466949-3180a3d056d5?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A scientist using a pipette in a pharmaceutical laboratory" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">04</span>
+        <h3 class="m-text-6">Life sciences, pharma &amp; MedTech</h3>
+        <p class="m-text">Dependable systems and digital workflows</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An electric vehicle plugged in to charge" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">05</span>
+        <h3 class="m-text-6">Automotive, mobility &amp; EV</h3>
+        <p class="m-text">Connected mobility and embedded technology</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A smartphone held over a card reader to make a contactless payment" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">06</span>
+        <h3 class="m-text-6">Financial services &amp; FinTech</h3>
+        <p class="m-text">Secure, scalable financial platforms</p>
+      </article>
     </div>
   </div>
 </section>
 
 <section id="capabilities" class="l-sec" data-section="capabilities" aria-labelledby="capabilities-title">
   <div class="ds-slide m-slide">
-    <h2 class="ds-title m-text-3" id="capabilities-title" style="--len:26" data-motion="streak"><span>Architect.</span> <span>Execute.</span> <span>Scale.</span></h2>
-    <div class="ds-grid" data-items=":scope > .ds-tile" data-fixed="8">
-      <figure class="ds-tile ds-tile--lift" style="--capabilities-tilt: -8deg"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Senior engineer writing code on high-resolution display" width="600" height="636" loading="lazy"><figcaption class="m-badge">Staff Augmentation</figcaption></figure>
+    <h2 class="ds-title m-text-3" id="capabilities-title" style="--len:36" data-motion="streak"><span>The</span> <span>capabilities</span> <span class="ds-break" aria-hidden="true"></span><span>behind</span> <span>your</span> <span>growth.</span></h2>
+    <div class="ds-grid" data-items=":scope > .ds-tile">
+      <figure class="ds-tile ds-tile--lift" style="--capabilities-tilt: -8deg"><img src="https://images.unsplash.com/photo-1696834137451-f52f471a58bc?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A developer wearing headphones writing code" width="600" height="400" loading="lazy"><figcaption class="m-badge">Custom software</figcaption></figure>
       <div class="ds-tile ds-tile--mark" aria-hidden="true" style="--capabilities-tilt: 5deg"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></div>
-      <figure class="ds-tile ds-tile--run" style="--capabilities-tilt: -3deg"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Engineering pod collaborating on systems design" width="900" height="1350" loading="lazy"><figcaption class="m-badge">Dedicated Teams</figcaption></figure>
+      <figure class="ds-tile ds-tile--run" style="--capabilities-tilt: -3deg"><img src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A product team in a meeting at an office" width="600" height="400" loading="lazy"><figcaption class="m-badge">Product engineering</figcaption></figure>
       <div class="ds-copy">
-        <p class="m-text">Six ways to build engineering capability — not six ways to hire. Every organization builds capability differently; these models meet your team at its current maturity stage.</p>
-        <p class="m-text">From rapid capacity injection to full global capability centers with built-in governance, compliance, and engineering craft.</p>
+        <p class="m-text">Every business needs a different mix of capabilities to move ahead. We work out with you which ones, set them up, and scale the teams and expertise your plans rely on.</p>
+        <p class="m-text">Engineering is the foundation, and specialist business functions sit alongside it.</p>
       </div>
-      <figure class="ds-tile ds-tile--ride" style="--capabilities-tilt: 9deg"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Modern global engineering campus building" width="600" height="750" loading="lazy"><figcaption class="m-badge">Offshore Center (ODC)</figcaption></figure>
-      <figure class="ds-tile ds-tile--swim" style="--capabilities-tilt: -6deg"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Enterprise engineering operations floor" width="900" height="506" loading="lazy"><figcaption class="m-badge">Global Center (GCC)</figcaption></figure>
-      <figure class="ds-tile ds-tile--kit" style="--capabilities-tilt: 3deg"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Architectural blueprint and systems design handover" width="500" height="469" loading="lazy"><figcaption class="m-badge">Build-Operate-Transfer</figcaption></figure>
-      <figure class="ds-tile ds-tile--court" style="--capabilities-tilt: -10deg"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Lead engineer monitoring production systems" width="900" height="1013" loading="lazy"><figcaption class="m-badge">Managed Teams</figcaption></figure>
-      <a class="ds-tile ds-tile--link" href="#growth" style="--capabilities-tilt: 6deg"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See how we deliver</span></a>
-      <p class="ds-note m-text-6">Fastest to start or full strategic scale — every model is structured for sustainable engineering velocity.</p>
+      <figure class="ds-tile ds-tile--ride" style="--capabilities-tilt: 9deg"><img src="https://images.unsplash.com/photo-1762341116897-921e2a52f7ff?auto=format&amp;fit=crop&amp;w=600&amp;h=900&amp;q=80" alt="A professional working at a desk with a notebook and laptop" width="600" height="900" loading="lazy"><figcaption class="m-badge">Professional functions</figcaption></figure>
+      <figure class="ds-tile ds-tile--swim" style="--capabilities-tilt: -6deg"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A laptop with a code editor open" width="600" height="400" loading="lazy"><figcaption class="m-badge">Quality engineering</figcaption></figure>
+      <figure class="ds-tile ds-tile--kit" style="--capabilities-tilt: 3deg"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Server racks in a data centre" width="600" height="400" loading="lazy"><figcaption class="m-badge">Cloud &amp; platform</figcaption></figure>
+      <figure class="ds-tile ds-tile--court" style="--capabilities-tilt: -10deg"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Charts on an analytics dashboard" width="600" height="400" loading="lazy"><figcaption class="m-badge">Data</figcaption></figure>
+      <a class="ds-tile ds-tile--link" href="#models" style="--capabilities-tilt: 6deg"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See how you can work with us</span></a>
+      <p class="ds-note m-text-6">Any of these can take the form of a few specialists, a dedicated team or a centre of your own.</p>
     </div>
-  </div>
-</section>
-
-<section id="leadership" class="l-sec" data-section="leadership" aria-labelledby="leadership-title">
-  <div class="co-slide m-slide-3">
-    <svg class="co-ring" data-motion="orbit" viewBox="0 0 400 400" aria-hidden="true" data-items=":scope > circle"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="140" pathLength="1"/></svg>
-    <div class="co-head">
-      <h2 class="m-text-3" id="leadership-title" data-motion="streak">Led by engineers who have run production systems</h2>
-      <p class="m-text-5">Every practice lead has owned distributed systems under scale, managed architectural debt, and shipped enterprise software. You collaborate directly with practitioners.</p>
-    </div>
-    <ul class="co-list" data-items=":scope > li">
-      <li class="co-person"><figure><div class="co-photo"><img data-motion="focus" data-enter="85%" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&amp;fit=crop&amp;w=600&amp;h=750&amp;q=80" alt="Portrait of Alex Rivera, AI and Data Engineering Practice Lead" width="600" height="750" loading="lazy"></div><figcaption><strong class="m-text-6">Alex Rivera</strong><span class="m-text-4">Practice Lead · AI &amp; Data Engineering</span></figcaption></figure></li>
-      <li class="co-person"><figure><div class="co-photo"><img data-motion="focus" data-enter="85%" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;w=600&amp;h=900&amp;q=80" alt="Portrait of Elena Rostova, VP Architecture" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Elena Rostova</strong><span class="m-text-4">VP Architecture · Platform &amp; Cloud</span></figcaption></figure></li>
-      <li class="co-person"><figure><div class="co-photo"><img data-motion="focus" data-enter="85%" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=600&amp;h=900&amp;q=80" alt="Portrait of Karthik Menon, Principal Architect" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Karthik Menon</strong><span class="m-text-4">Principal Architect · Product Engineering</span></figcaption></figure></li>
-      <li class="co-person"><figure><div class="co-photo"><img data-motion="focus" data-enter="85%" src="https://images.unsplash.com/photo-1573497019940-1c28c88c4f3e?auto=format&amp;fit=crop&amp;w=600&amp;h=900&amp;q=80" alt="Portrait of Sofia Chen, Director of Global Capability Centers" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Sofia Chen</strong><span class="m-text-4">Director · Global Capability Centers (GCC)</span></figcaption></figure></li>
-    </ul>
-  </div>
-</section>
-
-<section id="process" class="l-sec" data-section="process" aria-labelledby="process-title">
-  <div class="lb-slide m-slide-2">
-    <div class="lb-text">
-      <h2 class="m-text-3" id="process-title">What we build, and what it earns you</h2>
-      <p class="m-text-5">Six foundational capabilities built to withstand production reality. Architected for change, auditability, and long-term leverage.</p>
-      <p class="m-text">From moving generative AI from sandbox demo to resilient production inference, to building internal developer platforms that turn engineering effort into leverage across every squad.</p>
-      <a class="m-link" href="#contact">Speak with an engineering lead</a>
-    </div>
-    <div class="lb-stage">
-      <div class="lb-lens"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=880&amp;q=80" alt="High performance enterprise cloud server infrastructure" width="900" height="600" loading="lazy"></div>
-      <svg class="lb-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
-      <ul class="lb-notes" data-items=":scope > li" data-fixed="4">
-        <li class="lb-note" style="--a:-38deg"><strong class="m-text-6">Product Engineering</strong><span class="m-text-4">Architected for change and uptime</span></li>
-        <li class="lb-note" style="--a:38deg"><strong class="m-text-6">AI Engineering</strong><span class="m-text-4">Moving models from pilot to production</span></li>
-        <li class="lb-note" style="--a:142deg"><strong class="m-text-6">Platform &amp; Cloud</strong><span class="m-text-4">Internal leverage across squads</span></li>
-        <li class="lb-note" style="--a:218deg"><strong class="m-text-6">Quality Engineering</strong><span class="m-text-4">Confidence in the CI/CD pipeline</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="growth" class="l-sec" data-section="growth" aria-labelledby="growth-title">
-  <div class="wk-stage">
-    <div class="wk-head">
-      <h2 class="m-text-3" id="growth-title" data-motion="streak">The Delivery Cadence</h2>
-      <p class="m-text-5">Structured for rapid momentum, rigorous quality, and clear visibility. Here is how an Edish Connect pod embeds into your engineering cadence.</p>
-    </div>
-    <div class="wk-view">
-      <ol class="wk-track" data-items=":scope > li" data-fixed="7">
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 01</h3><p class="m-text-5">Architecture Audit</p><p class="m-text wk-time">Days 1–3 · Deep Dive</p><p class="m-text">We map your repositories, API contracts, latency budgets, and deployment constraints with your tech leads.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Software architecture flow diagrams and systems design" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 02</h3><p class="m-text-5">Pod Assembly</p><p class="m-text wk-time">Week 1 · Pod Selection</p><p class="m-text">Hand-picked senior engineers aligned to your exact technical stack, domain nuances, and timezone cadence.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Engineering team collaborating on product requirements" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 03</h3><p class="m-text-5">Embedded Kickoff</p><p class="m-text wk-time">Week 2 · First Commit</p><p class="m-text">Local environments configured, security clearances granted, and first pull requests opened within 48 hours.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Engineer workstation with active code editor" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 04</h3><p class="m-text-5">Continuous Delivery</p><p class="m-text wk-time">Ongoing · Daily Sprints</p><p class="m-text">Async standups, rigorous peer reviews, and automated integration tests ensure every commit meets your standard.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Clean code editor displaying backend syntax" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day wk-day--rest m-slide"><h3 class="m-text-6">Stage 05</h3><p class="m-text-5">Platform Leverage</p><p class="m-text wk-time">Milestone · Foundations</p><p class="m-text">Creating reusable libraries, automated smoke suites, and CI/CD enhancements that lift velocity across all squads.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Cloud infrastructure and telemetry systems" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 06</h3><p class="m-text-5">Metrics &amp; Retros</p><p class="m-text wk-time">Bi-Weekly · Executive Sync</p><p class="m-text">Transparent reviews analyzing sprint velocity, code quality, and architectural progress against strategic KPIs.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Data telemetry analytics charts" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 07</h3><p class="m-text-5">Knowledge Transfer</p><p class="m-text wk-time">Continuous · Full Retention</p><p class="m-text">Comprehensive documentation, runbooks, and pair-shadowing ensure your internal team permanently owns the capability.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Engineers conducting a technical walkthrough" width="600" height="400" loading="lazy"></div></li>
-      </ol>
-    </div>
-    <div class="wk-progress" aria-hidden="true"><span></span></div>
-  </div>
-</section>
-
-<section id="heritage" class="l-sec" data-section="heritage" aria-labelledby="heritage-title">
-  <div class="st-slide m-slide-3">
-    <h2 class="st-label m-text-6" id="heritage-title">Engineering leaders on real outcomes</h2>
-    <figure class="st-main">
-      <blockquote data-motion="streak" data-from="left"><p class="m-text-7"><img class="st-chip m-chip" data-motion="focus" data-enter="85%" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=120&amp;h=120&amp;q=80" alt="Portrait of Marcus Vance, VP of Engineering" width="240" height="240" loading="lazy">“Edish Connect didn't just staff engineers — they diagnosed our database write-bottleneck in the first 48 hours, restructured our event pipelines, and left our internal squad ten times more confident in production releases.”</p></blockquote>
-      <figcaption class="m-text-4">Marcus Vance · VP of Engineering, Global SaaS Platform</figcaption>
-    </figure>
-    <ul class="st-notes" data-items=":scope > li" data-motion="rise" data-enter="86%">
-      <li><p class="m-text">“Their team moved our AI pilot into production without a single architectural rebuild. What took other vendors six months took Edish Connect three sprints.”</p><p class="m-text-4">Nadia Al-Mansoor · Head of AI, FinTech Enterprise</p></li>
-      <li><p class="m-text">“The BOT model allowed us to stand up a 25-person autonomous engineering unit in under 60 days without compromising on code quality or culture.”</p><p class="m-text-4">Julian Thorne · CTO, Logistics Technology Group</p></li>
-    </ul>
-  </div>
-</section>
-
-<section id="foundations" class="l-sec" data-section="foundations" aria-labelledby="foundations-title">
-  <div class="rc-slide m-slide">
-    <div class="rc-text">
-      <h2 class="m-text-3" id="foundations-title"><span class="rc-row">Capability</span> <span class="rc-row">is what</span> <span class="rc-row">remains</span></h2>
-      <p class="m-text-5">Anyone can bill hours. An engineering partner is evaluated by the velocity, architectural resilience, and autonomy your organization retains when the engagement concludes.</p>
-      <ul class="rc-list" data-items=":scope > li">
-        <li><strong class="m-text-6">Engineering-Led, Not Sales-Led</strong><span class="m-text">Conversations start with your systems architecture and constraints, never with an aggressive sales rate card.</span></li>
-        <li><strong class="m-text-6">Senior Engineers, Not Résumés</strong><span class="m-text">Specialists who have carried the pager, debugged live outages, and maintained complex systems in production.</span></li>
-        <li><strong class="m-text-6">Systems Thinking from Day One</strong><span class="m-text">We analyze whole systems, dependencies, and team dynamics before proposing code modifications.</span></li>
-        <li><strong class="m-text-6">Retained Organizational Capability</strong><span class="m-text">Every architectural pattern, CI/CD pipeline, and workflow is documented and permanently owned by you.</span></li>
-      </ul>
-    </div>
-    <div class="rc-window">
-      <div class="rc-sky" aria-hidden="true"><div class="rc-cool"></div><span class="rc-sun m-orb"></span></div>
-      <div class="rc-sea"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=900&amp;h=600&amp;q=80" alt="Calm open water surface reflecting sky, representing production resilience and calm" width="900" height="600" loading="lazy"></div>
+    <div class="ds-pillars">
+      <div class="ds-pillar">
+        <figure class="ds-panel"><img src="https://images.unsplash.com/photo-1653503425441-9d975e51ce91?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=75" alt="Two professionals reviewing work on a laptop" width="1200" height="800" loading="lazy"><span class="ds-panel__num m-text-4">01</span></figure>
+        <h3 class="m-text-6">Engineering &amp; technology</h3>
+        <p class="m-text">Engineering is where Edish started, and it remains the core of what we do.</p>
+        <details class="ds-more">
+          <summary class="m-text-4">Product • AI • Custom Software • Platform • Cloud • Data • Quality • Engineering Consulting</summary>
+          <ol class="ds-list">
+            <li><span class="m-text-4">01</span><h4 class="m-text">Product engineering</h4><p class="m-text">Designing and building digital products, SaaS platforms and applications that scale.</p></li>
+            <li><span class="m-text-4">02</span><h4 class="m-text">Custom software development</h4><p class="m-text">Enterprise applications and software shaped around what your business actually needs.</p></li>
+            <li><span class="m-text-4">03</span><h4 class="m-text">Platform engineering</h4><p class="m-text">Platforms that scale and stay reliable, with a better experience for the developers who use them.</p></li>
+            <li><span class="m-text-4">04</span><h4 class="m-text">Cloud engineering</h4><p class="m-text">Cloud architecture, migration and modernisation, along with infrastructure optimisation.</p></li>
+            <li><span class="m-text-4">05</span><h4 class="m-text">Data engineering</h4><p class="m-text">Data platforms, pipelines and analytics, and the business systems that run on data.</p></li>
+            <li><span class="m-text-4">06</span><h4 class="m-text">Quality engineering</h4><p class="m-text">Quality, automation, testing and reliability built into every stage of the development lifecycle.</p></li>
+            <li><span class="m-text-4">07</span><h4 class="m-text">Engineering consulting</h4><p class="m-text">Advice on technology strategy, architecture and engineering transformation.</p></li>
+          </ol>
+        </details>
+      </div>
+      <div class="ds-pillar">
+        <figure class="ds-panel"><img src="https://images.unsplash.com/photo-1771244688590-1e481dba1b5a?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=75" alt="A professional at his desk in an office" width="1200" height="800" loading="lazy"><span class="ds-panel__num m-text-4">02</span></figure>
+        <h3 class="m-text-6">Enterprise &amp; professional functions</h3>
+        <p class="m-text">Working through the Edish Expert Council and our specialist partners, we help businesses build teams and functions outside technology as well.</p>
+        <details class="ds-more">
+          <summary class="m-text-4">Finance &amp; Tax • Legal Operations • Risk &amp; Compliance • HR • Business Operations</summary>
+          <ol class="ds-list">
+            <li><span class="m-text-4">01</span><h4 class="m-text">Finance &amp; taxation</h4><p class="m-text">Chartered accountants, financial reporting, tax operations, accounting operations, accounts payable and receivable, financial analysis, reconciliations and finance process management.</p></li>
+            <li><span class="m-text-4">02</span><h4 class="m-text">Legal &amp; contract operations</h4><p class="m-text">Legal operations, contract lifecycle management, contract documentation, legal research, compliance support and corporate legal administration.</p></li>
+            <li><span class="m-text-4">03</span><h4 class="m-text">Risk, audit &amp; compliance</h4><p class="m-text">Internal audit, risk operations, governance, controls and monitoring, regulatory reporting and compliance support.</p></li>
+            <li><span class="m-text-4">04</span><h4 class="m-text">HR &amp; people operations</h4><p class="m-text">Talent acquisition, HR operations, workforce administration, payroll support and people analytics.</p></li>
+            <li><span class="m-text-4">05</span><h4 class="m-text">Business &amp; operational functions</h4><p class="m-text">Procurement operations, business process management, enterprise reporting, selected shared services and administrative operations.</p></li>
+          </ol>
+        </details>
+        <p class="ds-caveat m-text">These functions are delivered with qualified experts, vetted professional firms and strategic delivery partners. Where the work is regulated, such as tax or legal advice, the specialist firm stays responsible for it.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -798,50 +964,232 @@ main { overflow-x: clip; }
   <div class="mb-slide m-slide">
     <svg class="mb-ring" data-motion="orbit" viewBox="0 0 400 400" aria-hidden="true" data-items=":scope > circle"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="150" pathLength="1"/></svg>
     <div class="mb-head">
-      <h2 class="m-text-3" id="models-title" data-motion="streak">Engagement Models</h2>
-      <p class="m-text-5">Structured around your organization's maturity stage. Predictable engagement, zero lock-in, and 100% intellectual property ownership.</p>
+      <h2 class="m-text-3" id="models-title" data-motion="streak">One partner, several ways to build.</h2>
+      <p class="m-text-5">No two organisations start from the same place. The model that suits you depends on your requirements, your scale, how much you want to own and where you plan to be in the long run. We help you work it out.</p>
     </div>
-    <div class="mb-plans" data-items=":scope > .mb-plan" data-motion="rise" data-enter="86%">
-      <article class="mb-plan">
-        <h3 class="m-text-6">Staff Augmentation</h3>
-        <p class="mb-price"><strong class="m-text-3">Immediate</strong><span class="m-text-4">capacity</span></p>
-        <p class="mb-for m-text">Capacity without a hiring cycle.</p>
-        <ul class="mb-inc"><li class="m-text">Senior engineers embedded directly in your sprints</li><li class="m-text">Aligned to your tools, CI/CD, and git workflows</li><li class="m-text">Direct reporting into your engineering managers</li><li class="m-text">Rapid onboarding with zero lock-in</li></ul>
-        <a class="m-btn" href="#contact"><span class="m-btn__label">Start Augmentation</span></a>
-      </article>
-      <article class="mb-plan mb-plan--featured">
-        <h3 class="m-text-6">Dedicated Pods &amp; GCC</h3>
-        <p class="mb-price"><strong class="m-text-3">Strategic</strong><span class="m-text-4">scale</span></p>
-        <p class="mb-for m-text">Sustained delivery with operational depth.</p>
-        <ul class="mb-inc"><li class="m-text">Standing multidisciplinary engineering pod</li><li class="m-text">Structured around your product roadmap and milestones</li><li class="m-text">Full security, SOC2 compliance, and governance layer</li><li class="m-text">Clear pathway to full Global Capability Center (GCC)</li></ul>
-        <a class="m-btn-2" href="#contact"><span class="m-btn__label">Explore Dedicated Pods</span></a>
-      </article>
-      <article class="mb-plan">
-        <h3 class="m-text-6">Build-Operate-Transfer</h3>
-        <p class="mb-price"><strong class="m-text-3">Owned</strong><span class="m-text-4">outcome</span></p>
-        <p class="mb-for m-text">We build, stabilize, and transfer full ownership.</p>
-        <ul class="mb-inc"><li class="m-text">End-to-end accountability for milestones and architecture</li><li class="m-text">Complete operational setup, talent hiring, and vetting</li><li class="m-text">Seamless legal, IP, and asset transfer at maturity</li><li class="m-text">Post-transfer architectural advisory and support</li></ul>
-        <a class="m-btn" href="#contact"><span class="m-btn__label">Plan BOT Engagement</span></a>
-      </article>
+    <div class="lad">
+      <svg class="lad-path" aria-hidden="true"><path class="lad-path__line"/><g class="lad-path__dots"></g></svg>
+      <ol class="lad-steps" data-items=":scope > li" data-motion="rise" data-enter="86%">
+        <li class="lad-step" style="--lv:1">
+          <p class="lad-tag m-text-4">Start small</p>
+          <h3 class="m-text-6">Staff augmentation</h3>
+          <p class="m-text">Add specialist professionals and engineering expertise to the team you already have.</p>
+          <a class="m-link" href="#contact">Ask about specialists</a>
+        </li>
+        <li class="lad-step" style="--lv:2">
+          <p class="lad-tag m-text-4">Build focus</p>
+          <h3 class="m-text-6">Dedicated teams</h3>
+          <p class="m-text">A focused team that works only on your requirements, functions or products.</p>
+          <a class="m-link" href="#contact">Ask about a dedicated team</a>
+        </li>
+        <li class="lad-step" style="--lv:3">
+          <p class="lad-tag m-text-4">Establish · ODC</p>
+          <h3 class="m-text-6">Offshore development centre</h3>
+          <p class="m-text">A dedicated offshore operation, with the people, processes, governance and infrastructure to deliver over the long term.</p>
+          <a class="m-link" href="#contact">Ask about an ODC</a>
+        </li>
+        <li class="lad-step lad-step--featured" style="--lv:4">
+          <p class="lad-tag m-text-4">Integrate · GCC</p>
+          <h3 class="m-text-6">Global capability centre</h3>
+          <p class="m-text">A strategic capability centre in India, built into your global organisation and aligned with its long-term goals.</p>
+          <a class="m-link" href="#contact">Ask about a GCC</a>
+        </li>
+        <li class="lad-step" style="--lv:5">
+          <p class="lad-tag m-text-4">Own the future · BOT</p>
+          <h3 class="m-text-6">Build, operate, transfer</h3>
+          <p class="m-text">We build and run a dedicated team or centre, then hand its operations and ownership over to you.</p>
+          <a class="m-link" href="#contact">Ask about BOT</a>
+        </li>
+      </ol>
+      <aside class="lad-alt">
+        <p class="lad-tag m-text-4">Alternative model</p>
+        <h3 class="m-text-6">Managed teams &amp; functional operations</h3>
+        <p class="m-text">Hand an agreed function, process or delivery scope to a managed team, with clear responsibilities and outcomes.</p>
+        <a class="m-link" href="#contact">Ask about managed teams</a>
+      </aside>
     </div>
+    <div class="mb-note">
+      <p class="m-text">Every model works for engineering and for selected professional functions. None of them leads automatically to the next. You begin wherever it makes sense for your business.</p>
+    </div>
+    <div class="fw">
+      <div class="fw-head">
+        <h3 class="fw-label m-text-4">The capability-building framework</h3>
+        <p class="m-text-6">Edish connects people, expertise, operating models and governance to build lasting capability—not simply a list of resources.</p>
+      </div>
+      <ol class="fw-list" data-items=":scope > li" data-motion="rise" data-enter="90%">
+        <li><span class="m-text-4">01</span><p class="m-text">Business objectives, scope and required expertise</p></li>
+        <li><span class="m-text-4">02</span><p class="m-text">The right team structure and accountable leadership</p></li>
+        <li><span class="m-text-4">03</span><p class="m-text">Talent sourcing, selection and onboarding</p></li>
+        <li><span class="m-text-4">04</span><p class="m-text">Tools, systems, processes and quality standards</p></li>
+        <li><span class="m-text-4">05</span><p class="m-text">Governance, reporting and delivery continuity</p></li>
+        <li><span class="m-text-4">06</span><p class="m-text">A model that can evolve as business needs change</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="council" class="l-sec" data-section="council" aria-labelledby="council-title">
+  <div class="lb-slide m-slide-2">
+    <div class="lb-text">
+      <h2 class="m-text-3" id="council-title">Edish Expert Council</h2>
+      <p class="m-text-5">Expertise beyond boundaries.</p>
+      <p class="m-text">Building a capability in India takes more than finding good people. It takes the right expertise, real operating knowledge and a clear understanding of how a whole function works.</p>
+      <p class="m-text">Edish remains your main point of contact and leads the build. The specialists and firms stay responsible for their own regulated professional work.</p>
+      <a class="m-link" href="#council-more">Explore the Edish Expert Council</a>
+    </div>
+    <div class="lb-stage lb-stage--net">
+      <div class="lb-lens"><img src="assets/logos/EI-mark-white-gold-transparent-2000.png" alt="Edish Connect" width="2000" height="2000" loading="lazy"></div>
+      <svg class="lb-spokes" viewBox="0 0 100 100" aria-hidden="true"><line pathLength="1" x1="50.00" y1="20.00" x2="50.00" y2="4.00"/><line pathLength="1" x1="73.45" y1="31.28" x2="85.95" y2="21.30"/><line pathLength="1" x1="79.24" y1="56.70" x2="94.84" y2="60.27"/><line pathLength="1" x1="63.01" y1="77.03" x2="69.95" y2="91.45"/><line pathLength="1" x1="36.99" y1="77.03" x2="30.05" y2="91.45"/><line pathLength="1" x1="20.76" y1="56.70" x2="5.16" y2="60.27"/><line pathLength="1" x1="26.55" y1="31.28" x2="14.05" y2="21.30"/></svg>
+      <svg class="lb-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+      <ul class="lb-notes" data-items=":scope > li" aria-label="Specialist domains">
+        <li class="lb-note" style="--a:-90deg"><img class="lb-face" src="https://images.unsplash.com/photo-1686249959385-ee6c7dcdf0ec?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=75" alt="" width="200" height="200" loading="lazy"><strong class="m-text-4">Engineering &amp; technology</strong></li>
+        <li class="lb-note" style="--a:-38.6deg"><img class="lb-face" src="https://images.unsplash.com/photo-1770626899426-baed57609a30?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=75" alt="" width="200" height="200" loading="lazy"><strong class="m-text-4">Taxation &amp; tax operations</strong></li>
+        <li class="lb-note" style="--a:12.9deg"><img class="lb-face" src="https://images.unsplash.com/photo-1771244678811-50c22f17c791?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=75" alt="" width="200" height="200" loading="lazy"><strong class="m-text-4">Financial &amp; management reporting</strong></li>
+        <li class="lb-note" style="--a:64.3deg"><img class="lb-face" src="https://images.unsplash.com/photo-1758518729459-235dcaadc611?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=75" alt="" width="200" height="200" loading="lazy"><strong class="m-text-4">Legal &amp; contract operations</strong></li>
+        <li class="lb-note" style="--a:115.7deg"><img class="lb-face" src="https://images.unsplash.com/photo-1742981365880-698cfb84492d?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=75" alt="" width="200" height="200" loading="lazy"><strong class="m-text-4">Compliance, risk &amp; audit</strong></li>
+        <li class="lb-note" style="--a:167.1deg"><img class="lb-face" src="https://images.unsplash.com/photo-1770627000564-3feb36aecbcd?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=75" alt="" width="200" height="200" loading="lazy"><strong class="m-text-4">HR &amp; people operations</strong></li>
+        <li class="lb-note" style="--a:218.6deg"><img class="lb-face" src="https://images.unsplash.com/photo-1778692258270-bc0e80e975c0?auto=format&amp;fit=crop&amp;crop=faces&amp;w=200&amp;h=200&amp;q=75" alt="" width="200" height="200" loading="lazy"><strong class="m-text-4">Business &amp; functional operations</strong></li>
+      </ul>
+    </div>
+    <div class="lb-more" id="council-more">
+      <div>
+        <h3 class="m-text-6">How the council works for a client</h3>
+        <ol class="lb-flow" data-items=":scope > li" data-motion="rise" data-enter="92%">
+          <li><span class="m-text-4">01</span><strong class="m-text">Understand</strong><p class="m-text">Edish clarifies the business need, scope and outcomes.</p></li>
+          <li><span class="m-text-4">02</span><strong class="m-text">Curate</strong><p class="m-text">Edish shortlists relevant individuals and/or specialist firms.</p></li>
+          <li><span class="m-text-4">03</span><strong class="m-text">Validate</strong><p class="m-text">Credentials, references, conflicts, scope and permissions are checked.</p></li>
+          <li><span class="m-text-4">04</span><strong class="m-text">Engage</strong><p class="m-text">Client approves the expert/partner and the commercial arrangement.</p></li>
+          <li><span class="m-text-4">05</span><strong class="m-text">Coordinate</strong><p class="m-text">Edish manages the interface and capability plan; specialists own their professional work.</p></li>
+          <li><span class="m-text-4">06</span><strong class="m-text">Review</strong><p class="m-text">Performance, governance, continuity and outcomes are reviewed.</p></li>
+        </ol>
+      </div>
+      <div>
+        <p class="m-text-5">The council is a curated network: finance leaders and chartered accountants, legal and corporate law specialists, risk and compliance professionals, technology leaders, HR specialists and business operations experts.</p>
+      </div>
+      <p class="lb-close m-text-5">The right expertise can build more than a team. It can build an entire capability.</p>
+    </div>
+  </div>
+</section>
+
+<section id="culture" class="l-sec" data-section="culture" aria-labelledby="culture-title">
+  <div class="mt-slide m-slide">
+    <div class="mt-side">
+      <span class="mt-orb m-orb" aria-hidden="true"></span>
+      <ol class="mt-steps" data-items=":scope > li" data-motion="rise" data-enter="86%">
+        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></svg></span><h3 class="m-text-6">Precision</h3><p class="mt-say m-text">Get things right</p><p class="m-text">Clear acceptance criteria, disciplined testing and quality controls.</p></li>
+        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3 class="m-text-6">Foresight</h3><p class="mt-say m-text">Think beyond today</p><p class="m-text">Architecture, roadmaps and early risk anticipation.</p></li>
+        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.9z"/></svg></span><h3 class="m-text-6">Mastery</h3><p class="mt-say m-text">Pursue excellence</p><p class="m-text">Technical depth, professional standards and mentorship.</p></li>
+        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V4M4 4h13l-3 4 3 4H4"/></svg></span><h3 class="m-text-6">Ownership</h3><p class="mt-say m-text">See it through</p><p class="m-text">Accountability, initiative and follow-through.</p></li>
+        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3 class="m-text-6">Reliability</h3><p class="mt-say m-text">Earn trust</p><p class="m-text">Predictable delivery, continuity and transparent reporting.</p></li>
+        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L22 22"/></svg></span><h3 class="m-text-6">Curiosity</h3><p class="mt-say m-text">Keep moving forward</p><p class="m-text">Experimentation, learning and continuous improvement.</p></li>
+      </ol>
+    </div>
+    <div class="mt-main">
+      <h2 class="mt-title m-text-3" id="culture-title">
+        <span class="mt-row">Culture <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1660736701150-975a90ce2d9e?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">is</span></span>
+        <span class="mt-row">part <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1622225399403-548e2df0c908?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">of the</span></span>
+        <span class="mt-row">work. <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1755408007655-9ac329cfa145?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></span></span>
+      </h2>
+      <div class="mt-foot">
+        <div class="mt-copy">
+          <p class="m-text-5">Technical skills build a team. Shared principles decide how that team thinks, works together, makes decisions and delivers.</p>
+          <p class="m-text">You will see these principles in how we hire and select people, onboard them, develop leaders, govern quality and delivery, share knowledge, hold ourselves accountable, manage performance and keep improving.</p>
+          <p class="m-text-6">Culture is not a story we tell. It is how the work gets done.</p>
+        </div>
+        <a class="m-btn" href="#contact"><span class="m-btn__label">Talk to us</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="india" class="l-sec" data-section="india" aria-labelledby="india-title">
+  <div class="ia-slide m-slide-2">
+    <div class="gi-band">
+      <svg class="gi-svg" viewBox="0 0 1124 456" role="img" aria-label="Global demand linked to India-based people and capability.">
+        <path class="gi-land" d="M36 4h0M44 4h0M52 4h0M60 4h0M68 4h0M76 4h0M116 4h0M124 4h0M148 4h0M156 4h0M164 4h0M172 4h0M180 4h0M188 4h0M196 4h0M204 4h0M212 4h0M292 4h0M300 4h0M308 4h0M316 4h0M324 4h0M332 4h0M340 4h0M348 4h0M356 4h0M364 4h0M372 4h0M380 4h0M388 4h0M396 4h0M404 4h0M412 4h0M612 4h0M716 4h0M724 4h0M772 4h0M780 4h0M788 4h0M796 4h0M804 4h0M812 4h0M820 4h0M828 4h0M836 4h0M844 4h0M852 4h0M860 4h0M868 4h0M876 4h0M884 4h0M892 4h0M900 4h0M908 4h0M916 4h0M924 4h0M932 4h0M940 4h0M948 4h0M956 4h0M964 4h0M972 4h0M980 4h0M988 4h0M996 4h0M1004 4h0M1012 4h0M1020 4h0M1028 4h0M1036 4h0M1044 4h0M1052 4h0M1060 4h0M1068 4h0M1076 4h0M1084 4h0M1092 4h0M1100 4h0M1108 4h0M1116 4h0M4 12h0M12 12h0M20 12h0M28 12h0M36 12h0M44 12h0M52 12h0M60 12h0M68 12h0M76 12h0M84 12h0M92 12h0M100 12h0M108 12h0M116 12h0M124 12h0M132 12h0M140 12h0M148 12h0M156 12h0M164 12h0M172 12h0M180 12h0M188 12h0M196 12h0M204 12h0M212 12h0M220 12h0M228 12h0M236 12h0M244 12h0M252 12h0M260 12h0M268 12h0M276 12h0M284 12h0M292 12h0M300 12h0M308 12h0M316 12h0M324 12h0M332 12h0M340 12h0M348 12h0M356 12h0M364 12h0M372 12h0M380 12h0M388 12h0M396 12h0M404 12h0M412 12h0M420 12h0M428 12h0M436 12h0M444 12h0M452 12h0M460 12h0M468 12h0M476 12h0M484 12h0M492 12h0M500 12h0M508 12h0M516 12h0M524 12h0M532 12h0M540 12h0M548 12h0M556 12h0M564 12h0M652 12h0M660 12h0M668 12h0M676 12h0M684 12h0M692 12h0M700 12h0M708 12h0M716 12h0M724 12h0M732 12h0M740 12h0M764 12h0M772 12h0M796 12h0M4 20h0M12 20h0M20 20h0M28 20h0M36 20h0M44 20h0M52 20h0M60 20h0M68 20h0M76 20h0M84 20h0M92 20h0M100 20h0M108 20h0M116 20h0M124 20h0M132 20h0M140 20h0M148 20h0M156 20h0M164 20h0M172 20h0M180 20h0M188 20h0M196 20h0M204 20h0M212 20h0M220 20h0M228 20h0M236 20h0M244 20h0M252 20h0M260 20h0M268 20h0M276 20h0M284 20h0M292 20h0M300 20h0M308 20h0M316 20h0M324 20h0M332 20h0M340 20h0M348 20h0M356 20h0M364 20h0M372 20h0M380 20h0M388 20h0M396 20h0M404 20h0M412 20h0M420 20h0M428 20h0M436 20h0M444 20h0M452 20h0M460 20h0M468 20h0M476 20h0M484 20h0M492 20h0M500 20h0M508 20h0M516 20h0M524 20h0M532 20h0M540 20h0M548 20h0M668 20h0M676 20h0M684 20h0M796 20h0M4 28h0M12 28h0M20 28h0M28 28h0M36 28h0M44 28h0M52 28h0M60 28h0M68 28h0M76 28h0M84 28h0M92 28h0M100 28h0M108 28h0M116 28h0M124 28h0M132 28h0M140 28h0M148 28h0M156 28h0M164 28h0M172 28h0M180 28h0M188 28h0M196 28h0M204 28h0M212 28h0M220 28h0M228 28h0M236 28h0M244 28h0M252 28h0M260 28h0M268 28h0M276 28h0M284 28h0M292 28h0M300 28h0M308 28h0M316 28h0M324 28h0M332 28h0M340 28h0M348 28h0M356 28h0M364 28h0M372 28h0M380 28h0M388 28h0M396 28h0M404 28h0M412 28h0M420 28h0M428 28h0M436 28h0M444 28h0M452 28h0M460 28h0M468 28h0M476 28h0M484 28h0M492 28h0M500 28h0M508 28h0M516 28h0M524 28h0M532 28h0M540 28h0M588 28h0M596 28h0M644 28h0M652 28h0M660 28h0M4 36h0M12 36h0M20 36h0M28 36h0M36 36h0M44 36h0M52 36h0M60 36h0M68 36h0M76 36h0M84 36h0M92 36h0M100 36h0M108 36h0M116 36h0M124 36h0M132 36h0M220 36h0M228 36h0M236 36h0M300 36h0M308 36h0M316 36h0M324 36h0M532 36h0M540 36h0M548 36h0M556 36h0M564 36h0M572 36h0M588 36h0M596 36h0M604 36h0M612 36h0M620 36h0M628 36h0M636 36h0M644 36h0M652 36h0M660 36h0M668 36h0M676 36h0M684 36h0M692 36h0M700 36h0M708 36h0M716 36h0M724 36h0M732 36h0M740 36h0M748 36h0M756 36h0M764 36h0M772 36h0M780 36h0M788 36h0M796 36h0M804 36h0M812 36h0M820 36h0M828 36h0M836 36h0M844 36h0M852 36h0M860 36h0M868 36h0M876 36h0M884 36h0M892 36h0M900 36h0M908 36h0M916 36h0M924 36h0M932 36h0M940 36h0M948 36h0M956 36h0M964 36h0M972 36h0M980 36h0M988 36h0M996 36h0M1004 36h0M1012 36h0M1020 36h0M1028 36h0M1036 36h0M1044 36h0M1052 36h0M1060 36h0M1068 36h0M1076 36h0M1084 36h0M1092 36h0M1100 36h0M1108 36h0M1116 36h0M4 44h0M12 44h0M20 44h0M28 44h0M36 44h0M44 44h0M52 44h0M60 44h0M68 44h0M76 44h0M84 44h0M92 44h0M100 44h0M108 44h0M116 44h0M196 44h0M204 44h0M212 44h0M220 44h0M308 44h0M316 44h0M324 44h0M524 44h0M532 44h0M540 44h0M548 44h0M556 44h0M564 44h0M588 44h0M596 44h0M604 44h0M612 44h0M620 44h0M628 44h0M636 44h0M644 44h0M652 44h0M660 44h0M668 44h0M676 44h0M684 44h0M692 44h0M700 44h0M708 44h0M716 44h0M724 44h0M732 44h0M740 44h0M748 44h0M756 44h0M764 44h0M772 44h0M780 44h0M788 44h0M796 44h0M804 44h0M812 44h0M820 44h0M828 44h0M836 44h0M844 44h0M852 44h0M860 44h0M868 44h0M876 44h0M884 44h0M892 44h0M900 44h0M908 44h0M916 44h0M924 44h0M932 44h0M940 44h0M948 44h0M956 44h0M964 44h0M972 44h0M980 44h0M988 44h0M996 44h0M1004 44h0M1012 44h0M1020 44h0M1028 44h0M1036 44h0M1044 44h0M1052 44h0M1060 44h0M1068 44h0M1076 44h0M1084 44h0M1092 44h0M1100 44h0M1108 44h0M1116 44h0M4 52h0M12 52h0M20 52h0M28 52h0M36 52h0M44 52h0M52 52h0M60 52h0M68 52h0M76 52h0M84 52h0M92 52h0M100 52h0M108 52h0M116 52h0M188 52h0M196 52h0M204 52h0M212 52h0M220 52h0M236 52h0M244 52h0M524 52h0M532 52h0M548 52h0M556 52h0M564 52h0M596 52h0M604 52h0M612 52h0M620 52h0M628 52h0M636 52h0M644 52h0M652 52h0M660 52h0M668 52h0M676 52h0M684 52h0M692 52h0M700 52h0M708 52h0M716 52h0M724 52h0M732 52h0M740 52h0M748 52h0M756 52h0M764 52h0M772 52h0M780 52h0M788 52h0M796 52h0M804 52h0M812 52h0M820 52h0M828 52h0M836 52h0M844 52h0M852 52h0M860 52h0M868 52h0M876 52h0M884 52h0M892 52h0M900 52h0M908 52h0M916 52h0M924 52h0M932 52h0M940 52h0M948 52h0M956 52h0M964 52h0M972 52h0M980 52h0M988 52h0M996 52h0M1004 52h0M1012 52h0M1020 52h0M1028 52h0M1036 52h0M1044 52h0M1052 52h0M1060 52h0M1068 52h0M1108 52h0M4 60h0M12 60h0M20 60h0M28 60h0M36 60h0M44 60h0M52 60h0M60 60h0M68 60h0M76 60h0M84 60h0M92 60h0M100 60h0M108 60h0M116 60h0M124 60h0M132 60h0M140 60h0M196 60h0M204 60h0M212 60h0M220 60h0M228 60h0M236 60h0M244 60h0M252 60h0M476 60h0M484 60h0M540 60h0M556 60h0M564 60h0M588 60h0M596 60h0M604 60h0M612 60h0M620 60h0M628 60h0M636 60h0M644 60h0M652 60h0M660 60h0M668 60h0M676 60h0M684 60h0M692 60h0M700 60h0M708 60h0M716 60h0M724 60h0M732 60h0M740 60h0M748 60h0M756 60h0M764 60h0M772 60h0M780 60h0M788 60h0M796 60h0M804 60h0M812 60h0M820 60h0M828 60h0M836 60h0M844 60h0M852 60h0M860 60h0M868 60h0M876 60h0M884 60h0M892 60h0M900 60h0M908 60h0M916 60h0M924 60h0M932 60h0M940 60h0M948 60h0M956 60h0M964 60h0M972 60h0M980 60h0M988 60h0M996 60h0M1004 60h0M1012 60h0M1020 60h0M1028 60h0M1036 60h0M1044 60h0M1052 60h0M4 68h0M12 68h0M20 68h0M28 68h0M36 68h0M44 68h0M52 68h0M60 68h0M68 68h0M76 68h0M84 68h0M92 68h0M100 68h0M108 68h0M116 68h0M124 68h0M132 68h0M140 68h0M148 68h0M156 68h0M164 68h0M188 68h0M196 68h0M204 68h0M212 68h0M220 68h0M228 68h0M236 68h0M244 68h0M252 68h0M260 68h0M484 68h0M492 68h0M548 68h0M588 68h0M596 68h0M604 68h0M612 68h0M620 68h0M628 68h0M636 68h0M644 68h0M652 68h0M660 68h0M668 68h0M676 68h0M684 68h0M692 68h0M700 68h0M708 68h0M716 68h0M724 68h0M732 68h0M740 68h0M748 68h0M756 68h0M764 68h0M772 68h0M780 68h0M788 68h0M796 68h0M804 68h0M812 68h0M820 68h0M828 68h0M836 68h0M844 68h0M852 68h0M860 68h0M868 68h0M876 68h0M884 68h0M892 68h0M900 68h0M908 68h0M916 68h0M924 68h0M932 68h0M940 68h0M948 68h0M956 68h0M964 68h0M972 68h0M980 68h0M988 68h0M996 68h0M1004 68h0M1012 68h0M1020 68h0M1028 68h0M1036 68h0M4 76h0M12 76h0M20 76h0M28 76h0M36 76h0M44 76h0M52 76h0M60 76h0M68 76h0M76 76h0M84 76h0M92 76h0M100 76h0M108 76h0M116 76h0M124 76h0M132 76h0M140 76h0M148 76h0M156 76h0M164 76h0M172 76h0M188 76h0M196 76h0M204 76h0M212 76h0M220 76h0M228 76h0M236 76h0M244 76h0M252 76h0M260 76h0M268 76h0M276 76h0M468 76h0M484 76h0M492 76h0M500 76h0M524 76h0M532 76h0M540 76h0M548 76h0M556 76h0M564 76h0M572 76h0M580 76h0M588 76h0M596 76h0M604 76h0M612 76h0M620 76h0M628 76h0M636 76h0M644 76h0M652 76h0M660 76h0M668 76h0M676 76h0M684 76h0M692 76h0M700 76h0M708 76h0M716 76h0M724 76h0M732 76h0M740 76h0M748 76h0M756 76h0M764 76h0M772 76h0M780 76h0M788 76h0M796 76h0M804 76h0M812 76h0M820 76h0M828 76h0M836 76h0M844 76h0M852 76h0M860 76h0M868 76h0M876 76h0M884 76h0M892 76h0M900 76h0M908 76h0M916 76h0M924 76h0M932 76h0M940 76h0M948 76h0M956 76h0M964 76h0M972 76h0M980 76h0M988 76h0M996 76h0M1004 76h0M1012 76h0M1020 76h0M1028 76h0M1036 76h0M1044 76h0M1052 76h0M1060 76h0M1068 76h0M4 84h0M12 84h0M20 84h0M28 84h0M36 84h0M44 84h0M52 84h0M60 84h0M68 84h0M76 84h0M84 84h0M92 84h0M100 84h0M108 84h0M116 84h0M124 84h0M132 84h0M140 84h0M148 84h0M156 84h0M164 84h0M172 84h0M180 84h0M188 84h0M196 84h0M204 84h0M212 84h0M220 84h0M228 84h0M236 84h0M244 84h0M252 84h0M260 84h0M276 84h0M484 84h0M492 84h0M500 84h0M508 84h0M516 84h0M524 84h0M532 84h0M540 84h0M548 84h0M556 84h0M564 84h0M572 84h0M580 84h0M588 84h0M596 84h0M604 84h0M612 84h0M620 84h0M628 84h0M636 84h0M644 84h0M652 84h0M660 84h0M668 84h0M676 84h0M684 84h0M692 84h0M700 84h0M708 84h0M716 84h0M724 84h0M732 84h0M740 84h0M748 84h0M756 84h0M764 84h0M772 84h0M780 84h0M788 84h0M796 84h0M804 84h0M812 84h0M820 84h0M828 84h0M836 84h0M844 84h0M852 84h0M860 84h0M868 84h0M876 84h0M884 84h0M892 84h0M900 84h0M908 84h0M916 84h0M924 84h0M932 84h0M940 84h0M948 84h0M956 84h0M964 84h0M972 84h0M980 84h0M988 84h0M996 84h0M1004 84h0M1012 84h0M1020 84h0M1028 84h0M1036 84h0M1044 84h0M1052 84h0M1060 84h0M4 92h0M12 92h0M20 92h0M28 92h0M36 92h0M44 92h0M52 92h0M60 92h0M68 92h0M76 92h0M84 92h0M92 92h0M100 92h0M108 92h0M116 92h0M124 92h0M132 92h0M140 92h0M148 92h0M156 92h0M164 92h0M172 92h0M180 92h0M188 92h0M196 92h0M204 92h0M212 92h0M220 92h0M236 92h0M268 92h0M276 92h0M284 92h0M500 92h0M508 92h0M516 92h0M524 92h0M532 92h0M540 92h0M548 92h0M556 92h0M564 92h0M572 92h0M580 92h0M588 92h0M596 92h0M604 92h0M612 92h0M620 92h0M628 92h0M636 92h0M644 92h0M652 92h0M660 92h0M668 92h0M676 92h0M684 92h0M692 92h0M700 92h0M708 92h0M716 92h0M724 92h0M732 92h0M740 92h0M748 92h0M756 92h0M764 92h0M772 92h0M780 92h0M788 92h0M796 92h0M804 92h0M812 92h0M820 92h0M828 92h0M836 92h0M844 92h0M852 92h0M860 92h0M868 92h0M876 92h0M884 92h0M892 92h0M900 92h0M908 92h0M916 92h0M924 92h0M932 92h0M940 92h0M948 92h0M956 92h0M964 92h0M972 92h0M980 92h0M988 92h0M996 92h0M1004 92h0M1012 92h0M1020 92h0M1028 92h0M1036 92h0M1044 92h0M1052 92h0M1060 92h0M1068 92h0M4 100h0M12 100h0M20 100h0M28 100h0M36 100h0M44 100h0M52 100h0M60 100h0M68 100h0M76 100h0M84 100h0M92 100h0M100 100h0M108 100h0M116 100h0M124 100h0M132 100h0M140 100h0M148 100h0M156 100h0M164 100h0M172 100h0M180 100h0M188 100h0M196 100h0M204 100h0M212 100h0M220 100h0M228 100h0M236 100h0M244 100h0M284 100h0M492 100h0M500 100h0M508 100h0M516 100h0M524 100h0M532 100h0M540 100h0M548 100h0M556 100h0M564 100h0M572 100h0M580 100h0M588 100h0M596 100h0M604 100h0M612 100h0M620 100h0M628 100h0M636 100h0M644 100h0M660 100h0M668 100h0M676 100h0M684 100h0M692 100h0M700 100h0M708 100h0M716 100h0M724 100h0M732 100h0M740 100h0M748 100h0M756 100h0M764 100h0M772 100h0M780 100h0M788 100h0M796 100h0M804 100h0M812 100h0M820 100h0M828 100h0M836 100h0M844 100h0M852 100h0M860 100h0M868 100h0M876 100h0M884 100h0M892 100h0M900 100h0M908 100h0M916 100h0M924 100h0M932 100h0M940 100h0M948 100h0M956 100h0M964 100h0M972 100h0M980 100h0M988 100h0M996 100h0M1004 100h0M1012 100h0M1020 100h0M1028 100h0M1036 100h0M1044 100h0M1052 100h0M1068 100h0M12 108h0M20 108h0M28 108h0M36 108h0M44 108h0M52 108h0M60 108h0M68 108h0M76 108h0M84 108h0M92 108h0M100 108h0M108 108h0M116 108h0M124 108h0M132 108h0M140 108h0M148 108h0M156 108h0M164 108h0M172 108h0M180 108h0M188 108h0M196 108h0M204 108h0M212 108h0M220 108h0M228 108h0M244 108h0M500 108h0M508 108h0M516 108h0M524 108h0M532 108h0M540 108h0M548 108h0M556 108h0M564 108h0M572 108h0M580 108h0M588 108h0M596 108h0M604 108h0M612 108h0M636 108h0M652 108h0M660 108h0M668 108h0M676 108h0M684 108h0M692 108h0M700 108h0M708 108h0M716 108h0M724 108h0M732 108h0M740 108h0M748 108h0M756 108h0M764 108h0M772 108h0M780 108h0M788 108h0M796 108h0M804 108h0M812 108h0M820 108h0M828 108h0M836 108h0M844 108h0M852 108h0M860 108h0M868 108h0M876 108h0M884 108h0M892 108h0M900 108h0M908 108h0M916 108h0M924 108h0M932 108h0M940 108h0M948 108h0M956 108h0M964 108h0M972 108h0M980 108h0M988 108h0M996 108h0M1004 108h0M1012 108h0M1020 108h0M1028 108h0M1036 108h0M1044 108h0M1068 108h0M4 116h0M12 116h0M20 116h0M28 116h0M36 116h0M44 116h0M52 116h0M60 116h0M68 116h0M76 116h0M84 116h0M92 116h0M100 116h0M108 116h0M116 116h0M124 116h0M132 116h0M140 116h0M148 116h0M156 116h0M164 116h0M172 116h0M180 116h0M188 116h0M196 116h0M204 116h0M212 116h0M468 116h0M476 116h0M484 116h0M492 116h0M500 116h0M508 116h0M548 116h0M572 116h0M580 116h0M588 116h0M596 116h0M604 116h0M668 116h0M676 116h0M684 116h0M692 116h0M700 116h0M708 116h0M716 116h0M724 116h0M732 116h0M740 116h0M748 116h0M756 116h0M764 116h0M772 116h0M780 116h0M788 116h0M796 116h0M804 116h0M812 116h0M820 116h0M828 116h0M836 116h0M844 116h0M852 116h0M860 116h0M868 116h0M876 116h0M884 116h0M892 116h0M900 116h0M908 116h0M916 116h0M924 116h0M932 116h0M940 116h0M948 116h0M956 116h0M964 116h0M972 116h0M980 116h0M988 116h0M996 116h0M1004 116h0M1012 116h0M1020 116h0M1068 116h0M1076 116h0M4 124h0M12 124h0M20 124h0M28 124h0M36 124h0M44 124h0M52 124h0M60 124h0M68 124h0M76 124h0M84 124h0M92 124h0M100 124h0M108 124h0M116 124h0M124 124h0M132 124h0M140 124h0M148 124h0M156 124h0M164 124h0M172 124h0M180 124h0M188 124h0M196 124h0M204 124h0M468 124h0M476 124h0M484 124h0M492 124h0M500 124h0M556 124h0M564 124h0M580 124h0M588 124h0M596 124h0M604 124h0M620 124h0M628 124h0M636 124h0M644 124h0M652 124h0M660 124h0M668 124h0M676 124h0M684 124h0M692 124h0M700 124h0M708 124h0M716 124h0M724 124h0M732 124h0M740 124h0M748 124h0M756 124h0M764 124h0M772 124h0M780 124h0M788 124h0M796 124h0M804 124h0M812 124h0M820 124h0M828 124h0M836 124h0M844 124h0M852 124h0M860 124h0M868 124h0M876 124h0M884 124h0M892 124h0M900 124h0M908 124h0M916 124h0M924 124h0M932 124h0M940 124h0M948 124h0M956 124h0M964 124h0M972 124h0M980 124h0M988 124h0M996 124h0M1004 124h0M1012 124h0M12 132h0M20 132h0M28 132h0M36 132h0M44 132h0M52 132h0M60 132h0M68 132h0M76 132h0M84 132h0M92 132h0M100 132h0M108 132h0M116 132h0M124 132h0M132 132h0M140 132h0M148 132h0M156 132h0M164 132h0M172 132h0M180 132h0M188 132h0M196 132h0M468 132h0M476 132h0M484 132h0M492 132h0M588 132h0M612 132h0M620 132h0M628 132h0M636 132h0M644 132h0M652 132h0M660 132h0M668 132h0M676 132h0M684 132h0M692 132h0M700 132h0M708 132h0M716 132h0M724 132h0M732 132h0M740 132h0M748 132h0M756 132h0M764 132h0M772 132h0M780 132h0M788 132h0M796 132h0M804 132h0M812 132h0M820 132h0M828 132h0M836 132h0M844 132h0M852 132h0M860 132h0M868 132h0M876 132h0M884 132h0M892 132h0M900 132h0M908 132h0M916 132h0M924 132h0M932 132h0M940 132h0M948 132h0M956 132h0M964 132h0M1004 132h0M1060 132h0M12 140h0M20 140h0M28 140h0M36 140h0M44 140h0M52 140h0M60 140h0M68 140h0M76 140h0M84 140h0M92 140h0M100 140h0M108 140h0M116 140h0M124 140h0M132 140h0M140 140h0M148 140h0M156 140h0M164 140h0M172 140h0M180 140h0M188 140h0M468 140h0M476 140h0M484 140h0M492 140h0M524 140h0M540 140h0M588 140h0M612 140h0M620 140h0M628 140h0M636 140h0M644 140h0M652 140h0M660 140h0M668 140h0M676 140h0M684 140h0M692 140h0M700 140h0M708 140h0M716 140h0M724 140h0M732 140h0M740 140h0M748 140h0M756 140h0M764 140h0M772 140h0M780 140h0M788 140h0M796 140h0M804 140h0M812 140h0M820 140h0M828 140h0M836 140h0M844 140h0M852 140h0M860 140h0M868 140h0M876 140h0M884 140h0M892 140h0M900 140h0M908 140h0M916 140h0M924 140h0M932 140h0M940 140h0M948 140h0M956 140h0M964 140h0M972 140h0M980 140h0M988 140h0M1012 140h0M1052 140h0M1060 140h0M20 148h0M28 148h0M36 148h0M44 148h0M52 148h0M60 148h0M68 148h0M76 148h0M84 148h0M92 148h0M100 148h0M108 148h0M116 148h0M124 148h0M132 148h0M140 148h0M148 148h0M156 148h0M164 148h0M172 148h0M180 148h0M188 148h0M476 148h0M484 148h0M492 148h0M500 148h0M508 148h0M516 148h0M524 148h0M532 148h0M540 148h0M604 148h0M644 148h0M652 148h0M660 148h0M668 148h0M676 148h0M684 148h0M692 148h0M700 148h0M708 148h0M716 148h0M724 148h0M732 148h0M740 148h0M748 148h0M756 148h0M764 148h0M772 148h0M780 148h0M788 148h0M796 148h0M820 148h0M828 148h0M836 148h0M844 148h0M852 148h0M860 148h0M868 148h0M876 148h0M884 148h0M892 148h0M900 148h0M908 148h0M916 148h0M924 148h0M932 148h0M940 148h0M948 148h0M956 148h0M964 148h0M972 148h0M1012 148h0M1036 148h0M1044 148h0M1052 148h0M36 156h0M44 156h0M52 156h0M60 156h0M68 156h0M76 156h0M84 156h0M92 156h0M100 156h0M108 156h0M116 156h0M124 156h0M132 156h0M140 156h0M148 156h0M156 156h0M164 156h0M172 156h0M180 156h0M468 156h0M476 156h0M484 156h0M492 156h0M500 156h0M508 156h0M516 156h0M524 156h0M532 156h0M540 156h0M644 156h0M652 156h0M660 156h0M668 156h0M676 156h0M684 156h0M692 156h0M700 156h0M708 156h0M716 156h0M724 156h0M732 156h0M740 156h0M748 156h0M756 156h0M764 156h0M772 156h0M780 156h0M788 156h0M796 156h0M820 156h0M828 156h0M836 156h0M844 156h0M852 156h0M860 156h0M868 156h0M876 156h0M884 156h0M892 156h0M900 156h0M908 156h0M916 156h0M924 156h0M932 156h0M940 156h0M948 156h0M956 156h0M964 156h0M972 156h0M980 156h0M1020 156h0M36 164h0M52 164h0M60 164h0M68 164h0M76 164h0M84 164h0M92 164h0M100 164h0M108 164h0M116 164h0M124 164h0M132 164h0M140 164h0M148 164h0M156 164h0M164 164h0M172 164h0M468 164h0M476 164h0M484 164h0M492 164h0M500 164h0M508 164h0M516 164h0M524 164h0M532 164h0M540 164h0M548 164h0M556 164h0M564 164h0M588 164h0M596 164h0M604 164h0M612 164h0M620 164h0M636 164h0M644 164h0M652 164h0M660 164h0M668 164h0M676 164h0M684 164h0M692 164h0M700 164h0M708 164h0M716 164h0M724 164h0M732 164h0M740 164h0M748 164h0M756 164h0M764 164h0M772 164h0M780 164h0M788 164h0M796 164h0M820 164h0M828 164h0M836 164h0M844 164h0M852 164h0M860 164h0M868 164h0M876 164h0M884 164h0M892 164h0M900 164h0M908 164h0M916 164h0M924 164h0M932 164h0M940 164h0M948 164h0M956 164h0M964 164h0M972 164h0M980 164h0M44 172h0M52 172h0M60 172h0M68 172h0M76 172h0M84 172h0M92 172h0M100 172h0M108 172h0M116 172h0M172 172h0M460 172h0M468 172h0M476 172h0M484 172h0M492 172h0M500 172h0M508 172h0M516 172h0M524 172h0M532 172h0M540 172h0M548 172h0M556 172h0M564 172h0M572 172h0M580 172h0M588 172h0M596 172h0M604 172h0M612 172h0M620 172h0M628 172h0M636 172h0M644 172h0M652 172h0M660 172h0M668 172h0M676 172h0M684 172h0M692 172h0M708 172h0M716 172h0M724 172h0M732 172h0M740 172h0M748 172h0M756 172h0M764 172h0M772 172h0M780 172h0M788 172h0M836 172h0M844 172h0M852 172h0M860 172h0M868 172h0M876 172h0M892 172h0M900 172h0M908 172h0M916 172h0M924 172h0M932 172h0M940 172h0M948 172h0M956 172h0M964 172h0M972 172h0M980 172h0M44 180h0M60 180h0M68 180h0M76 180h0M84 180h0M92 180h0M100 180h0M108 180h0M172 180h0M452 180h0M460 180h0M468 180h0M476 180h0M484 180h0M492 180h0M500 180h0M508 180h0M516 180h0M524 180h0M532 180h0M540 180h0M548 180h0M556 180h0M564 180h0M572 180h0M580 180h0M588 180h0M596 180h0M604 180h0M612 180h0M620 180h0M628 180h0M644 180h0M652 180h0M660 180h0M668 180h0M676 180h0M684 180h0M692 180h0M716 180h0M732 180h0M740 180h0M748 180h0M756 180h0M764 180h0M772 180h0M844 180h0M852 180h0M860 180h0M884 180h0M892 180h0M900 180h0M908 180h0M916 180h0M924 180h0M932 180h0M940 180h0M948 180h0M956 180h0M964 180h0M972 180h0M980 180h0M52 188h0M68 188h0M76 188h0M84 188h0M92 188h0M100 188h0M108 188h0M188 188h0M444 188h0M452 188h0M460 188h0M468 188h0M476 188h0M484 188h0M492 188h0M500 188h0M508 188h0M516 188h0M524 188h0M532 188h0M540 188h0M548 188h0M556 188h0M564 188h0M572 188h0M580 188h0M588 188h0M596 188h0M604 188h0M612 188h0M620 188h0M628 188h0M636 188h0M652 188h0M660 188h0M668 188h0M676 188h0M684 188h0M692 188h0M700 188h0M724 188h0M772 188h0M780 188h0M860 188h0M884 188h0M892 188h0M900 188h0M908 188h0M916 188h0M924 188h0M932 188h0M940 188h0M948 188h0M956 188h0M964 188h0M972 188h0M60 196h0M76 196h0M84 196h0M92 196h0M100 196h0M108 196h0M172 196h0M436 196h0M444 196h0M452 196h0M460 196h0M468 196h0M476 196h0M484 196h0M492 196h0M500 196h0M508 196h0M516 196h0M524 196h0M532 196h0M540 196h0M548 196h0M556 196h0M564 196h0M572 196h0M580 196h0M588 196h0M596 196h0M604 196h0M612 196h0M620 196h0M628 196h0M636 196h0M660 196h0M668 196h0M676 196h0M684 196h0M692 196h0M700 196h0M708 196h0M716 196h0M724 196h0M732 196h0M860 196h0M868 196h0M876 196h0M884 196h0M892 196h0M900 196h0M908 196h0M916 196h0M924 196h0M932 196h0M940 196h0M948 196h0M956 196h0M964 196h0M84 204h0M92 204h0M100 204h0M108 204h0M140 204h0M148 204h0M188 204h0M196 204h0M436 204h0M444 204h0M452 204h0M460 204h0M468 204h0M476 204h0M484 204h0M492 204h0M500 204h0M508 204h0M516 204h0M524 204h0M532 204h0M540 204h0M548 204h0M556 204h0M564 204h0M572 204h0M580 204h0M588 204h0M596 204h0M604 204h0M612 204h0M620 204h0M628 204h0M636 204h0M644 204h0M660 204h0M668 204h0M676 204h0M684 204h0M692 204h0M700 204h0M708 204h0M716 204h0M724 204h0M732 204h0M876 204h0M884 204h0M892 204h0M900 204h0M908 204h0M916 204h0M924 204h0M940 204h0M84 212h0M92 212h0M100 212h0M108 212h0M140 212h0M148 212h0M212 212h0M220 212h0M436 212h0M444 212h0M452 212h0M460 212h0M468 212h0M476 212h0M484 212h0M492 212h0M500 212h0M508 212h0M516 212h0M524 212h0M532 212h0M540 212h0M548 212h0M556 212h0M564 212h0M572 212h0M580 212h0M588 212h0M596 212h0M604 212h0M612 212h0M620 212h0M628 212h0M636 212h0M644 212h0M668 212h0M676 212h0M684 212h0M692 212h0M700 212h0M708 212h0M716 212h0M724 212h0M876 212h0M884 212h0M892 212h0M900 212h0M908 212h0M916 212h0M940 212h0M100 220h0M108 220h0M116 220h0M124 220h0M132 220h0M140 220h0M436 220h0M444 220h0M452 220h0M460 220h0M468 220h0M476 220h0M484 220h0M492 220h0M500 220h0M508 220h0M516 220h0M524 220h0M532 220h0M540 220h0M548 220h0M556 220h0M564 220h0M572 220h0M580 220h0M588 220h0M596 220h0M604 220h0M612 220h0M620 220h0M628 220h0M636 220h0M644 220h0M652 220h0M676 220h0M684 220h0M692 220h0M700 220h0M708 220h0M716 220h0M884 220h0M892 220h0M900 220h0M908 220h0M916 220h0M924 220h0M988 220h0M132 228h0M140 228h0M148 228h0M156 228h0M164 228h0M436 228h0M444 228h0M452 228h0M460 228h0M468 228h0M476 228h0M484 228h0M492 228h0M500 228h0M508 228h0M516 228h0M524 228h0M532 228h0M540 228h0M548 228h0M556 228h0M564 228h0M572 228h0M580 228h0M588 228h0M596 228h0M604 228h0M612 228h0M620 228h0M628 228h0M636 228h0M644 228h0M652 228h0M660 228h0M676 228h0M684 228h0M692 228h0M700 228h0M892 228h0M900 228h0M908 228h0M916 228h0M924 228h0M932 228h0M156 236h0M164 236h0M436 236h0M444 236h0M452 236h0M460 236h0M468 236h0M476 236h0M484 236h0M492 236h0M500 236h0M508 236h0M516 236h0M524 236h0M532 236h0M540 236h0M548 236h0M556 236h0M564 236h0M572 236h0M580 236h0M588 236h0M596 236h0M604 236h0M612 236h0M620 236h0M628 236h0M636 236h0M644 236h0M652 236h0M660 236h0M668 236h0M676 236h0M900 236h0M908 236h0M916 236h0M924 236h0M932 236h0M996 236h0M164 244h0M204 244h0M212 244h0M220 244h0M444 244h0M452 244h0M460 244h0M468 244h0M476 244h0M484 244h0M492 244h0M500 244h0M508 244h0M516 244h0M524 244h0M532 244h0M540 244h0M548 244h0M556 244h0M564 244h0M572 244h0M580 244h0M588 244h0M596 244h0M604 244h0M612 244h0M620 244h0M628 244h0M636 244h0M644 244h0M652 244h0M660 244h0M668 244h0M692 244h0M700 244h0M916 244h0M924 244h0M932 244h0M988 244h0M996 244h0M180 252h0M188 252h0M196 252h0M204 252h0M212 252h0M220 252h0M228 252h0M236 252h0M244 252h0M252 252h0M452 252h0M460 252h0M468 252h0M476 252h0M484 252h0M492 252h0M500 252h0M508 252h0M516 252h0M524 252h0M532 252h0M540 252h0M548 252h0M556 252h0M564 252h0M572 252h0M580 252h0M588 252h0M596 252h0M604 252h0M612 252h0M620 252h0M628 252h0M636 252h0M644 252h0M652 252h0M660 252h0M668 252h0M676 252h0M684 252h0M692 252h0M700 252h0M820 252h0M972 252h0M1004 252h0M196 260h0M204 260h0M212 260h0M220 260h0M228 260h0M236 260h0M244 260h0M252 260h0M260 260h0M460 260h0M468 260h0M476 260h0M484 260h0M492 260h0M500 260h0M508 260h0M516 260h0M524 260h0M532 260h0M540 260h0M548 260h0M556 260h0M564 260h0M572 260h0M580 260h0M588 260h0M596 260h0M604 260h0M612 260h0M620 260h0M628 260h0M636 260h0M644 260h0M652 260h0M660 260h0M668 260h0M676 260h0M684 260h0M692 260h0M820 260h0M900 260h0M1004 260h0M196 268h0M204 268h0M212 268h0M220 268h0M228 268h0M236 268h0M244 268h0M252 268h0M260 268h0M268 268h0M276 268h0M284 268h0M468 268h0M476 268h0M492 268h0M524 268h0M532 268h0M540 268h0M548 268h0M556 268h0M564 268h0M572 268h0M580 268h0M588 268h0M596 268h0M604 268h0M612 268h0M620 268h0M628 268h0M636 268h0M644 268h0M652 268h0M660 268h0M668 268h0M676 268h0M684 268h0M692 268h0M884 268h0M908 268h0M964 268h0M972 268h0M196 276h0M204 276h0M212 276h0M220 276h0M228 276h0M236 276h0M244 276h0M252 276h0M260 276h0M268 276h0M276 276h0M284 276h0M292 276h0M540 276h0M548 276h0M556 276h0M564 276h0M572 276h0M580 276h0M588 276h0M596 276h0M604 276h0M612 276h0M620 276h0M628 276h0M636 276h0M644 276h0M652 276h0M660 276h0M668 276h0M676 276h0M684 276h0M892 276h0M908 276h0M956 276h0M964 276h0M188 284h0M196 284h0M204 284h0M212 284h0M220 284h0M228 284h0M236 284h0M244 284h0M252 284h0M260 284h0M268 284h0M276 284h0M284 284h0M292 284h0M300 284h0M540 284h0M548 284h0M556 284h0M564 284h0M572 284h0M580 284h0M588 284h0M596 284h0M604 284h0M612 284h0M620 284h0M628 284h0M636 284h0M644 284h0M652 284h0M660 284h0M668 284h0M676 284h0M900 284h0M908 284h0M940 284h0M948 284h0M956 284h0M964 284h0M972 284h0M1012 284h0M180 292h0M188 292h0M196 292h0M204 292h0M212 292h0M220 292h0M228 292h0M236 292h0M244 292h0M252 292h0M260 292h0M268 292h0M276 292h0M284 292h0M292 292h0M300 292h0M308 292h0M540 292h0M548 292h0M556 292h0M564 292h0M572 292h0M580 292h0M588 292h0M596 292h0M604 292h0M612 292h0M620 292h0M628 292h0M636 292h0M644 292h0M652 292h0M660 292h0M668 292h0M908 292h0M940 292h0M948 292h0M956 292h0M964 292h0M980 292h0M988 292h0M1028 292h0M1036 292h0M180 300h0M188 300h0M196 300h0M204 300h0M212 300h0M220 300h0M228 300h0M236 300h0M244 300h0M252 300h0M260 300h0M268 300h0M276 300h0M284 300h0M292 300h0M300 300h0M308 300h0M316 300h0M324 300h0M332 300h0M340 300h0M548 300h0M556 300h0M564 300h0M572 300h0M580 300h0M588 300h0M596 300h0M604 300h0M612 300h0M620 300h0M628 300h0M636 300h0M644 300h0M652 300h0M660 300h0M908 300h0M916 300h0M924 300h0M948 300h0M956 300h0M964 300h0M980 300h0M988 300h0M1020 300h0M1036 300h0M1044 300h0M1052 300h0M1060 300h0M1068 300h0M180 308h0M188 308h0M196 308h0M204 308h0M212 308h0M220 308h0M228 308h0M236 308h0M244 308h0M252 308h0M260 308h0M268 308h0M276 308h0M284 308h0M292 308h0M300 308h0M308 308h0M316 308h0M324 308h0M332 308h0M340 308h0M348 308h0M548 308h0M556 308h0M564 308h0M572 308h0M580 308h0M588 308h0M596 308h0M604 308h0M612 308h0M620 308h0M628 308h0M636 308h0M644 308h0M652 308h0M916 308h0M980 308h0M1052 308h0M1060 308h0M1068 308h0M1076 308h0M1108 308h0M188 316h0M196 316h0M204 316h0M212 316h0M220 316h0M228 316h0M236 316h0M244 316h0M252 316h0M260 316h0M268 316h0M276 316h0M284 316h0M292 316h0M300 316h0M308 316h0M316 316h0M324 316h0M332 316h0M340 316h0M348 316h0M356 316h0M556 316h0M564 316h0M572 316h0M580 316h0M588 316h0M596 316h0M604 316h0M612 316h0M620 316h0M628 316h0M636 316h0M644 316h0M652 316h0M932 316h0M940 316h0M948 316h0M1060 316h0M1068 316h0M1076 316h0M1084 316h0M188 324h0M196 324h0M204 324h0M212 324h0M220 324h0M228 324h0M236 324h0M244 324h0M252 324h0M260 324h0M268 324h0M276 324h0M284 324h0M292 324h0M300 324h0M308 324h0M316 324h0M324 324h0M332 324h0M340 324h0M348 324h0M356 324h0M556 324h0M564 324h0M572 324h0M580 324h0M588 324h0M596 324h0M604 324h0M612 324h0M620 324h0M628 324h0M636 324h0M644 324h0M652 324h0M1004 324h0M1068 324h0M1092 324h0M196 332h0M204 332h0M212 332h0M220 332h0M228 332h0M236 332h0M244 332h0M252 332h0M260 332h0M268 332h0M276 332h0M284 332h0M292 332h0M300 332h0M308 332h0M316 332h0M324 332h0M332 332h0M340 332h0M348 332h0M556 332h0M564 332h0M572 332h0M580 332h0M588 332h0M596 332h0M604 332h0M612 332h0M620 332h0M628 332h0M636 332h0M644 332h0M652 332h0M660 332h0M196 340h0M204 340h0M212 340h0M220 340h0M228 340h0M236 340h0M244 340h0M252 340h0M260 340h0M268 340h0M276 340h0M284 340h0M292 340h0M300 340h0M308 340h0M316 340h0M324 340h0M332 340h0M340 340h0M556 340h0M564 340h0M572 340h0M580 340h0M588 340h0M596 340h0M604 340h0M612 340h0M620 340h0M628 340h0M636 340h0M644 340h0M652 340h0M660 340h0M1028 340h0M1036 340h0M1044 340h0M1068 340h0M204 348h0M212 348h0M220 348h0M228 348h0M236 348h0M244 348h0M252 348h0M260 348h0M268 348h0M276 348h0M284 348h0M292 348h0M300 348h0M308 348h0M316 348h0M324 348h0M332 348h0M340 348h0M556 348h0M564 348h0M572 348h0M580 348h0M588 348h0M596 348h0M604 348h0M612 348h0M620 348h0M628 348h0M636 348h0M644 348h0M652 348h0M660 348h0M692 348h0M700 348h0M1004 348h0M1012 348h0M1020 348h0M1028 348h0M1036 348h0M1068 348h0M1076 348h0M212 356h0M220 356h0M228 356h0M236 356h0M244 356h0M252 356h0M260 356h0M268 356h0M276 356h0M284 356h0M292 356h0M300 356h0M308 356h0M316 356h0M324 356h0M332 356h0M340 356h0M548 356h0M556 356h0M564 356h0M572 356h0M580 356h0M588 356h0M596 356h0M604 356h0M612 356h0M620 356h0M628 356h0M636 356h0M644 356h0M652 356h0M684 356h0M692 356h0M996 356h0M1004 356h0M1012 356h0M1020 356h0M1028 356h0M1036 356h0M1044 356h0M1052 356h0M1068 356h0M1076 356h0M220 364h0M228 364h0M236 364h0M244 364h0M252 364h0M260 364h0M268 364h0M276 364h0M284 364h0M292 364h0M300 364h0M308 364h0M316 364h0M324 364h0M332 364h0M340 364h0M556 364h0M564 364h0M572 364h0M580 364h0M588 364h0M596 364h0M604 364h0M612 364h0M620 364h0M628 364h0M636 364h0M684 364h0M692 364h0M988 364h0M996 364h0M1004 364h0M1012 364h0M1020 364h0M1028 364h0M1036 364h0M1044 364h0M1052 364h0M1060 364h0M1068 364h0M1076 364h0M1084 364h0M220 372h0M228 372h0M236 372h0M244 372h0M252 372h0M260 372h0M268 372h0M276 372h0M284 372h0M292 372h0M300 372h0M308 372h0M316 372h0M324 372h0M332 372h0M556 372h0M564 372h0M572 372h0M580 372h0M588 372h0M596 372h0M604 372h0M612 372h0M620 372h0M628 372h0M636 372h0M676 372h0M684 372h0M692 372h0M972 372h0M980 372h0M988 372h0M996 372h0M1004 372h0M1012 372h0M1020 372h0M1028 372h0M1036 372h0M1044 372h0M1052 372h0M1060 372h0M1068 372h0M1076 372h0M1084 372h0M1092 372h0M220 380h0M228 380h0M236 380h0M244 380h0M252 380h0M260 380h0M268 380h0M276 380h0M284 380h0M292 380h0M300 380h0M308 380h0M316 380h0M324 380h0M564 380h0M572 380h0M580 380h0M588 380h0M596 380h0M604 380h0M612 380h0M620 380h0M628 380h0M636 380h0M676 380h0M684 380h0M956 380h0M964 380h0M972 380h0M980 380h0M988 380h0M996 380h0M1004 380h0M1012 380h0M1020 380h0M1028 380h0M1036 380h0M1044 380h0M1052 380h0M1060 380h0M1068 380h0M1076 380h0M1084 380h0M1092 380h0M1100 380h0M220 388h0M228 388h0M236 388h0M244 388h0M252 388h0M260 388h0M268 388h0M276 388h0M284 388h0M292 388h0M300 388h0M308 388h0M564 388h0M572 388h0M580 388h0M588 388h0M596 388h0M604 388h0M612 388h0M620 388h0M628 388h0M684 388h0M956 388h0M964 388h0M972 388h0M980 388h0M988 388h0M996 388h0M1004 388h0M1012 388h0M1020 388h0M1028 388h0M1036 388h0M1044 388h0M1052 388h0M1060 388h0M1068 388h0M1076 388h0M1084 388h0M1092 388h0M1100 388h0M1108 388h0M220 396h0M228 396h0M236 396h0M244 396h0M252 396h0M260 396h0M268 396h0M276 396h0M284 396h0M292 396h0M300 396h0M564 396h0M572 396h0M580 396h0M588 396h0M596 396h0M604 396h0M612 396h0M620 396h0M628 396h0M956 396h0M964 396h0M972 396h0M980 396h0M988 396h0M996 396h0M1004 396h0M1012 396h0M1020 396h0M1028 396h0M1036 396h0M1044 396h0M1052 396h0M1060 396h0M1068 396h0M1076 396h0M1084 396h0M1092 396h0M1100 396h0M1108 396h0M220 404h0M228 404h0M236 404h0M244 404h0M252 404h0M260 404h0M268 404h0M276 404h0M284 404h0M292 404h0M300 404h0M572 404h0M580 404h0M588 404h0M596 404h0M604 404h0M612 404h0M620 404h0M964 404h0M972 404h0M980 404h0M988 404h0M996 404h0M1004 404h0M1012 404h0M1020 404h0M1028 404h0M1036 404h0M1044 404h0M1052 404h0M1060 404h0M1068 404h0M1076 404h0M1084 404h0M1092 404h0M1100 404h0M1108 404h0M220 412h0M228 412h0M236 412h0M244 412h0M252 412h0M260 412h0M268 412h0M276 412h0M284 412h0M292 412h0M572 412h0M580 412h0M588 412h0M596 412h0M604 412h0M612 412h0M620 412h0M964 412h0M972 412h0M980 412h0M988 412h0M996 412h0M1004 412h0M1012 412h0M1020 412h0M1028 412h0M1036 412h0M1044 412h0M1052 412h0M1060 412h0M1068 412h0M1076 412h0M1084 412h0M1092 412h0M1100 412h0M1108 412h0M220 420h0M228 420h0M236 420h0M244 420h0M252 420h0M260 420h0M268 420h0M276 420h0M284 420h0M580 420h0M588 420h0M596 420h0M604 420h0M964 420h0M972 420h0M980 420h0M988 420h0M996 420h0M1044 420h0M1052 420h0M1060 420h0M1068 420h0M1076 420h0M1084 420h0M1092 420h0M1100 420h0M212 428h0M220 428h0M228 428h0M236 428h0M244 428h0M252 428h0M260 428h0M268 428h0M972 428h0M1060 428h0M1068 428h0M1076 428h0M1084 428h0M1092 428h0M1100 428h0M212 436h0M220 436h0M228 436h0M236 436h0M244 436h0M252 436h0M260 436h0M268 436h0M1060 436h0M1068 436h0M1076 436h0M1084 436h0M1092 436h0M212 444h0M220 444h0M228 444h0M236 444h0M244 444h0M212 452h0M220 452h0M228 452h0M236 452h0M244 452h0M1092 452h0"/>
+        <path class="gi-india" d="M804 148h0M812 148h0M804 156h0M812 156h0M804 164h0M812 164h0M796 172h0M804 172h0M812 172h0M820 172h0M828 172h0M884 172h0M780 180h0M788 180h0M796 180h0M804 180h0M812 180h0M820 180h0M828 180h0M836 180h0M868 180h0M876 180h0M788 188h0M796 188h0M804 188h0M812 188h0M820 188h0M828 188h0M836 188h0M844 188h0M852 188h0M868 188h0M876 188h0M780 196h0M788 196h0M796 196h0M804 196h0M812 196h0M820 196h0M828 196h0M836 196h0M844 196h0M852 196h0M796 204h0M804 204h0M812 204h0M820 204h0M828 204h0M836 204h0M844 204h0M796 212h0M804 212h0M812 212h0M820 212h0M828 212h0M836 212h0M796 220h0M804 220h0M812 220h0M820 220h0M828 220h0M804 228h0M812 228h0M820 228h0M804 236h0M812 236h0M820 236h0M804 244h0M812 244h0M812 252h0"/>
+        <g class="gi-arcs"><path pathLength="1" style="--d:0.00s" d="M204 125Q508 -71 812 204"/><path pathLength="1" style="--d:0.35s" d="M500 82Q656 -25 812 204"/><path pathLength="1" style="--d:0.70s" d="M546 96Q679 4 812 204"/><path pathLength="1" style="--d:1.05s" d="M721 187Q767 158 812 204"/><path pathLength="1" style="--d:1.40s" d="M915 283Q864 162 812 204"/><path pathLength="1" style="--d:1.75s" d="M1059 145Q935 64 812 204"/><path pathLength="1" style="--d:2.10s" d="M1104 424Q958 87 812 204"/></g>
+        <g class="gi-nodes"><circle cx="204" cy="125" r="3.5"/><circle cx="500" cy="82" r="3.5"/><circle cx="546" cy="96" r="3.5"/><circle cx="721" cy="187" r="3.5"/><circle cx="915" cy="283" r="3.5"/><circle cx="1059" cy="145" r="3.5"/><circle cx="1104" cy="424" r="3.5"/></g>
+        <circle class="gi-hub-ring" cx="812" cy="204" r="16"/><circle class="gi-hub" cx="812" cy="204" r="6"/>
+      </svg>
+    </div>
+    <div class="ia-text">
+      <h2 class="m-text-3" id="india-title">India talent ecosystems</h2>
+      <p class="m-text-5">Jaipur is one example among many. The same thinking applies wherever a client chooses to build in India.</p>
+      <ul class="ia-list" data-items=":scope > li" data-motion="rise" data-enter="90%">
+        <li class="m-text">Relevant talent ecosystem</li>
+        <li class="m-text">Industry and skill availability</li>
+        <li class="m-text">Hiring feasibility and leadership access</li>
+        <li class="m-text">Cost and infrastructure considerations</li>
+        <li class="m-text">ODC/GCC suitability and client needs</li>
+      </ul>
+      <p class="ia-fine m-text-6">City selection should be evidence-led and requirement-specific.</p>
+    </div>
+    <div class="ia-map">
+      <svg class="ia-land" viewBox="0 0 558 620" aria-hidden="true"><path d="M122.8 10.0 L145.1 18.0 L182.3 40.0 L202.7 64.0 L199.0 98.0 L208.3 124.0 L228.8 142.0 L243.7 150.0 L264.1 172.0 L288.3 202.0 L316.2 212.0 L344.1 222.0 L373.9 220.0 L375.7 206.0 L388.7 204.0 L405.5 216.0 L446.4 214.0 L439.0 194.0 L455.7 192.0 L483.6 172.0 L509.6 166.0 L532.0 172.0 L546.8 186.0 L537.5 202.0 L518.9 210.0 L505.9 218.0 L494.8 242.0 L487.3 272.0 L472.4 290.0 L468.7 306.0 L457.6 310.0 L452.0 276.0 L446.4 252.0 L409.2 246.0 L405.5 230.0 L383.2 226.0 L373.9 250.0 L385.0 266.0 L388.7 292.0 L390.6 316.0 L353.4 322.0 L344.1 346.0 L318.1 364.0 L299.5 384.0 L266.0 418.0 L245.5 432.0 L228.8 440.0 L225.1 482.0 L221.3 520.0 L219.5 544.0 L204.6 564.0 L189.7 578.0 L176.7 588.0 L160.0 572.0 L148.8 544.0 L137.6 514.0 L126.5 492.0 L119.0 454.0 L106.0 430.0 L93.0 390.0 L89.3 366.0 L87.4 340.0 L85.6 326.0 L85.6 306.0 L76.3 316.0 L65.1 332.0 L52.1 336.0 L37.2 324.0 L18.6 304.0 L31.6 300.0 L44.6 292.0 L20.5 294.0 L9.3 282.0 L3.7 276.0 L13.0 264.0 L37.2 264.0 L48.4 236.0 L39.1 218.0 L27.9 208.0 L44.6 190.0 L72.5 192.0 L93.0 166.0 L111.6 142.0 L122.8 130.0 L122.8 110.0 L135.8 104.0 L111.6 82.0 L109.7 58.0 L117.2 34.0 Z"/></svg>
+      <ul class="ia-pins" aria-label="Cities">
+        <li style="--x:30.7%;--y:28.7%"><button class="ia-pin" type="button" aria-pressed="false" data-note="">Delhi NCR</button></li>
+        <li style="--x:26%;--y:34.2%"><button class="ia-pin" type="button" aria-pressed="true" data-note="Precision, craftsmanship, planning and design.">Jaipur</button></li>
+        <li style="--x:26.3%;--y:47.7%"><button class="ia-pin" type="button" aria-pressed="false" data-note="Emerging talent, operational focus and a growing technology ecosystem.">Indore</button></li>
+        <li style="--x:19.7%;--y:61.3%"><button class="ia-pin" type="button" aria-pressed="false" data-note="Engineering discipline, industrial expertise and product development.">Pune</button></li>
+        <li style="--x:35%;--y:64.8%"><button class="ia-pin" type="button" aria-pressed="false" data-note="Technology depth, enterprise scale and innovation.">Hyderabad</button></li>
+        <li style="--x:32%;--y:79%"><button class="ia-pin ia-pin--left" type="button" aria-pressed="false" data-note="Technology innovation, product thinking and entrepreneurial energy.">Bengaluru</button></li>
+        <li style="--x:41%;--y:78.7%"><button class="ia-pin" type="button" aria-pressed="false" data-note="Automotive, manufacturing and engineering expertise.">Chennai</button></li>
+      </ul>
+      <div class="ia-read" aria-live="polite"><p class="ia-read__city m-text-6">Jaipur</p><p class="ia-read__note m-text">Precision, craftsmanship, planning and design.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="l-sec" data-section="approach" aria-labelledby="approach-title">
+  <div class="wk-stage">
+    <div class="wk-head">
+      <h2 class="m-text-3" id="approach-title" data-motion="streak">From the first professional to an entire capability centre.</h2>
+      <div class="wk-intro">
+        <p class="m-text-5">Building a capability in India is not a one-off hiring exercise.</p>
+        <p class="m-text-6">Built around your ambitions. Designed to evolve with your business.</p>
+      </div>
+    </div>
+    <div class="wk-view">
+      <ol class="wk-track" data-items=":scope > li">
+        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 1</h3><p class="m-text-5">Understand</p><p class="m-text wk-time">Requirement &amp; assessment</p><p class="m-text">We learn your business objectives, functions, technology needs, processes and skills, and how you expect the operation to run.</p><div class="wk-stair" data-lv="1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 2</h3><p class="m-text-5">Design</p><p class="m-text wk-time">Structure &amp; location</p><p class="m-text">We recommend the engagement model, location, organisation structure, specialist partners and governance that fit.</p><div class="wk-stair" data-lv="2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 3</h3><p class="m-text-5">Build</p><p class="m-text wk-time">People, partners &amp; setup</p><p class="m-text">We recruit and onboard the right people and put the processes, infrastructure and operational systems around them.</p><div class="wk-stair" data-lv="3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 4</h3><p class="m-text-5">Operate</p><p class="m-text wk-time">Governance &amp; performance</p><p class="m-text">We manage performance, continuity, quality, communication, delivery and day-to-day efficiency.</p><div class="wk-stair" data-lv="4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 5</h3><p class="m-text-5">Evolve</p><p class="m-text wk-time">Scale &amp; maturity</p><p class="m-text">We support you as you widen your capabilities, take on more ownership, add new functions and keep maturing as an organisation.</p><div class="wk-stair" data-lv="5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
+      </ol>
+    </div>
+    <div class="wk-progress" aria-hidden="true"><span></span></div>
   </div>
 </section>
 
 <section id="faq" class="l-sec" data-section="faq" aria-labelledby="faq-title">
   <div class="fq-slide m-slide-3">
     <div class="fq-head">
-      <h2 class="m-text-3" id="faq-title">Before we begin</h2>
-      <p class="m-text">Have specific architecture or staffing questions? Schedule a call and an engineering director will answer.</p>
+      <h2 class="m-text-3" id="faq-title">Capability built on experience.</h2>
+      <p class="m-text">You should be able to check what you are trusting. Before you commit to anything, we take you through the people, partners and governance behind the work.</p>
+    </div>
+    <div class="fq-proof">
+      <ol class="fq-pillars" data-items=":scope > li" data-motion="rise" data-enter="88%">
+        <li><span class="m-text-4">01</span><h3 class="m-text-6">You meet the people</h3><p class="m-text">Before anything is signed, you meet the founding team and the person accountable for building your capability.</p></li>
+        <li><span class="m-text-4">02</span><h3 class="m-text-6">Experts with real credentials</h3><p class="m-text">Every specialist who comes in through the Expert Council is vetted, and their qualifications and affiliations are checked before they start work with you.</p></li>
+        <li><span class="m-text-4">03</span><h3 class="m-text-6">Governance from day one</h3><p class="m-text">Responsibilities, quality checks, reporting and escalation are agreed in writing before the team starts, and reviewed with you as it grows.</p></li>
+        <li><span class="m-text-4">04</span><h3 class="m-text-6">References on request</h3><p class="m-text">Where a client has approved it, we share case studies and introduce you to people we have worked with, so you can ask them directly.</p></li>
+      </ol>
+      <h3 class="fq-sub m-text-6">Questions businesses ask first</h3>
     </div>
     <div class="fq-body">
       <div class="fq-rail" aria-hidden="true"><span class="fq-ball m-orb"></span></div>
       <div class="fq-list" data-items=":scope > details">
-        <details class="fq-item"><summary class="m-text-6">How quickly can an Edish Connect pod start committing code?</summary><p class="m-text">Most teams have senior engineers embedded in your standups and opening PRs within one to two weeks, following automated security vetting and repo onboarding.</p></details>
-        <details class="fq-item"><summary class="m-text-6">How do you evaluate and select engineers for our roadmap?</summary><p class="m-text">We evaluate candidates through deep system design reviews, production debugging scenarios, and domain matching. We present only senior practitioners who've owned similar systems in production.</p></details>
-        <details class="fq-item"><summary class="m-text-6">Who owns the intellectual property and code?</summary><p class="m-text">You own 100% of all intellectual property, source code, architectural documentation, and infrastructure scripts from the first commit. Everything lives directly in your repositories.</p></details>
-        <details class="fq-item"><summary class="m-text-6">How is Edish Connect different from traditional IT staffing?</summary><p class="m-text">Staffing agencies sell resumes and bill hours. We are an engineering growth company led by senior architects who provide technical oversight, architectural reviews, and delivery accountability.</p></details>
-        <details class="fq-item"><summary class="m-text-6">Can we transition from dedicated teams to BOT or GCC?</summary><p class="m-text">Yes. Many partners begin with an embedded pod to accelerate a release, then expand into a dedicated ODC or full Build-Operate-Transfer center as product lines mature.</p></details>
-        <details class="fq-item"><summary class="m-text-6">What does the initial architecture consultation involve?</summary><p class="m-text">You will speak directly with an engineering director, not an account executive. We will discuss your current architecture, bottlenecks, and roadmap to recommend the right model.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Who will we actually be working with?</summary><p class="m-text">Before anything is signed, you meet the founding team and the person accountable for building your capability.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Who handles regulated work such as tax, audit or legal?</summary><p class="m-text">Specialist professional firms and qualified experts do. Edish remains your main point of contact and leads the build, while the specialists stay responsible for their own regulated work.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Can we see examples of your work?</summary><p class="m-text">Where a client has approved it, we share case studies and introduce you to people we have worked with.</p></details>
+        <details class="fq-item"><summary class="m-text-6">How do you keep quality and delivery on track?</summary><p class="m-text">Responsibilities, quality checks, reporting and escalation are agreed in writing before the team starts, and reviewed with you as it grows.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Do we need to know which model we want before we talk?</summary><p class="m-text">No. Only your name and email are required on the form. We will help you work out the model that suits your requirements, your scale and how much you want to own.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Can we move from one model to another later?</summary><p class="m-text">Yes. There is no set path from one model to the next, so you can start wherever makes sense for your business and change the model as your needs change.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Do you only work in Jaipur?</summary><p class="m-text">No. Jaipur is one example. We work across India, and where we suggest you build depends on talent, skills, costs, infrastructure, leadership availability and what your business needs.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Do we have to come to India to set things up?</summary><p class="m-text">Not necessarily. For an ODC, everything can be set up over video calls.</p></details>
+        <details class="fq-item"><summary class="m-text-6">What happens after I send the form?</summary><p class="m-text">Our sales team reads it and contacts you by email or phone to talk through your requirements. We then prepare a detailed proposal, and it can take more than one call to get there.</p></details>
       </div>
     </div>
   </div>
@@ -850,24 +1198,30 @@ main { overflow-x: clip; }
 <section id="contact" class="l-sec" data-section="contact" aria-labelledby="contact-title">
   <div class="ct-slide m-slide">
     <div class="ct-run">
-      <h2 class="ct-title m-text-3" id="contact-title">Start the conversation</h2>
+      <h2 class="ct-title m-text-3" id="contact-title">What capability are you looking to build in India?</h2>
       <div class="ct-line" aria-hidden="true"></div>
     </div>
     <div class="ct-grid">
-      <dl class="ct-info">
-        <div><dt class="m-text-4">Global Hubs</dt><dd class="m-text-6">San Francisco · London · Singapore · Bangalore</dd></div>
-        <div><dt class="m-text-4">Engagement Hours</dt><dd class="m-text">US, European, and APAC time zone coverage</dd></div>
-        <div><dt class="m-text-4">Response SLA</dt><dd class="m-text">Direct response within one business day</dd></div>
-        <div><dt class="m-text-4">Email</dt><dd><a class="m-link" href="mailto:hello@edishconnect.com">hello@edishconnect.com</a></dd></div>
-      </dl>
+      <div class="ct-side">
+        <p class="m-text-5">Whether you are planning an engineering team, a finance function, a dedicated offshore centre or a larger capability centre, let's explore the right way forward.</p>
+        <dl class="ct-info">
+          <div><dt class="m-text-4">Email</dt><dd><a class="m-link" href="mailto:hello@edishconnect.com">hello@edishconnect.com</a></dd></div>
+          <div><dt class="m-text-4">LinkedIn</dt><dd><a class="m-link" href="https://www.linkedin.com/company/edish-connect" target="_blank" rel="noopener">Edish Connect</a></dd></div>
+          <div><dt class="m-text-4">What happens next</dt><dd class="m-text">Our team reads it and contacts you by email or phone.</dd></div>
+        </dl>
+        <p class="ct-hint m-text">Only your name and email are required. If you’re not sure about the rest, leave it blank and we’ll work it out together.</p>
+      </div>
       <form class="ct-form" action="#" method="post" novalidate data-motion="rise" data-enter="86%" data-items=":scope > *">
         <label class="m-field"><span class="m-field__label">Name</span><input name="name" type="text" autocomplete="name" required></label>
-        <label class="m-field"><span class="m-field__label">Work Email</span><input name="email" type="email" autocomplete="email" required></label>
-        <label class="m-field ct-wide"><span class="m-field__label">Engineering Focus</span><select name="sport"><option>Product Engineering</option><option>AI &amp; Data Engineering</option><option>Platform &amp; Cloud Engineering</option><option>Quality Engineering</option><option>Staff Augmentation</option><option>Dedicated Pod</option><option>ODC / GCC Center</option><option>Build-Operate-Transfer (BOT)</option></select></label>
-        <label class="m-field ct-wide"><span class="m-field__label">What are you building or scaling?</span><textarea name="goal" rows="3" placeholder="Tell us about your systems, stack, and where development is slowing down..."></textarea></label>
+        <label class="m-field"><span class="m-field__label">Work email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="m-field ct-wide"><span class="m-field__label">What capability are you looking to establish?</span><select name="capability"><option value="">Choose one</option><option>Engineering &amp; Technology</option><option>Finance &amp; Taxation</option><option>Legal Operations</option><option>Risk, Audit &amp; Compliance</option><option>HR &amp; People Operations</option><option>Business &amp; Shared Services</option><option>Multiple functions</option><option>Not sure yet</option></select></label>
+        <label class="m-field ct-wide"><span class="m-field__label">What are you looking to set up?</span><select name="model"><option value="">Choose one</option><option>A few specialist professionals</option><option>Dedicated team</option><option>ODC / Functional centre</option><option>GCC / Multi-function centre</option><option>Managed process or department</option><option>Not sure yet</option></select></label>
+        <label class="m-field"><span class="m-field__label">Approximate team size</span><select name="size"><option value="">Choose one</option><option>1–5</option><option>6–20</option><option>21–50</option><option>51–100</option><option>100+</option><option>Yet to be determined</option></select></label>
+        <label class="m-field"><span class="m-field__label">Preferred location</span><select name="location"><option value="">Choose one</option><option>Bengaluru</option><option>Chennai</option><option>Delhi NCR</option><option>Hyderabad</option><option>Indore</option><option>Jaipur</option><option>Pune</option><option>Multiple locations</option><option>Open to recommendations</option></select></label>
+        <label class="m-field ct-wide"><span class="m-field__label">Short description</span><textarea name="message" rows="3" placeholder="A short description of what your business needs"></textarea></label>
         <div class="ct-send">
-          <button class="m-btn" type="submit"><span class="m-btn__label">Start the Conversation</span></button>
-          <p class="ct-status m-text-4" role="status" data-ok="Thank you. An engineering director will reach out within one business day." data-error="Please provide your name and a valid work email address."></p>
+          <button class="m-btn" type="submit"><span class="m-btn__label">Start building with Edish</span></button>
+          <p class="ct-status m-text-4" role="status" data-ok="Thanks, we've got it. Someone from our team will get back to you by email or phone." data-error="Please add your name and a valid work email."></p>
         </div>
       </form>
     </div>
@@ -876,24 +1230,26 @@ main { overflow-x: clip; }
 </main>
 <footer id="footer" data-section="footer">
   <div class="ft-slide m-slide-2">
-    <p class="ft-word m-text-2" style="--len:13" data-motion="streak" data-from="left">edish connect</p>
+    <p class="ft-word brand-lockup" data-motion="streak" data-from="left"><img src="assets/logos/EI-lockup-navy.png" alt="Edish Connect, Engineering Growth Company" width="1824" height="624" loading="lazy"></p>
     <div class="ft-cols">
-      <p class="m-text">An Engineering Growth Company. Where Engineering Meets Inspiration. We partner with engineering leaders to build product, platform, and AI capability inside their organizations.</p>
+      <p class="m-text">We build global capabilities in India across engineering and specialist business functions, from a handful of experts to a full capability centre. Where Engineering Meets Execution and Inspiration.</p>
       <nav aria-label="Footer">
         <ul data-items=":scope > li">
-          <li><a class="m-link" href="#culture">Philosophy</a></li>
-          <li><a class="m-link" href="#capabilities">Models</a></li>
-          <li><a class="m-link" href="#process">Capabilities</a></li>
-          <li><a class="m-link" href="#growth">Delivery</a></li>
-          <li><a class="m-link" href="#models">Engagement</a></li>
+          <li><a class="m-link" href="#capabilities">What we build</a></li>
+          <li><a class="m-link" href="#industries">Industries</a></li>
+          <li><a class="m-link" href="#models">How we build</a></li>
+          <li><a class="m-link" href="#council">Expert Council</a></li>
+          <li><a class="m-link" href="#culture">Our culture</a></li>
+          <li><a class="m-link" href="#india">India</a></li>
+          <li><a class="m-link" href="#approach">Our approach</a></li>
         </ul>
       </nav>
       <ul data-items=":scope > li">
         <li><a class="m-link" href="https://www.linkedin.com/company/edish-connect" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a class="m-link" href="https://github.com/edish-connect" target="_blank" rel="noopener">GitHub</a></li>
         <li><a class="m-link" href="mailto:hello@edishconnect.com">hello@edishconnect.com</a></li>
+        <li><a class="m-link" href="#contact">Start building with Edish</a></li>
       </ul>
-      <p class="ft-legal m-text-4">© 2026 Edish Connect. All rights reserved. Engineering Navy · Inspiration Gold</p>
+      <p class="ft-legal m-text-4">© 2026 Edish Connect</p>
     </div>
   </div>
 </footer>
@@ -928,8 +1284,41 @@ main { overflow-x: clip; }
 </script>
 <script data-module="section-script:hero">
 (() => {
+  const slide = document.querySelector('#hero .op-slide');
+  const title = slide.querySelector('.op-title');
+  const meta = slide.querySelector('.op-meta');
+  const cap = slide.querySelector('.op-cap');
+  const lines = [...title.querySelectorAll('.op-line')];
+  const box = el => { let x = 0, y = 0; for (let n = el; n && n !== slide; n = n.offsetParent) { x += n.offsetLeft; y += n.offsetTop; } return { l: x, t: y, r: x + el.offsetWidth, b: y + el.offsetHeight }; };
+  const hit = (a, b, gap) => a.l < b.r + gap && a.r + gap > b.l && a.t < b.b + gap && a.b + gap > b.t;
+  const clash = () => { const others = [meta, cap].filter(el => el && el.offsetParent).map(box); return lines.some(line => { const a = box(line); return others.some(o => hit(a, o, 16)); }); };
+  const shrink = floor => { let scale = 1; title.style.setProperty('--op-fit', 1); while (clash() && scale > floor) { scale -= 0.04; title.style.setProperty('--op-fit', scale); } };
+  const fit = () => {
+    meta.classList.remove('is-compact');
+    shrink(0.8);
+    if (clash()) { meta.classList.add('is-compact'); shrink(0.4); }
+  };
+  fit();
+  new ResizeObserver(fit).observe(slide);
+  document.fonts?.ready.then(fit);
+})();
+(() => {
   const stage = document.querySelector('#hero .op-s1');
   new IntersectionObserver(([entry]) => entry.isIntersecting ? stage.removeAttribute('data-paused') : stage.setAttribute('data-paused', '')).observe(stage);
+  const slides = [...stage.querySelectorAll('.op-photo img')];
+  const captions = [...stage.querySelectorAll('.op-cap li')];
+  const load = img => { if (img && img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); } };
+  load(slides[1]);
+  if (slides.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let current = 0;
+  setInterval(() => {
+    if (stage.hasAttribute('data-paused') || document.hidden) return;
+    slides[current].classList.remove('is-on');
+    current = (current + 1) % slides.length;
+    load(slides[current]); load(slides[(current + 1) % slides.length]);
+    slides[current].classList.add('is-on');
+    captions.forEach((caption, index) => caption.classList.toggle('is-on', String(index) === slides[current].dataset.banner));
+  }, 3800);
 })();
 </script>
 <script data-module="motion-queue">
@@ -1071,6 +1460,60 @@ queueMotion(() => {
   });
 }, { first: true, id: 'opening' });
 </script>
+<script data-module="section-script:visuals">
+(() => {
+  const lad = document.querySelector('#models .lad');
+  if (lad) {
+    const svg = lad.querySelector('.lad-path');
+    const line = svg.querySelector('.lad-path__line');
+    const dots = svg.querySelector('.lad-path__dots');
+    const draw = () => {
+      if (getComputedStyle(svg).display === 'none') return;
+      const steps = [...lad.querySelectorAll('.lad-step')];
+      const p = steps.map(step => [step.offsetLeft + step.offsetWidth / 2, step.offsetTop]);
+      if (p.length < 2) return;
+      const a = p[p.length - 2], b = p[p.length - 1];
+      const end = [b[0] + (b[0] - a[0]) * .55, b[1] - (a[1] - b[1]) * 1.1];
+      const pts = [[0, p[0][1] + (p[0][1] - p[1][1]) * .8], ...p, end];
+      let d = `M${pts[0][0]} ${pts[0][1]}`;
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+        d += ` C${p1[0] + (p2[0] - p0[0]) / 6} ${p1[1] + (p2[1] - p0[1]) / 6} ${p2[0] - (p3[0] - p1[0]) / 6} ${p2[1] - (p3[1] - p1[1]) / 6} ${p2[0]} ${p2[1]}`;
+      }
+      const angle = Math.atan2(end[1] - b[1], end[0] - b[0]);
+      const head = s => `${end[0] + 12 * Math.cos(angle + s)} ${end[1] + 12 * Math.sin(angle + s)}`;
+      d += ` M${head(2.6)} L${end[0]} ${end[1]} L${head(-2.6)}`;
+      line.setAttribute('d', d);
+      dots.innerHTML = p.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="5.5"/>`).join('');
+    };
+    new ResizeObserver(draw).observe(lad);
+    addEventListener('load', draw);
+    document.fonts?.ready.then(draw);
+  }
+  const band = document.querySelector('#india .gi-band');
+  if (band && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    band.setAttribute('data-armed', '');
+    const io = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { band.classList.add('is-in'); io.disconnect(); }
+    }), { threshold: .35 });
+    io.observe(band);
+  }
+})();
+</script>
+<script data-module="section-script:india">
+(() => {
+  const map = document.querySelector('#india .ia-map');
+  if (!map) return;
+  const pins = [...map.querySelectorAll('.ia-pin')];
+  const city = map.querySelector('.ia-read__city');
+  const note = map.querySelector('.ia-read__note');
+  pins.forEach(pin => pin.addEventListener('click', () => {
+    pins.forEach(other => other.setAttribute('aria-pressed', String(other === pin)));
+    city.textContent = pin.textContent;
+    note.textContent = pin.dataset.note || '';
+  }));
+})();
+</script>
 <script data-module="section-script:contact">
 (() => {
   const form = document.querySelector('#contact .ct-form');
@@ -1133,7 +1576,7 @@ queueMotion(() => {
 queueMotion(() => {
   gsap.matchMedia().add({ motion: '(prefers-reduced-motion: no-preference)', wide: '(min-width: 861px)' }, context => {
     if (!context.conditions.motion) return;
-    const section = document.getElementById('process');
+    const section = document.getElementById('council');
     const stage = section.querySelector('.lb-stage');
     const notes = [...section.querySelectorAll('.lb-note')];
     const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
@@ -1158,7 +1601,7 @@ queueMotion(() => {
 <script data-module="scene:growth">
 queueMotion(() => {
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('growth');
+    const section = document.getElementById('approach');
     const stage = section.querySelector('.wk-stage');
     const view = section.querySelector('.wk-view');
     const track = section.querySelector('.wk-track');
@@ -1183,19 +1626,6 @@ queueMotion(() => {
       section.style.removeProperty('--wk-height');
       section.removeAttribute('data-scrubbed');
     };
-  });
-});
-</script>
-<script data-module="scene:foundations">
-queueMotion(() => {
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('recovery');
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'recovery', trigger: section.querySelector('.rc-window'), start: 'top 92%', end: 'center 50%', scrub: true
-    }})
-      .fromTo(section.querySelector('.rc-sun'), { yPercent: -110, scale: .8 }, { yPercent: 0, scale: 1, duration: 1, ease: 'power1.inOut' }, 0)
-      .fromTo(section.querySelector('.rc-cool'), { opacity: 0 }, { opacity: 1, duration: 1 }, 0)
-      .fromTo(section.querySelector('.rc-sea img'), { yPercent: -5, scale: 1.12 }, { yPercent: 0, scale: 1, duration: 1 }, 0);
   });
 });
 </script>
