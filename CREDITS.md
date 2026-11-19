@@ -47,17 +47,10 @@ Loaded from images.unsplash.com. Free to use under the [Unsplash License](https:
 | [A man and a woman sitting at a table with a laptop](https://unsplash.com/photos/a-man-and-a-woman-sitting-at-a-table-with-a-laptop-qMnPOToyQ4c) | [Yash Parashar](https://unsplash.com/@lookforyash) | capabilities |
 | [Man in suit sitting at desk with laptop and coffee](https://unsplash.com/photos/man-in-suit-sitting-at-desk-with-laptop-and-coffee-kgc1vAw1Tl8) | [Skytech Aviation](https://unsplash.com/@skytechaviation0) | capabilities |
 | [Man wearing glasses looking down at laptop](https://unsplash.com/photos/man-wearing-glasses-looking-down-at-laptop-9LwA7kToz9g) | [litoon dev](https://unsplash.com/@litoondev) | hero |
-| [A man sitting on a chair using a laptop](https://unsplash.com/photos/a-man-sitting-on-a-chair-using-a-laptop-LTDE3UZCzAM) | [Hasibullah Sahil](https://unsplash.com/@hasibullahsahil) | expert council |
-| [A woman sits at a desk with a laptop](https://unsplash.com/photos/a-woman-sits-at-a-desk-with-a-laptop-JFD4nvAn0X4) | [Skytech Aviation](https://unsplash.com/@skytechaviation0) | expert council |
-| [A man in a suit stands behind an office desk](https://unsplash.com/photos/a-man-in-a-suit-stands-behind-an-office-desk-wECq1hW92Us) | [Skytech Aviation](https://unsplash.com/@skytechaviation0) | expert council |
-| [A smiling woman wearing glasses and a blue suit](https://unsplash.com/photos/a-smiling-woman-wearing-glasses-and-a-blue-suit-jI4HREHtae4) | [Vitaly Gariev](https://unsplash.com/@silverkblack) | expert council |
-| [A man in a suit sits at a desk](https://unsplash.com/photos/a-man-in-a-suit-sits-at-a-desk-zLx710peU_k) | [Ratul Puri](https://unsplash.com/@ratulpuri) | expert council |
-| [A woman in a pink blazer sits at her desk](https://unsplash.com/photos/a-woman-in-a-pink-blazer-sits-at-her-desk-H-7Tq6VH6V4) | [Skytech Aviation](https://unsplash.com/@skytechaviation0) | expert council |
-| [A smiling man wearing glasses and a suit jacket](https://unsplash.com/photos/a-smiling-man-wearing-glasses-and-a-suit-jacket-zXR0fNWHDDQ) | [Kamal Dharma Teja Dasari](https://unsplash.com/@dharma632) | expert council |
 
 ## Map data
 
-- The dotted world map in the India section is generated from Natural Earth land outlines (public domain) via [world-atlas 2.0.2](https://github.com/topojson/world-atlas) (ISC). The India outline is a simplified hand-drawn shape.
+- The dotted world map in the India section is generated from Natural Earth land outlines (public domain) via [world-atlas 2.0.2](https://github.com/topojson/world-atlas) (ISC). The India map and the India dots on the world map use Natural Earth 1:10m Admin 0 countries, India point-of-view edition (public domain, v5.1.2), which shows India's boundary as officially depicted by India.
 
 ## Fonts (SIL Open Font License 1.1)
 
