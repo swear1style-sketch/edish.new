@@ -603,6 +603,22 @@ main { overflow-x: clip; }
 </style>
 <style data-module="section:visuals">
 @layer sections {
+#culture .mt-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+#culture .mt-head .mt-row { padding-left: 0; }
+#culture .mt-orbs { position: relative; flex: none; font-size: clamp(34px, 6.1vw, 92px); width: 1.9em; height: 2.3em; margin-right: .2em; }
+#culture .mt-orbs img { position: absolute; left: calc(var(--k) * .48em); top: calc(var(--k) * .68em); width: .98em; height: .98em; box-shadow: 0 0 0 4px var(--color-1), 0 14px 26px -14px color-mix(in srgb, var(--color-3) 60%, transparent); }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    html:not(.lenis) #culture .mt-orbs img { animation: culture-orb-in linear both; animation-timeline: view(); animation-range: entry calc(10% + var(--k) * 12%) cover calc(32% + var(--k) * 8%); }
+    @keyframes culture-orb-in { from { translate: 0 -40px; rotate: -120deg; scale: .5; opacity: 0; } to { translate: 0 0; rotate: 0deg; scale: 1; opacity: 1; } }
+  }
+}
+@media (max-width: 860px) { #culture .mt-orbs { font-size: clamp(42px, 12vw, 64px); } }
+#council .lb-toggle { grid-column: 1 / -1; justify-self: start; gap: 10px; }
+#council .lb-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s; }
+#council .lb-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+#council .lb-more[hidden] { display: none; }
+#council .lb-more { overflow: hidden; }
 /* One navy/gold photographic grade across the page */
 #industries .in-photo { position: relative; isolation: isolate; }
 :is(#industries .in-photo, #capabilities .ds-tile:not(.ds-tile--mark):not(.ds-tile--link), #capabilities .ds-panel)::after {
@@ -688,6 +704,19 @@ main { overflow-x: clip; }
   #capabilities .ds-pnum { align-self: start; font-size: 56px; }
   #capabilities .ds-grid { grid-template-areas: "run run" "run run" "lift mark" "swim swim" "kit link" "court court" "note note"; }
 }
+/* Philosophy orb: copperplate engraving of the Samrat Yantra, Jantar Mantar */
+#hero .op-yantra { position: absolute; inset: 0; width: 100%; height: 100%; }
+#hero .op-yantra path, #hero .op-yantra circle { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+#hero .op-yantra__line { stroke: color-mix(in srgb, var(--color-3) 62%, transparent); stroke-width: .55; }
+#hero .op-yantra__fine { stroke: color-mix(in srgb, var(--color-3) 48%, transparent); stroke-width: .35; }
+#hero .op-yantra__hatch { stroke: color-mix(in srgb, var(--color-3) 26%, transparent); stroke-width: .28; }
+#hero .op-yantra__shadow { stroke: color-mix(in srgb, var(--color-3) 70%, transparent); stroke-width: .8; }
+#hero .op-trio { position: relative; display: flex; align-items: center; gap: .28em; font-size: clamp(56px, 5vw, 72px); }
+#hero .op-trio::before { content: ""; position: absolute; left: .5em; right: .5em; top: 50%; height: 1px; background: color-mix(in srgb, var(--color-5) 70%, transparent); }
+#hero .op-trio__ico { position: relative; display: grid; place-items: center; width: 1em; height: 1em; border-radius: 50%; background: var(--color-3); color: var(--color-5); border: 1.5px solid var(--color-5); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-5) 16%, transparent), 0 0 22px color-mix(in srgb, var(--color-5) 35%, transparent); }
+#hero .op-trio__ico svg { width: 50%; height: 50%; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 860px) { #hero .op-trio { font-size: 52px; } }
+@media (max-width: 860px) { #hero .op-yantra { transform: scaleX(-1); } }
 }
 </style>
 <style data-module="section:models">
@@ -877,8 +906,8 @@ main { overflow-x: clip; }
   <div class="op-s2" id="philosophy">
     <div class="op-card m-slide-3">
       <h2 class="op-title2 m-text-2" style="--len:21">Three forces.<br> One Edish philosophy.</h2>
-      <span class="op-orb m-orb" aria-hidden="true"></span>
-      <img class="op-chip m-chip" src="https://images.unsplash.com/photo-1578999935853-4ec5fa6c1f60?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="Hawa Mahal, Jaipur" width="240" height="240" loading="lazy">
+      <span class="op-orb m-orb" aria-hidden="true"><svg class="op-yantra" viewBox="0 0 100 100" aria-hidden="true"><defs><clipPath id="op-yantra-orb"><circle cx="50" cy="50" r="49"/></clipPath><clipPath id="op-yantra-face"><path d="M22 74L66 74L66 25Z"/></clipPath></defs><g clip-path="url(#op-yantra-orb)"><path class="op-yantra__fine" d="M4 74H96"/><g clip-path="url(#op-yantra-face)"><path class="op-yantra__hatch" d="M18 74L48 40M21 74L51 40M24 74L54 40M27 74L57 40M30 74L60 40M33 74L63 40M36 74L66 40M39 74L69 40M42 74L72 40M45 74L75 40M48 74L78 40M51 74L81 40M54 74L84 40M57 74L87 40M60 74L90 40M63 74L93 40M66 74L96 40M69 74L99 40"/></g><path class="op-yantra__line" d="M22 74L66 74L66 25Z"/><path class="op-yantra__fine" d="M24.75 70.94h1.51M27.50 67.88h1.51M30.25 64.81h1.51M33.00 61.75h1.51M35.75 58.69h1.51M38.50 55.62h1.51M41.25 52.56h1.51M44.00 49.50h1.51M46.75 46.44h1.51M49.50 43.38h1.51M52.25 40.31h1.51M55.00 37.25h1.51M57.75 34.19h1.51M60.50 31.12h1.51M63.25 28.06h1.51"/><path class="op-yantra__line" d="M61.5 25V19.5M70.5 25V19.5M60.5 25H71.5M60 19.5H72M60.5 19.5C61 15 71 15 71.5 19.5M66 15.6V13.6"/><path class="op-yantra__line" d="M12 74A38 14 0 0 0 88 74"/><path class="op-yantra__fine" d="M19 74A31 11.4 0 0 0 81 74"/><path class="op-yantra__fine" d="M12.58 76.43L19.47 75.98M14.29 78.79L20.87 77.90M17.09 81.00L23.15 79.70M20.89 83.00L26.25 81.33M25.57 84.72L30.07 82.73M31.00 86.12L34.50 83.87M37.00 87.16L39.40 84.71M43.40 87.79L44.62 85.23M50.00 88.00L50.00 85.40M56.60 87.79L55.38 85.23M63.00 87.16L60.60 84.71M69.00 86.12L65.50 83.87M74.43 84.72L69.93 82.73M79.11 83.00L73.75 81.33M82.91 81.00L76.85 79.70M85.71 78.79L79.13 77.90M87.42 76.43L80.53 75.98"/><path class="op-yantra__shadow" d="M66 74L77 82.6"/><circle class="op-yantra__line" cx="26" cy="30" r="3.6"/><path class="op-yantra__fine" d="M31.20 30.00L33.40 30.00M30.50 32.60L32.41 33.70M28.60 34.50L29.70 36.41M26.00 35.20L26.00 37.40M23.40 34.50L22.30 36.41M21.50 32.60L19.59 33.70M20.80 30.00L18.60 30.00M21.50 27.40L19.59 26.30M23.40 25.50L22.30 23.59M26.00 24.80L26.00 22.60M28.60 25.50L29.70 23.59M30.50 27.40L32.41 26.30"/></g></svg></span>
+      <span class="op-chip op-trio" aria-hidden="true"><span class="op-trio__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M11 6.2L6 20.5M13 6.2l5 14.3M7.6 15.5h8.8"/></svg></span><span class="op-trio__ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.5"/><circle cx="11" cy="13" r=".9"/><path d="M11 13l9-9M16.5 4H20v3.5"/></svg></span><span class="op-trio__ico"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2v.2h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></span></span>
       <div class="op-cols" data-items=":scope > *" data-motion="rise" data-enter="90%">
         <p class="m-text"><strong>Engineering</strong><br>The expertise to create.</p>
         <p class="m-text"><strong>Execution</strong><br>The ability to make it happen.</p>
@@ -1084,7 +1113,8 @@ main { overflow-x: clip; }
         <li class="lb-note" style="--a:218.6deg"><span class="lb-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.94 10.04 L15.29 10.89 L14.66 12.41 L13.10 12.06 L12.06 13.10 L12.41 14.66 L10.89 15.29 L10.04 13.94 L8.56 13.94 L7.71 15.29 L6.19 14.66 L6.54 13.10 L5.50 12.06 L3.94 12.41 L3.31 10.89 L4.66 10.04 L4.66 8.56 L3.31 7.71 L3.94 6.19 L5.50 6.54 L6.54 5.50 L6.19 3.94 L7.71 3.31 L8.56 4.66 L10.04 4.66 L10.89 3.31 L12.41 3.94 L12.06 5.50 L13.10 6.54 L14.66 6.19 L15.29 7.71 L13.94 8.56Z"/><circle cx="9.3" cy="9.3" r="2"/><path d="M19.94 15.91 L21.13 16.14 L21.13 17.66 L19.94 17.89 L19.28 19.04 L19.68 20.18 L18.36 20.95 L17.57 20.03 L16.23 20.03 L15.44 20.95 L14.12 20.18 L14.52 19.04 L13.86 17.89 L12.67 17.66 L12.67 16.14 L13.86 15.91 L14.52 14.76 L14.12 13.62 L15.44 12.85 L16.23 13.77 L17.57 13.77 L18.36 12.85 L19.68 13.62 L19.28 14.76Z"/><circle cx="16.9" cy="16.9" r="1.3"/></svg></span><strong class="m-text-4">Business &amp; functional operations</strong></li>
       </ul>
     </div>
-    <div class="lb-more" id="council-more">
+    <button class="m-btn-2 lb-toggle" type="button" aria-expanded="false" aria-controls="council-more"><span class="m-btn__label">Learn more</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="lb-more" id="council-more" hidden>
       <div>
         <h3 class="m-text-6">How the council works for a client</h3>
         <ol class="lb-flow" data-items=":scope > li" data-motion="rise" data-enter="92%">
@@ -1118,11 +1148,10 @@ main { overflow-x: clip; }
       </ol>
     </div>
     <div class="mt-main">
-      <h2 class="mt-title m-text-3" id="culture-title">
-        <span class="mt-row">Culture <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1660736701150-975a90ce2d9e?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">is</span></span>
-        <span class="mt-row">part <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1622225399403-548e2df0c908?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">of the</span></span>
-        <span class="mt-row">work. <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1755408007655-9ac329cfa145?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></span></span>
-      </h2>
+      <div class="mt-head">
+        <h2 class="mt-title m-text-3" id="culture-title"><span class="mt-row">Culture is part</span> <span class="mt-row">of the work.</span></h2>
+        <div class="mt-orbs" aria-hidden="true"><img class="m-chip" style="--k:0" src="https://images.unsplash.com/photo-1660736701150-975a90ce2d9e?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"><img class="m-chip" style="--k:1" src="https://images.unsplash.com/photo-1622225399403-548e2df0c908?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"><img class="m-chip" style="--k:2" src="https://images.unsplash.com/photo-1755408007655-9ac329cfa145?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></div>
+      </div>
       <div class="mt-foot">
         <div class="mt-copy">
           <p class="m-text-5">Technical skills build a team. Shared principles decide how that team thinks, works together, makes decisions and delivers.</p>
@@ -1199,17 +1228,7 @@ main { overflow-x: clip; }
 <section id="faq" class="l-sec" data-section="faq" aria-labelledby="faq-title">
   <div class="fq-slide m-slide-3">
     <div class="fq-head">
-      <h2 class="m-text-3" id="faq-title">Capability built on experience.</h2>
-      <p class="m-text">You should be able to check what you are trusting. Before you commit to anything, we take you through the people, partners and governance behind the work.</p>
-    </div>
-    <div class="fq-proof">
-      <ol class="fq-pillars" data-items=":scope > li" data-motion="rise" data-enter="88%">
-        <li><span class="m-text-4">01</span><h3 class="m-text-6">You meet the people</h3><p class="m-text">Before anything is signed, you meet the founding team and the person accountable for building your capability.</p></li>
-        <li><span class="m-text-4">02</span><h3 class="m-text-6">Experts with real credentials</h3><p class="m-text">Every specialist who comes in through the Expert Council is vetted, and their qualifications and affiliations are checked before they start work with you.</p></li>
-        <li><span class="m-text-4">03</span><h3 class="m-text-6">Governance from day one</h3><p class="m-text">Responsibilities, quality checks, reporting and escalation are agreed in writing before the team starts, and reviewed with you as it grows.</p></li>
-        <li><span class="m-text-4">04</span><h3 class="m-text-6">References on request</h3><p class="m-text">Where a client has approved it, we share case studies and introduce you to people we have worked with, so you can ask them directly.</p></li>
-      </ol>
-      <h3 class="fq-sub m-text-6">Questions businesses ask first</h3>
+      <h2 class="m-text-3" id="faq-title">Questions businesses ask first</h2>
     </div>
     <div class="fq-body">
       <div class="fq-rail" aria-hidden="true"><span class="fq-ball m-orb"></span></div>
@@ -1552,6 +1571,39 @@ queueMotion(() => {
   }
 })();
 </script>
+<script data-module="section-script:council">
+(() => {
+  const button = document.querySelector('#council .lb-toggle');
+  const panel = document.getElementById('council-more');
+  if (!button || !panel) return;
+  const label = button.querySelector('.m-btn__label');
+  const calm = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const refresh = () => { window.ScrollTrigger?.refresh(); dispatchEvent(new Event('resize')); };
+  const open = () => {
+    panel.getAnimations().forEach(animation => animation.cancel());
+    panel.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
+    label.textContent = 'Show less';
+    if (!calm()) panel.animate([{ height: '0px', opacity: 0 }, { height: panel.scrollHeight + 'px', opacity: 1 }], { duration: 550, easing: 'cubic-bezier(.2, .7, .2, 1)' });
+    refresh();
+  };
+  const close = () => {
+    button.setAttribute('aria-expanded', 'false');
+    label.textContent = 'Learn more';
+    let finished = false;
+    const done = () => { if (finished || button.getAttribute('aria-expanded') === 'true') return; finished = true; panel.hidden = true; refresh(); };
+    if (calm()) return done();
+    panel.animate([{ height: panel.scrollHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 400, easing: 'cubic-bezier(.4, 0, .2, 1)', fill: 'forwards' }).onfinish = done;
+    setTimeout(done, 450);
+  };
+  button.addEventListener('click', () => (panel.hidden ? open() : close()));
+  document.querySelectorAll('a[href="#council-more"]').forEach(link => link.addEventListener('click', event => {
+    if (panel.hidden) open();
+    event.preventDefault();
+    button.scrollIntoView({ behavior: calm() ? 'auto' : 'smooth', block: 'start' });
+  }));
+})();
+</script>
 <script data-module="section-script:india">
 (() => {
   const map = document.querySelector('#india .ia-map');
@@ -1585,18 +1637,8 @@ queueMotion(() => {
     const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
       id: 'method', trigger: section.querySelector('.mt-title'), start: 'top 92%', end: 'top 32%', scrub: true, invalidateOnRefresh: true
     }});
-    section.querySelectorAll('.mt-gap').forEach((gap, index) => {
-      const chip = gap.querySelector('.mt-chip');
-      const after = gap.parentElement.querySelector('.mt-after');
-      const at = index * .16;
-      if (after) {
-        timeline.fromTo(after, { x: () => -gap.offsetWidth }, { x: 0, duration: .45, ease: 'power2.out' }, at);
-      }
-      timeline.fromTo(chip,
-        { x: () => -gap.offsetWidth * 0.5, y: () => -Math.max(gap.offsetWidth * 1.2, 50), rotation: -300, scale: .45, opacity: 0 },
-        { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1, duration: .7, ease: 'power2.inOut' },
-        at + .04
-      );
+    section.querySelectorAll('.mt-orbs img').forEach((chip, index) => {
+      timeline.fromTo(chip, { y: -40, rotation: -120, scale: .5, opacity: 0 }, { y: 0, rotation: 0, scale: 1, opacity: 1, duration: .6, ease: 'power2.out' }, index * .18);
     });
   });
 });
