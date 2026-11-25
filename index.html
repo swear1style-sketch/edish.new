@@ -516,7 +516,7 @@ main { overflow-x: clip; }
 #capabilities .ds-more .ds-list li:last-child { border-bottom: 0; }
 
 /* How we build: capability-growth ladder (alternative starting points) */
-#models .lad { position: relative; display: grid; grid-template-columns: 1fr minmax(220px, 250px); gap: clamp(16px, 2vw, 28px); align-items: end; }
+#models .lad { position: relative; display: grid; grid-template-columns: 1fr; gap: clamp(16px, 2vw, 28px); align-items: end; }
 #models .lad-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; align-items: end; }
 #models .lad-step { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 20px 16px 18px; min-height: calc(230px + var(--lv) * 46px); background: var(--color-8); border-top: 3px solid var(--color-5); }
 #models .lad-step::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--lv) * 9px); background: color-mix(in srgb, var(--color-5) 28%, transparent); }
@@ -857,7 +857,14 @@ main { overflow-x: clip; }
 #capabilities .ds-pnum { grid-row: span 2; font-size: clamp(56px, 7vw, 104px); line-height: .78; font-weight: 500; letter-spacing: -.06em; color: var(--color-5); }
 #capabilities .ds-phead h3 { font-size: clamp(28px, 3.2vw, 46px); line-height: 1; letter-spacing: -.045em; }
 #capabilities .ds-phead .m-text { color: var(--color-6); max-width: 640px; }
-#capabilities .ds-grid { grid-template-areas: "run run lift mark court court" "run run swim swim court court" "run run swim swim kit kit" "note note note link kit kit"; }
+#capabilities .ds-grid { grid-template-areas: "run run lift mark court court" "run run swim swim court court" "run run swim swim kit kit" "i1 i1 i2 i2 i3 i3" "i4 i4 i5 i5 i6 i6" "note note note note link link"; }
+#capabilities .ds-tile--i1 { grid-area: i1; }
+#capabilities .ds-tile--i2 { grid-area: i2; }
+#capabilities .ds-tile--i3 { grid-area: i3; }
+#capabilities .ds-tile--i4 { grid-area: i4; }
+#capabilities .ds-tile--i5 { grid-area: i5; }
+#capabilities .ds-tile--i6 { grid-area: i6; }
+#capabilities .ds-tile--i1 { scroll-margin-top: 96px; }
 #capabilities .ds-pillar .ds-more { margin-top: 20px; }
 #capabilities .ds-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.3vw, 18px); }
 #capabilities .ds-duo .ds-panel { margin: 0; }
@@ -865,7 +872,7 @@ main { overflow-x: clip; }
 @media (max-width: 860px) {
   #capabilities .ds-intro, #capabilities .ds-duo { grid-template-columns: 1fr; }
   #capabilities .ds-pnum { align-self: start; font-size: 56px; }
-  #capabilities .ds-grid { grid-template-areas: "run run" "run run" "lift mark" "swim swim" "kit link" "court court" "note note"; }
+  #capabilities .ds-grid { grid-template-areas: "run run" "run run" "lift mark" "swim swim" "kit link" "court court" "i1 i2" "i3 i4" "i5 i6" "note note"; }
 }
 /* Philosophy orb: copperplate engraving of the Samrat Yantra, Jantar Mantar */
 #hero .op-yantra { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -887,6 +894,29 @@ main { overflow-x: clip; }
 /* Engineering & technology: themed image tags */
 #capabilities :is(.ds-tile, .ds-duo .ds-panel) .m-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 10px; border-radius: 2px; background: color-mix(in srgb, var(--color-3) 86%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid color-mix(in srgb, var(--color-5) 55%, transparent); color: var(--color-1); font-size: 11px; font-weight: 500; letter-spacing: .1em; line-height: 1; text-transform: uppercase; box-shadow: 0 10px 20px -12px var(--color-3); }
 #capabilities :is(.ds-tile, .ds-duo .ds-panel) .m-badge::before { content: ""; flex: none; width: 6px; height: 6px; rotate: 45deg; background: var(--color-5); box-shadow: 0 0 6px var(--color-5); }
+/* Philosophy card: keep the text columns clear of the orb at every desktop width */
+@media (min-width: 861px) {
+  #hero .op-card { --ow: clamp(220px, 27vw, 400px); }
+  #hero .op-orb { width: var(--ow); }
+  #hero .op-cols { max-width: min(660px, calc(109cqw + var(--space-1) - var(--ow) - 48px)); }
+}
+@media (min-width: 861px) and (max-width: 1280px) { #hero .op-card { --ow: clamp(200px, 21vw, 280px); } }
+@media (max-width: 860px) {
+  #capabilities :is(.ds-tile, .ds-duo .ds-panel) .m-badge { left: 8px; bottom: 8px; max-width: calc(100% - 16px); padding: 6px 8px; gap: 6px; font-size: 9.5px; letter-spacing: .06em; line-height: 1.25; }
+  #capabilities :is(.ds-tile, .ds-duo .ds-panel) .m-badge::before { width: 5px; height: 5px; }
+}
+/* Council details: six steps lead as a precise card grid; the network note follows */
+#council .lb-more { grid-template-columns: 1fr; gap: clamp(24px, 3vw, 36px); }
+#council .lb-more > div:first-child { gap: 22px; }
+#council .lb-more > div:first-child > h3 { font-size: clamp(26px, 2.6vw, 36px); letter-spacing: -0.035em; }
+#council .lb-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; border-top: 0; }
+#council .lb-flow li { display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; align-content: start; gap: 8px; padding: 20px 22px 22px; border: 0; border-top: 2px solid var(--color-5); background: color-mix(in srgb, var(--color-1) 4%, transparent); }
+#council .lb-flow .m-text-4 { grid-row: auto; padding: 0; font-size: 22px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; color: var(--color-5); }
+#council .lb-flow strong { font-size: 18px; }
+#council .lb-flow p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+#council .lb-more > div:nth-child(2) { max-width: 860px; padding-top: clamp(22px, 2.6vw, 30px); border-top: 1px solid color-mix(in srgb, var(--color-1) 18%, transparent); }
+@media (max-width: 1024px) { #council .lb-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { #council .lb-flow { grid-template-columns: 1fr; } }
 }
 </style>
 <style data-module="section:models">
@@ -1284,53 +1314,6 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   </div>
 </section>
 
-<section id="industries" class="l-sec" data-section="industries" aria-labelledby="industries-title">
-  <div class="mb-slide m-slide-3">
-    <div class="mb-head">
-      <h2 class="m-text-3" id="industries-title" data-motion="streak">Different industries, different challenges, one capability partner.</h2>
-      <p class="m-text-5">Every industry has its own complexity, its own technology priorities and its own way of working.</p>
-    </div>
-    <div class="in-grid" data-items=":scope > .in-card" data-motion="rise" data-enter="86%">
-      <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1739036868260-c26b292cd85d?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An AI processor chip on a circuit board" width="800" height="560" loading="lazy"></figure>
-        <span class="in-num m-text-4">01</span>
-        <h3 class="m-text-6">Technology, software &amp; AI</h3>
-        <p class="m-text">Products, platforms and intelligent systems</p>
-      </article>
-      <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1742934029122-511b3b28e9f3?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An engineer working at a computer on a factory floor" width="800" height="560" loading="lazy"></figure>
-        <span class="in-num m-text-4">02</span>
-        <h3 class="m-text-6">Manufacturing &amp; industrial</h3>
-        <p class="m-text">Connected operations and industrial technology</p>
-      </article>
-      <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1762381157166-f51ac99ab412?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="Wind turbines and solar panels across farmland" width="800" height="560" loading="lazy"></figure>
-        <span class="in-num m-text-4">03</span>
-        <h3 class="m-text-6">Energy, utilities &amp; infrastructure</h3>
-        <p class="m-text">Digital and engineering capability</p>
-      </article>
-      <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1732690233982-1d4567384ea1?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A scientist in gloves operating a laboratory instrument" width="800" height="560" loading="lazy"></figure>
-        <span class="in-num m-text-4">04</span>
-        <h3 class="m-text-6">Life sciences, pharma &amp; MedTech</h3>
-        <p class="m-text">Dependable systems and digital workflows</p>
-      </article>
-      <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An electric vehicle plugged in to charge" width="800" height="560" loading="lazy"></figure>
-        <span class="in-num m-text-4">05</span>
-        <h3 class="m-text-6">Automotive, mobility &amp; EV</h3>
-        <p class="m-text">Connected mobility and embedded technology</p>
-      </article>
-      <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A smartphone held over a card reader to make a contactless payment" width="800" height="560" loading="lazy"></figure>
-        <span class="in-num m-text-4">06</span>
-        <h3 class="m-text-6">Financial services &amp; FinTech</h3>
-        <p class="m-text">Secure, scalable financial platforms</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section id="capabilities" class="l-sec" data-section="capabilities" aria-labelledby="capabilities-title">
   <div class="ds-slide m-slide">
     <h2 class="ds-title m-text-3" id="capabilities-title" style="--len:36" data-motion="streak"><span>The</span> <span>capabilities</span> <span class="ds-break" aria-hidden="true"></span><span>behind</span> <span>your</span> <span>growth.</span></h2>
@@ -1348,6 +1331,12 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
           <figure class="ds-tile ds-tile--swim" style="--capabilities-tilt: -6deg"><img src="https://images.unsplash.com/photo-1633250391894-397930e3f5f2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A person testing an app on a phone in front of code" width="600" height="400" loading="lazy"><figcaption class="m-badge">Quality engineering</figcaption></figure>
           <figure class="ds-tile ds-tile--kit" style="--capabilities-tilt: 3deg"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Server racks in a data centre" width="600" height="400" loading="lazy"><figcaption class="m-badge">Cloud &amp; platform</figcaption></figure>
           <figure class="ds-tile ds-tile--court" style="--capabilities-tilt: -10deg"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Charts on an analytics dashboard" width="600" height="400" loading="lazy"><figcaption class="m-badge">Data</figcaption></figure>
+          <figure class="ds-tile ds-tile--i1" id="industries" style="--capabilities-tilt: 4deg"><img src="https://images.unsplash.com/photo-1739036868260-c26b292cd85d?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="An AI processor chip on a circuit board" width="600" height="400" loading="lazy"><figcaption class="m-badge">Technology, software &amp; AI</figcaption></figure>
+          <figure class="ds-tile ds-tile--i2" style="--capabilities-tilt: -5deg"><img src="https://images.unsplash.com/photo-1742934029122-511b3b28e9f3?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="An engineer working at a computer on a factory floor" width="600" height="400" loading="lazy"><figcaption class="m-badge">Manufacturing &amp; industrial</figcaption></figure>
+          <figure class="ds-tile ds-tile--i3" style="--capabilities-tilt: 7deg"><img src="https://images.unsplash.com/photo-1762381157166-f51ac99ab412?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Wind turbines and solar panels across farmland" width="600" height="400" loading="lazy"><figcaption class="m-badge">Energy, utilities &amp; infrastructure</figcaption></figure>
+          <figure class="ds-tile ds-tile--i4" style="--capabilities-tilt: -3deg"><img src="https://images.unsplash.com/photo-1732690233982-1d4567384ea1?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="A scientist in gloves operating a laboratory instrument" width="600" height="400" loading="lazy"><figcaption class="m-badge">Life sciences, pharma &amp; MedTech</figcaption></figure>
+          <figure class="ds-tile ds-tile--i5" style="--capabilities-tilt: 6deg"><img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="An electric vehicle plugged in to charge" width="600" height="400" loading="lazy"><figcaption class="m-badge">Automotive, mobility &amp; EV</figcaption></figure>
+          <figure class="ds-tile ds-tile--i6" style="--capabilities-tilt: -7deg"><img src="https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="A smartphone held over a card reader to make a contactless payment" width="600" height="400" loading="lazy"><figcaption class="m-badge">Financial services &amp; FinTech</figcaption></figure>
           <a class="ds-tile ds-tile--link" href="#models" style="--capabilities-tilt: 6deg"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See how you can work with us</span></a>
           <p class="ds-note m-text-6">Any of these can take the form of a few specialists, a dedicated team or a centre of your own.</p>
         </div>
@@ -1427,12 +1416,6 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
           <a class="m-link" href="#contact">Ask about BOT</a>
         </li>
       </ol>
-      <aside class="lad-alt">
-        <p class="lad-tag m-text-4">Alternative model</p>
-        <h3 class="m-text-6">Managed teams &amp; functional operations</h3>
-        <p class="m-text">Hand an agreed function, process or delivery scope to a managed team, with clear responsibilities and outcomes.</p>
-        <a class="m-link" href="#contact">Ask about managed teams</a>
-      </aside>
     </div>
     <div class="mb-note">
       <p class="m-text">Every model works for engineering and for selected professional functions. None of them leads automatically to the next. You begin wherever it makes sense for your business.</p>
