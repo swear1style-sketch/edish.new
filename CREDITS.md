@@ -10,9 +10,6 @@ Loaded from images.unsplash.com. Free to use under the [Unsplash License](https:
 |---|---|---|---|
 | 1 | [photo-1504384308090-c894fdcc538d](https://unsplash.com/photos/man-sitting-facing-computer-c894fdcc538d) | [Alex Kotliarskyi](https://unsplash.com/@frantic) | hero |
 | 2 | [photo-1534528741775-53994a69daeb](https://unsplash.com/photos/shallow-focus-photography-of-woman-outdoor-53994a69daeb) | [Aiony Haust](https://unsplash.com/@aiony) | hero |
-| 3 | [photo-1507003211169-0a1dd7228f2d](https://unsplash.com/photos/man-smiling-0a1dd7228f2d) | [Joseph Gonzalez](https://unsplash.com/@stripdrop) | culture |
-| 4 | [photo-1573496359142-b8d87734a5a2](https://unsplash.com/photos/woman-in-gray-blazer-b8d87734a5a2) | [Christina @ wocintechchat.com](https://unsplash.com/@wocintechchat) | culture |
-| 5 | [photo-1500648767791-00dcc994a43e](https://unsplash.com/photos/man-in-front-of-wall-00dcc994a43e) | [Jurica Koletić](https://unsplash.com/@juricakoletic) | culture |
 | 6 | [photo-1555066931-4365d14bab8c](https://unsplash.com/photos/lines-of-code-on-a-computer-screen-4365d14bab8c) | [Fotis Fotopoulos](https://unsplash.com/@ffstop) | capabilities |
 | 7 | [photo-1522071820081-009f0129c71c](https://unsplash.com/photos/people-sitting-beside-table-009f0129c71c) | [Annie Spratt](https://unsplash.com/@anniespratt) | capabilities |
 | 8 | [photo-1486406146926-c627a92ad1ab](https://unsplash.com/photos/low-angle-photography-of-high-rise-building-c627a92ad1ab) | [Sean Pollock](https://unsplash.com/@seanpollock) | capabilities |
@@ -44,9 +41,11 @@ Loaded from images.unsplash.com. Free to use under the [Unsplash License](https:
 | [A man wearing headphones and using a laptop](https://unsplash.com/photos/a-man-wearing-headphones-and-using-a-laptop-ee4g8naRkPk) | [Hitesh Choudhary](https://unsplash.com/@hiteshchoudhary) | hero, capabilities |
 | [Men and women having a meeting](https://unsplash.com/photos/men-and-women-having-a-meeting-cW4lLTavU80) | [Smartworks Coworking](https://unsplash.com/@smartworkscoworking) | hero, capabilities |
 | [A woman sits at a desk with a laptop](https://unsplash.com/photos/a-woman-sits-at-a-desk-with-a-laptop-RcPx_WTQyrM) | [Zulfugar Karimov](https://unsplash.com/@zulfugarkarimov) | capabilities |
-| [A man and a woman sitting at a table with a laptop](https://unsplash.com/photos/a-man-and-a-woman-sitting-at-a-table-with-a-laptop-qMnPOToyQ4c) | [Yash Parashar](https://unsplash.com/@lookforyash) | capabilities |
 | [Man in suit sitting at desk with laptop and coffee](https://unsplash.com/photos/man-in-suit-sitting-at-desk-with-laptop-and-coffee-kgc1vAw1Tl8) | [Skytech Aviation](https://unsplash.com/@skytechaviation0) | capabilities |
 | [Man wearing glasses looking down at laptop](https://unsplash.com/photos/man-wearing-glasses-looking-down-at-laptop-9LwA7kToz9g) | [litoon dev](https://unsplash.com/@litoondev) | hero |
+| [Wind turbines and solar panels in a rural landscape](https://unsplash.com/photos/wind-turbines-and-solar-panels-in-a-rural-landscape-gFud7-XmQvk) | [Bernd Dittrich](https://unsplash.com/@hdbernd) | industries |
+| [A person in a lab coat and gloves working on a machine](https://unsplash.com/photos/a-person-in-a-lab-coat-and-gloves-working-on-a-machine-y6zGvWKU6sE) | [Mina Rad](https://unsplash.com/@miinrad) | industries |
+| [A person holding a cell phone in front of a laptop](https://unsplash.com/photos/a-person-holding-a-cell-phone-in-front-of-a-laptop-v-FOvoL3onk) | [Fahim Muntashir](https://unsplash.com/@f12r) | capabilities |
 
 ## Map data
 

@@ -604,6 +604,168 @@ main { overflow-x: clip; }
 </style>
 <style data-module="section:visuals">
 @layer sections {
+/* Approach: isometric 3D staircase of the five stages */
+#approach .st3 { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 24px clamp(24px, 4vw, 64px); align-items: center; padding-inline: var(--space-2); }
+#approach .st-figure { position: relative; min-width: 0; }
+#approach .st-svg { display: block; width: 100%; height: auto; max-height: min(76vh, 700px); overflow: visible; }
+#approach .st-shadow { fill: color-mix(in srgb, var(--color-3) 28%, transparent); filter: url(#st-blur); }
+#approach .st-top { fill: url(#st-top); stroke: color-mix(in srgb, var(--color-3) 18%, transparent); stroke-width: .6; }
+#approach .st-front { fill: url(#st-front); }
+#approach .st-right { fill: url(#st-right); }
+#approach .st-edge { fill: none; stroke: var(--color-5); stroke-width: 1.2; stroke-linecap: round; opacity: .5; transition: opacity .4s, stroke-width .4s; }
+#approach .st-num { font: 600 13px var(--font-1); fill: var(--color-5); letter-spacing: .08em; }
+#approach .st-name { font: 500 17px var(--font-1); fill: var(--color-1); letter-spacing: -.01em; }
+#approach .st-step { cursor: pointer; }
+#approach .st-top-on { fill: url(#st-top-on); opacity: 0; transition: opacity .7s ease; pointer-events: none; }
+#approach .st-step[data-active] .st-top-on { opacity: 1; }
+#approach .st-step[data-active] .st-edge { opacity: 1; stroke-width: 2; filter: drop-shadow(0 0 6px var(--color-5)); }
+@media (hover: hover) { #approach .st-step:hover .st-edge { opacity: 1; } }
+#approach .st-trail { fill: none; stroke: var(--color-5); stroke-width: 1.4; stroke-dasharray: .01 .014; stroke-linecap: round; opacity: .55; pointer-events: none; }
+#approach .st-trail-on { fill: none; stroke: var(--color-5); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--prog, 0)); filter: drop-shadow(0 0 4px var(--color-5)); transition: stroke-dashoffset .9s cubic-bezier(.5, 0, .2, 1); pointer-events: none; }
+#approach .st-marker { transform: translate(var(--mx), var(--my)); transition: transform .85s cubic-bezier(.45, 0, .25, 1); pointer-events: none; }
+#approach .st-ripple { fill: none; stroke: var(--color-5); stroke-width: 1.6; opacity: 0; transform-box: fill-box; transform-origin: center; }
+#approach .st-orb-shadow { fill: color-mix(in srgb, var(--color-3) 35%, transparent); filter: blur(2px); }
+#approach .st-halo { fill: url(#st-glow); opacity: .6; transform-box: fill-box; transform-origin: center; }
+#approach .st-dot { fill: #fff3d6; stroke: var(--color-5); stroke-width: 2.5; filter: drop-shadow(0 0 10px var(--color-5)); }
+#approach .st-side { display: grid; gap: 18px; min-width: 0; }
+#approach .st-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+#approach .st-tab { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid color-mix(in srgb, var(--color-2) 22%, transparent); border-radius: var(--radius-1); background: transparent; color: var(--color-2); font: 500 14px/1 var(--font-1); cursor: pointer; transition: background .3s, color .3s, border-color .3s; }
+#approach .st-tab .m-text-4 { color: var(--color-7); font-size: 11px; }
+#approach .st-tab[aria-selected="true"] { background: var(--color-3); color: var(--color-1); border-color: var(--color-3); }
+#approach .st-tab[aria-selected="true"] .m-text-4 { color: var(--color-5); }
+#approach .st-panel { display: grid; gap: 10px; align-content: start; min-height: 250px; padding: 26px 24px; background: var(--color-1); border-top: 3px solid var(--color-5); box-shadow: var(--shadow-1); }
+#approach .st-panel[hidden] { display: none; }
+#approach .st-stage { color: var(--color-6); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+#approach .st-title { margin: 0; font: 500 clamp(32px, 3.4vw, 48px)/1 var(--font-1); letter-spacing: -.04em; color: var(--color-2); }
+#approach .st-label { color: var(--color-7); font-weight: 500; }
+#approach .st-panel .m-text:last-child { color: var(--color-6); }
+#approach .st-progress { height: 2px; overflow: hidden; background: color-mix(in srgb, var(--color-2) 12%, transparent); }
+#approach .st-progress span { display: block; height: 100%; background: var(--color-5); transform-origin: 0 50%; scale: 0 1; }
+@media (prefers-reduced-motion: no-preference) {
+  #approach .st3[data-cycling] .st-progress span { animation: st-timer 4.2s linear forwards; }
+  #approach .st-panel:not([hidden]) { animation: st-panel-in .5s cubic-bezier(.2, .7, .2, 1); }
+  #approach .st-halo { animation: st-pulse 2.6s ease-in-out infinite; }
+  #approach .st-bob { animation: st-bob 3.2s ease-in-out infinite; }
+  #approach .st-ripple { animation: st-ripple 2.8s cubic-bezier(.2, .6, .3, 1) infinite; }
+  #approach .st-ripple--2 { animation-delay: 1.4s; }
+  #approach .st3.is-hop .st-jump { animation: st-hop .85s cubic-bezier(.45, 0, .25, 1); }
+  #approach .st3.is-hop .st-orb-shadow { animation: st-shadow-hop .85s cubic-bezier(.45, 0, .25, 1); }
+  #approach .st-orb-shadow { transform-box: fill-box; transform-origin: center; }
+  #approach .st-step { transform-box: fill-box; transform-origin: 50% 100%; }
+  #approach .st3[data-armed] .st-step { opacity: 0; scale: 1 0; }
+  #approach .st3[data-armed].is-in .st-step { animation: st-rise .8s cubic-bezier(.3, 1.25, .5, 1) calc(var(--si) * .14s) both; }
+  #approach .st3[data-armed] :is(.st-trail, .st-trail-on, .st-marker) { opacity: 0; }
+  #approach .st3[data-armed].is-in .st-trail { animation: st-trail-in .8s ease 1s forwards; }
+  #approach .st3[data-armed].is-in .st-trail-on { animation: st-fade .8s ease 1s forwards; }
+  #approach .st3[data-armed].is-in .st-marker { animation: st-fade .6s ease 1.2s forwards; }
+  @keyframes st-rise { 0% { opacity: 0; scale: 1 0; } 30% { opacity: 1; } 100% { opacity: 1; scale: 1 1; } }
+  @keyframes st-bob { 50% { translate: 0 -5px; } }
+  @keyframes st-hop { 0% { translate: 0 0; } 45% { translate: 0 -42px; } 100% { translate: 0 0; } }
+  @keyframes st-shadow-hop { 45% { scale: .45; opacity: .4; } }
+  @keyframes st-ripple { 0% { scale: .35; opacity: .9; } 100% { scale: 1.7; opacity: 0; } }
+  @keyframes st-trail-in { to { opacity: .55; } }
+  @keyframes st-fade { to { opacity: 1; } }
+  @keyframes st-pulse { 50% { scale: 1.25; opacity: .32; } }
+  @keyframes st-timer { to { scale: 1 1; } }
+  @keyframes st-panel-in { from { opacity: 0; translate: 0 12px; } }
+}
+@media (max-width: 960px) {
+  #approach .st3 { grid-template-columns: 1fr; }
+  #approach .st-panel { min-height: 0; }
+}
+/* Culture: the six principles in sandstone, ivory and champagne bronze */
+#culture { --pr-ivory: #f8f2e8; --pr-sand: #ecdcc2; --pr-stone: #dcc49e; --pr-bronze: #9c7440; --pr-champ: #c9a66b; --pr-ink: #3a2b1c; }
+#culture .pr-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); display: grid; gap: clamp(32px, 4vw, 56px); background: linear-gradient(165deg, var(--pr-ivory), #f3e8d6 55%, var(--pr-sand)); color: var(--pr-ink); }
+#culture .pr-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px clamp(24px, 4vw, 64px); align-items: end; padding-top: 18px; }
+#culture .pr-head .mt-title { font-size: clamp(40px, 5.4vw, 84px); color: var(--pr-ink); text-wrap: balance; }
+#culture .pr-intro { display: grid; gap: 14px; }
+#culture .pr-intro .m-text { color: color-mix(in srgb, var(--pr-ink) 70%, transparent); }
+#culture .pr-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 18px); }
+#culture .pr-card { position: relative; overflow: hidden; background: linear-gradient(180deg, #fcf8f1, var(--pr-sand)); border: 1px solid color-mix(in srgb, var(--pr-bronze) 30%, transparent); box-shadow: 0 24px 40px -32px color-mix(in srgb, var(--pr-bronze) 75%, transparent); transition: transform .45s cubic-bezier(.2, .7, .2, 1), box-shadow .45s; }
+#culture .pr-toggle { all: unset; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; width: 100%; min-width: 0; padding: 16px 18px 20px; cursor: pointer; }
+#culture .pr-toggle:focus-visible { outline: 2px solid var(--pr-bronze); outline-offset: -4px; }
+#culture .pr-art { display: grid; place-items: center; aspect-ratio: 16 / 10; margin-bottom: 10px; background: radial-gradient(70% 70% at 50% 45%, #fffaf2, color-mix(in srgb, var(--pr-stone) 45%, transparent)); border-bottom: 1px solid color-mix(in srgb, var(--pr-bronze) 25%, transparent); }
+#culture .pr-art svg { width: 82%; height: auto; overflow: visible; }
+#culture .pr-art svg :is(path, line, circle, ellipse) { fill: none; stroke: var(--pr-bronze); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+#culture .pr-art svg .f { fill: color-mix(in srgb, var(--pr-stone) 55%, transparent); }
+#culture .pr-art svg .t { stroke-width: .8; stroke: color-mix(in srgb, var(--pr-bronze) 70%, transparent); }
+#culture .pr-art svg .g { stroke-width: .9; }
+#culture .pr-art svg .a { stroke: var(--pr-champ); fill: color-mix(in srgb, var(--pr-champ) 40%, transparent); }
+#culture .pr-art svg .a2 { fill: color-mix(in srgb, var(--pr-champ) 55%, #fff); }
+#culture .pr-art svg :is(.pr-sweep, .pr-pupils, .pr-hands, .pr-flame, .pr-wheel, .pr-lift) { transform-box: fill-box; transition: rotate 1.2s cubic-bezier(.2, .7, .2, 1), translate .8s cubic-bezier(.2, .7, .2, 1), scale .8s cubic-bezier(.2, .7, .2, 1); }
+#culture .pr-sweep { transform-origin: 100% 100%; }
+#culture .pr-hands, #culture .pr-wheel { transform-origin: center; }
+#culture .pr-flame { transform-origin: 50% 100%; }
+#culture .pr-top { display: flex; align-items: baseline; gap: 10px; }
+#culture .pr-num { color: var(--pr-bronze); }
+#culture .pr-name { color: var(--pr-ink); }
+#culture .pr-plus { margin-left: auto; align-self: center; width: 13px; height: 13px; color: var(--pr-bronze); background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat; transition: transform .35s; }
+#culture .pr-say { color: var(--pr-bronze); font-weight: 500; }
+#culture .pr-more { position: absolute; inset: 0; display: flex; align-items: flex-end; background: linear-gradient(180deg, color-mix(in srgb, var(--pr-ivory) 94%, transparent), var(--pr-ivory)); translate: 0 101%; transition: translate .55s cubic-bezier(.2, .7, .2, 1); pointer-events: none; }
+#culture .pr-more__in { width: 100%; padding: 20px 18px 22px; border-top: 2px solid var(--pr-champ); display: grid; gap: 14px; }
+#culture .pr-more__name { color: var(--pr-ink); }
+#culture .pr-more dl { display: grid; gap: 12px; margin: 0; }
+#culture .pr-more dt { color: var(--pr-bronze); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+#culture .pr-more dd { margin: 3px 0 0; color: var(--pr-ink); font-size: 15px; }
+#culture .pr-card[data-open] .pr-more { translate: 0 0; }
+#culture .pr-card[data-open] .pr-plus { transform: rotate(45deg); }
+#culture .pr-foot { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 32px clamp(24px, 4vw, 64px); padding-top: 28px; border-top: 1px solid color-mix(in srgb, var(--pr-bronze) 35%, transparent); }
+#culture .pr-message { font-size: clamp(20px, 1.8vw, 26px); line-height: 1.3; color: color-mix(in srgb, var(--pr-ink) 80%, transparent); }
+#culture .pr-message span { display: block; }
+#culture .pr-message b { font-weight: 500; color: var(--pr-bronze); }
+#culture .pr-close { display: grid; gap: 22px; justify-items: start; align-content: end; }
+#culture .pr-close .m-text-6 { color: var(--pr-ink); }
+#culture .pr-close .m-btn { background: var(--pr-ink); color: var(--pr-ivory); }
+@media (hover: hover) and (min-width: 861px) {
+  #culture .pr-card:hover { transform: translateY(-6px); box-shadow: 0 30px 50px -30px color-mix(in srgb, var(--pr-bronze) 85%, transparent), 0 0 0 1px color-mix(in srgb, var(--pr-champ) 60%, transparent); }
+  #culture .pr-card:hover .pr-more { translate: 0 0; }
+  #culture .pr-card:hover .pr-plus { transform: rotate(45deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #culture .pr-card:hover .pr-sweep, #culture .pr-card[data-open] .pr-sweep { rotate: 26deg; }
+  #culture .pr-card:hover .pr-pupils, #culture .pr-card[data-open] .pr-pupils { translate: 3px -1px; }
+  #culture .pr-card:hover .pr-hands, #culture .pr-card[data-open] .pr-hands { scale: .94; }
+  #culture .pr-card:hover .pr-wheel, #culture .pr-card[data-open] .pr-wheel { animation: pr-turn 14s linear infinite; }
+  #culture .pr-card:hover .pr-lift, #culture .pr-card[data-open] .pr-lift { translate: -5px -7px; rotate: -6deg; }
+  #culture .pr-flame { animation: pr-flicker 2.6s ease-in-out infinite; }
+  #culture .pr-grid[data-armed] .pr-card { opacity: 0; translate: 0 28px; }
+  #culture .pr-grid[data-armed].is-in .pr-card { animation: pr-in .8s cubic-bezier(.2, .7, .2, 1) calc(var(--pi) * .1s) both; }
+  #culture .pr-grid[data-armed] .pr-art svg :is(path, line, circle, ellipse) { stroke-dasharray: 1; stroke-dashoffset: 1; fill-opacity: 0; }
+  #culture .pr-grid[data-armed].is-in .pr-art svg :is(path, line, circle, ellipse) { animation: pr-draw 1.8s cubic-bezier(.6, 0, .2, 1) calc(.25s + var(--pi) * .1s) forwards, pr-fill .9s ease calc(1.3s + var(--pi) * .1s) forwards; }
+  @keyframes pr-in { to { opacity: 1; translate: 0 0; } }
+  @keyframes pr-draw { to { stroke-dashoffset: 0; } }
+  @keyframes pr-fill { to { fill-opacity: 1; } }
+  @keyframes pr-turn { to { rotate: 360deg; } }
+  @keyframes pr-flicker { 0%, 100% { scale: 1 1; } 40% { scale: .94 1.06; } 70% { scale: 1.04 .97; } }
+}
+@media (max-width: 1100px) and (min-width: 861px) { #culture .pr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) {
+  #culture .pr-head, #culture .pr-foot { grid-template-columns: 1fr; }
+  #culture .pr-grid { grid-template-columns: 1fr; }
+  #culture .pr-art { aspect-ratio: 16 / 9; }
+  #culture .pr-more { position: static; translate: none; display: grid; grid-template-rows: 0fr; align-items: stretch; background: none; pointer-events: auto; transition: grid-template-rows .45s cubic-bezier(.2, .7, .2, 1); }
+  #culture .pr-more__in { overflow: hidden; min-height: 0; padding: 0 18px; border-top: 0; }
+  #culture .pr-more__name { display: none; }
+  #culture .pr-card[data-open] .pr-more { grid-template-rows: 1fr; }
+  #culture .pr-card[data-open] .pr-more__in { padding-bottom: 20px; }
+}
+/* Reveal animations for image sections that were static */
+[data-reveal] { clip-path: inset(100% 0 0 0); }
+[data-reveal] img { scale: 1.16; }
+[data-reveal].is-in { animation: rv-wipe 1.05s cubic-bezier(.7, 0, .2, 1) calc(var(--ri, 0) * .12s) both; }
+[data-reveal].is-in img { animation: rv-zoom 1.7s cubic-bezier(.2, .7, .2, 1) calc(var(--ri, 0) * .12s) both; }
+@keyframes rv-wipe { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes rv-zoom { from { scale: 1.16; } to { scale: 1; } }
+#india .ia-map[data-reveal-map] .ia-land path { stroke-dasharray: 1; stroke-dashoffset: 1; fill-opacity: 0; }
+#india .ia-map[data-reveal-map] .ia-pins li { opacity: 0; scale: .4; }
+#india .ia-map[data-reveal-map] .ia-read { opacity: 0; translate: 0 12px; }
+#india .ia-map[data-reveal-map].is-in .ia-land path { animation: rv-draw 2.4s cubic-bezier(.6, 0, .2, 1) forwards, rv-fill .9s ease 1.8s forwards; }
+#india .ia-map[data-reveal-map].is-in .ia-pins li { animation: rv-pop .5s cubic-bezier(.3, 1.6, .5, 1) calc(1.4s + var(--ri, 0) * .12s) forwards; }
+#india .ia-map[data-reveal-map].is-in .ia-read { animation: rv-rise .6s ease 2.3s forwards; }
+@keyframes rv-draw { to { stroke-dashoffset: 0; } }
+@keyframes rv-fill { to { fill-opacity: 1; } }
+@keyframes rv-pop { to { opacity: 1; scale: 1; } }
+@keyframes rv-rise { to { opacity: 1; translate: 0 0; } }
 #culture .mt-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
 #culture .mt-head .mt-row { padding-left: 0; }
 #culture .mt-orbs { position: relative; flex: none; font-size: clamp(34px, 6.1vw, 92px); width: 1.9em; height: 2.3em; margin-right: .2em; }
@@ -718,6 +880,13 @@ main { overflow-x: clip; }
 #hero .op-trio__ico svg { width: 50%; height: 50%; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 860px) { #hero .op-trio { font-size: 52px; } }
 @media (max-width: 860px) { #hero .op-yantra { transform: scaleX(-1); } }
+/* Scroll-linked image reveals: an inset rounded window widens to the full frame, the photo settles and warms into the grade */
+[data-scroll-img] { clip-path: inset(calc((1 - var(--p, 1)) * 14%) calc((1 - var(--p, 1)) * 10%) round calc((1 - var(--p, 1)) * 36px)); }
+:is(#industries, #capabilities) [data-scroll-img] img { translate: 0 calc(var(--par, 0) * 4%); scale: calc(1.28 - var(--p, 1) * .28); filter: grayscale(calc(.25 + (1 - var(--p, 1)) * .75)) sepia(.22) saturate(.85) contrast(1.06) brightness(calc(.82 + var(--p, 1) * .18)); }
+:is(#industries, #capabilities) [data-scroll-img]::after { opacity: calc(1.5 - var(--p, 1) * .5); }
+/* Engineering & technology: themed image tags */
+#capabilities :is(.ds-tile, .ds-duo .ds-panel) .m-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 10px; border-radius: 2px; background: color-mix(in srgb, var(--color-3) 86%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid color-mix(in srgb, var(--color-5) 55%, transparent); color: var(--color-1); font-size: 11px; font-weight: 500; letter-spacing: .1em; line-height: 1; text-transform: uppercase; box-shadow: 0 10px 20px -12px var(--color-3); }
+#capabilities :is(.ds-tile, .ds-duo .ds-panel) .m-badge::before { content: ""; flex: none; width: 6px; height: 6px; rotate: 45deg; background: var(--color-5); box-shadow: 0 0 6px var(--color-5); }
 }
 </style>
 <style data-module="section:models">
@@ -1135,13 +1304,13 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
         <p class="m-text">Connected operations and industrial technology</p>
       </article>
       <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1509391111737-9b07f052f6b6?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An electrical substation lit up at night" width="800" height="560" loading="lazy"></figure>
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1762381157166-f51ac99ab412?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="Wind turbines and solar panels across farmland" width="800" height="560" loading="lazy"></figure>
         <span class="in-num m-text-4">03</span>
         <h3 class="m-text-6">Energy, utilities &amp; infrastructure</h3>
         <p class="m-text">Digital and engineering capability</p>
       </article>
       <article class="in-card">
-        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1579165466949-3180a3d056d5?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A scientist using a pipette in a pharmaceutical laboratory" width="800" height="560" loading="lazy"></figure>
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1732690233982-1d4567384ea1?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A scientist in gloves operating a laboratory instrument" width="800" height="560" loading="lazy"></figure>
         <span class="in-num m-text-4">04</span>
         <h3 class="m-text-6">Life sciences, pharma &amp; MedTech</h3>
         <p class="m-text">Dependable systems and digital workflows</p>
@@ -1176,14 +1345,14 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
           <figure class="ds-tile ds-tile--lift" style="--capabilities-tilt: -8deg"><img src="https://images.unsplash.com/photo-1696834137451-f52f471a58bc?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A developer wearing headphones writing code" width="600" height="400" loading="lazy"><figcaption class="m-badge">Custom software</figcaption></figure>
           <div class="ds-tile ds-tile--mark" aria-hidden="true" style="--capabilities-tilt: 5deg"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></div>
           <figure class="ds-tile ds-tile--run" style="--capabilities-tilt: -3deg"><img src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A product team in a meeting at an office" width="600" height="400" loading="lazy"><figcaption class="m-badge">Product engineering</figcaption></figure>
-          <figure class="ds-tile ds-tile--swim" style="--capabilities-tilt: -6deg"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A laptop with a code editor open" width="600" height="400" loading="lazy"><figcaption class="m-badge">Quality engineering</figcaption></figure>
+          <figure class="ds-tile ds-tile--swim" style="--capabilities-tilt: -6deg"><img src="https://images.unsplash.com/photo-1633250391894-397930e3f5f2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A person testing an app on a phone in front of code" width="600" height="400" loading="lazy"><figcaption class="m-badge">Quality engineering</figcaption></figure>
           <figure class="ds-tile ds-tile--kit" style="--capabilities-tilt: 3deg"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Server racks in a data centre" width="600" height="400" loading="lazy"><figcaption class="m-badge">Cloud &amp; platform</figcaption></figure>
           <figure class="ds-tile ds-tile--court" style="--capabilities-tilt: -10deg"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Charts on an analytics dashboard" width="600" height="400" loading="lazy"><figcaption class="m-badge">Data</figcaption></figure>
           <a class="ds-tile ds-tile--link" href="#models" style="--capabilities-tilt: 6deg"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See how you can work with us</span></a>
           <p class="ds-note m-text-6">Any of these can take the form of a few specialists, a dedicated team or a centre of your own.</p>
         </div>
         <details class="ds-more">
-          <summary class="m-text-4">Product • AI • Custom Software • Platform • Cloud • Data • Quality • Engineering Consulting</summary>
+          <summary class="m-text-4">Product • AI • UI/UX • Custom Software • Platform • Cloud • Data • Quality • Engineering Consulting</summary>
           <ol class="ds-list">
             <li><span class="m-text-4">01</span><h4 class="m-text">Product engineering</h4><p class="m-text">Designing and building digital products, SaaS platforms and applications that scale.</p></li>
             <li><span class="m-text-4">02</span><h4 class="m-text">Custom software development</h4><p class="m-text">Enterprise applications and software shaped around what your business actually needs.</p></li>
@@ -1330,29 +1499,44 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
 </section>
 
 <section id="culture" class="l-sec" data-section="culture" aria-labelledby="culture-title">
-  <div class="mt-slide m-slide">
-    <div class="mt-side">
-      <span class="mt-orb m-orb" aria-hidden="true"></span>
-      <ol class="mt-steps" data-items=":scope > li" data-motion="rise" data-enter="86%">
-        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></svg></span><h3 class="m-text-6">Precision</h3><p class="mt-say m-text">Get things right</p><p class="m-text">Clear acceptance criteria, disciplined testing and quality controls.</p></li>
-        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3 class="m-text-6">Foresight</h3><p class="mt-say m-text">Think beyond today</p><p class="m-text">Architecture, roadmaps and early risk anticipation.</p></li>
-        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.9z"/></svg></span><h3 class="m-text-6">Mastery</h3><p class="mt-say m-text">Pursue excellence</p><p class="m-text">Technical depth, professional standards and mentorship.</p></li>
-        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V4M4 4h13l-3 4 3 4H4"/></svg></span><h3 class="m-text-6">Ownership</h3><p class="mt-say m-text">See it through</p><p class="m-text">Accountability, initiative and follow-through.</p></li>
-        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3 class="m-text-6">Reliability</h3><p class="mt-say m-text">Earn trust</p><p class="m-text">Predictable delivery, continuity and transparent reporting.</p></li>
-        <li><span class="mt-sym" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L22 22"/></svg></span><h3 class="m-text-6">Curiosity</h3><p class="mt-say m-text">Keep moving forward</p><p class="m-text">Experimentation, learning and continuous improvement.</p></li>
-      </ol>
-    </div>
-    <div class="mt-main">
-      <div class="mt-head">
-        <h2 class="mt-title m-text-3" id="culture-title"><span class="mt-row">Culture is part</span> <span class="mt-row">of the work.</span></h2>
-        <div class="mt-orbs" aria-hidden="true"><img class="m-chip" style="--k:0" src="https://images.unsplash.com/photo-1660736701150-975a90ce2d9e?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"><img class="m-chip" style="--k:1" src="https://images.unsplash.com/photo-1622225399403-548e2df0c908?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"><img class="m-chip" style="--k:2" src="https://images.unsplash.com/photo-1755408007655-9ac329cfa145?auto=format&amp;fit=crop&amp;w=240&amp;h=240&amp;q=80" alt="" width="240" height="240" loading="lazy"></div>
+  <div class="pr-slide m-slide">
+    <div class="pr-head">
+      <h2 class="mt-title m-text-3" id="culture-title">Culture is part of the work.</h2>
+      <div class="pr-intro">
+        <p class="m-text-5">Technical skills build a team. Shared principles decide how that team thinks, works together, makes decisions and delivers.</p>
+        <p class="m-text">You will see these principles in how we hire and select people, onboard them, develop leaders, govern quality and delivery, share knowledge, hold ourselves accountable, manage performance and keep improving.</p>
       </div>
-      <div class="mt-foot">
-        <div class="mt-copy">
-          <p class="m-text-5">Technical skills build a team. Shared principles decide how that team thinks, works together, makes decisions and delivers.</p>
-          <p class="m-text">You will see these principles in how we hire and select people, onboard them, develop leaders, govern quality and delivery, share knowledge, hold ourselves accountable, manage performance and keep improving.</p>
-          <p class="m-text-6">Culture is not a story we tell. It is how the work gets done.</p>
-        </div>
+    </div>
+    <ol class="pr-grid">
+        <li class="pr-card" style="--pi:0">
+          <button class="pr-toggle" type="button" aria-expanded="false" aria-controls="pr-more-1"><span class="pr-art" aria-hidden="true"><svg viewBox="0 0 160 120"><path pathLength="1" class="g" d="M14 100H150"/><path pathLength="1" class="f" d="M32 100A72 72 0 0 1 104 28"/><path pathLength="1" class="" d="M46 100A58 58 0 0 1 104 42"/><line pathLength="1" class="t" x1="46.0" y1="100.0" x2="32.0" y2="100.0"/><line pathLength="1" class="t" x1="46.2" y1="94.9" x2="38.3" y2="94.2"/><line pathLength="1" class="t" x1="46.9" y1="89.9" x2="39.0" y2="88.5"/><line pathLength="1" class="t" x1="48.0" y1="85.0" x2="34.5" y2="81.4"/><line pathLength="1" class="t" x1="49.5" y1="80.2" x2="42.0" y2="77.4"/><line pathLength="1" class="t" x1="51.4" y1="75.5" x2="44.2" y2="72.1"/><line pathLength="1" class="t" x1="53.8" y1="71.0" x2="41.6" y2="64.0"/><line pathLength="1" class="t" x1="56.5" y1="66.7" x2="49.9" y2="62.1"/><line pathLength="1" class="t" x1="59.6" y1="62.7" x2="53.4" y2="57.6"/><line pathLength="1" class="t" x1="63.0" y1="59.0" x2="53.1" y2="49.1"/><line pathLength="1" class="t" x1="66.7" y1="55.6" x2="61.6" y2="49.4"/><line pathLength="1" class="t" x1="70.7" y1="52.5" x2="66.1" y2="45.9"/><line pathLength="1" class="t" x1="75.0" y1="49.8" x2="68.0" y2="37.6"/><line pathLength="1" class="t" x1="79.5" y1="47.4" x2="76.1" y2="40.2"/><line pathLength="1" class="t" x1="84.2" y1="45.5" x2="81.4" y2="38.0"/><line pathLength="1" class="t" x1="89.0" y1="44.0" x2="85.4" y2="30.5"/><line pathLength="1" class="t" x1="93.9" y1="42.9" x2="92.5" y2="35.0"/><line pathLength="1" class="t" x1="98.9" y1="42.2" x2="98.2" y2="34.3"/><line pathLength="1" class="t" x1="104.0" y1="42.0" x2="104.0" y2="28.0"/><path pathLength="1" class="f" d="M104 100V28L140 100Z"/><line pathLength="1" class="t" x1="107.0" y1="36.4" x2="111.2" y2="36.4"/><line pathLength="1" class="t" x1="107.0" y1="44.8" x2="115.4" y2="44.8"/><line pathLength="1" class="t" x1="107.0" y1="53.2" x2="119.6" y2="53.2"/><line pathLength="1" class="t" x1="107.0" y1="61.6" x2="123.8" y2="61.6"/><line pathLength="1" class="t" x1="107.0" y1="70.0" x2="128.0" y2="70.0"/><line pathLength="1" class="t" x1="107.0" y1="78.4" x2="132.2" y2="78.4"/><line pathLength="1" class="t" x1="107.0" y1="86.8" x2="136.4" y2="86.8"/><line pathLength="1" class="t" x1="107.0" y1="95.2" x2="140.6" y2="95.2"/><path pathLength="1" class="" d="M116 100V91A5 5 0 0 1 126 91V100"/><path pathLength="1" class="" d="M128 100V93A4 4 0 0 1 136 93V100"/><g class="pr-sweep"><line pathLength="1" class="a" x1="104.0" y1="100.0" x2="52.0" y2="64.0"/></g><circle pathLength="1" class="a" cx="48" cy="30" r="5"/></svg></span><span class="pr-top"><span class="pr-num m-text-4">01</span><span class="pr-name m-text-6">Precision</span><span class="pr-plus" aria-hidden="true"></span></span><span class="pr-say m-text">Get things right</span></button>
+          <div class="pr-more" id="pr-more-1"><div class="pr-more__in"><p class="pr-more__name m-text-6" aria-hidden="true">Precision</p><dl><div><dt class="m-text-4">Inspiration</dt><dd class="m-text">Jantar Mantar, Jaipur</dd></div><div><dt class="m-text-4">Meaning</dt><dd class="m-text">We bring accuracy and discipline to everything we do.</dd></div><div><dt class="m-text-4">At Edish</dt><dd class="m-text">Clear acceptance criteria, disciplined testing and quality controls.</dd></div></dl></div></div>
+        </li>
+        <li class="pr-card" style="--pi:1">
+          <button class="pr-toggle" type="button" aria-expanded="false" aria-controls="pr-more-2"><span class="pr-art" aria-hidden="true"><svg viewBox="0 0 160 120"><path pathLength="1" class="f" d="M80 108C52 96 38 72 40 46C40 36 44 28 50 22L58 34C70 28 90 28 102 34L110 22C116 28 120 36 120 46C122 72 108 96 80 108Z"/><path pathLength="1" class="" d="M44 52C52 34 70 32 80 46C90 32 108 34 116 52"/><circle pathLength="1" class="" cx="62" cy="56" r="17"/><circle pathLength="1" class="" cx="62" cy="56" r="12"/><circle pathLength="1" class="" cx="98" cy="56" r="17"/><circle pathLength="1" class="" cx="98" cy="56" r="12"/><g class="pr-pupils"><circle pathLength="1" class="a" cx="62" cy="56" r="5"/><circle pathLength="1" class="a" cx="98" cy="56" r="5"/></g><path pathLength="1" class="a" d="M80 66L75 75L80 83L85 75Z"/><path pathLength="1" class="" d="M66 94l5 5l5 -5M78 98l2 2l2 -2M84 94l5 5l5 -5"/></svg></span><span class="pr-top"><span class="pr-num m-text-4">02</span><span class="pr-name m-text-6">Foresight</span><span class="pr-plus" aria-hidden="true"></span></span><span class="pr-say m-text">Think beyond today</span></button>
+          <div class="pr-more" id="pr-more-2"><div class="pr-more__in"><p class="pr-more__name m-text-6" aria-hidden="true">Foresight</p><dl><div><dt class="m-text-4">Inspiration</dt><dd class="m-text">Owl and its eyes</dd></div><div><dt class="m-text-4">Meaning</dt><dd class="m-text">We anticipate future needs and think beyond immediate requirements.</dd></div><div><dt class="m-text-4">At Edish</dt><dd class="m-text">Architecture, roadmaps and early risk anticipation.</dd></div></dl></div></div>
+        </li>
+        <li class="pr-card" style="--pi:2">
+          <button class="pr-toggle" type="button" aria-expanded="false" aria-controls="pr-more-3"><span class="pr-art" aria-hidden="true"><svg viewBox="0 0 160 120"><ellipse pathLength="1" class="" cx="80" cy="102" rx="54" ry="9"/><g class="pr-spin"><ellipse pathLength="1" class="t" cx="80" cy="102" rx="36" ry="5"/><line pathLength="1" class="t" x1="44.0" y1="102.0" x2="60.0" y2="103.0"/><line pathLength="1" class="t" x1="100.0" y1="103.0" x2="116.0" y2="102.0"/></g><path pathLength="1" class="f" d="M60 98C46 82 50 62 66 54C71 50 71 44 67 40H93C89 44 89 50 94 54C110 62 114 82 100 98Z"/><ellipse pathLength="1" class="" cx="80" cy="40" rx="13" ry="3"/><path pathLength="1" class="t" d="M55 72Q80 79 105 72M54 84Q80 91 106 84"/><g class="pr-hands"><path pathLength="1" class="f" d="M8 112L38 84C44 78 49 70 53 62C54 58 58 58 58 62C57 68 55 76 56 84L60 88C58 92 52 94 46 96L22 118"/><path pathLength="1" class="t" d="M53 62C54 56 58 54 61 56M56 70C58 65 61 64 63 66M56 78C58 74 61 73 63 75"/><path pathLength="1" class="f" d="M152 112L122 84C116 78 111 70 107 62C106 58 102 58 102 62C103 68 105 76 104 84L100 88C102 92 108 94 114 96L138 118"/><path pathLength="1" class="t" d="M107 62C106 56 102 54 99 56M104 70C102 65 99 64 97 66M104 78C102 74 99 73 97 75"/></g></svg></span><span class="pr-top"><span class="pr-num m-text-4">03</span><span class="pr-name m-text-6">Mastery</span><span class="pr-plus" aria-hidden="true"></span></span><span class="pr-say m-text">Pursue excellence</span></button>
+          <div class="pr-more" id="pr-more-3"><div class="pr-more__in"><p class="pr-more__name m-text-6" aria-hidden="true">Mastery</p><dl><div><dt class="m-text-4">Inspiration</dt><dd class="m-text">Traditional Rajasthani pottery</dd></div><div><dt class="m-text-4">Meaning</dt><dd class="m-text">We develop deep expertise and take pride in our craft.</dd></div><div><dt class="m-text-4">At Edish</dt><dd class="m-text">Technical depth, professional standards and mentorship.</dd></div></dl></div></div>
+        </li>
+        <li class="pr-card" style="--pi:3">
+          <button class="pr-toggle" type="button" aria-expanded="false" aria-controls="pr-more-4"><span class="pr-art" aria-hidden="true"><svg viewBox="0 0 160 120"><g transform="translate(10 17) scale(.84)"><path pathLength="1" class="" d="M26 116C40 98 54 84 68 70M40 118C52 102 64 90 76 78"/><path pathLength="1" class="f" d="M64 72Q72 62 82 68Q80 78 72 80Z"/><path pathLength="1" class="f" d="M82 74L90 77L104 36L97 34Z"/><path pathLength="1" class="" d="M92 36H112L108 28H96Z"/><g class="pr-flame"><path pathLength="1" class="f" d="M102 27C91 21 94 9 102 2C104 11 113 13 110 20C109 24 106 27 102 27Z"/><path pathLength="1" class="a" d="M102 24C98 21 99 15 102 11C104 16 107 18 105 21C104 23 103 24 102 24Z"/></g><path pathLength="1" class="t" d="M81.3 7.5A22 22 0 0 1 122.7 7.5"/><path pathLength="1" class="t" d="M73.7 -0.0A32 32 0 0 1 130.3 -0.0"/></g></svg></span><span class="pr-top"><span class="pr-num m-text-4">04</span><span class="pr-name m-text-6">Ownership</span><span class="pr-plus" aria-hidden="true"></span></span><span class="pr-say m-text">See it through</span></button>
+          <div class="pr-more" id="pr-more-4"><div class="pr-more__in"><p class="pr-more__name m-text-6" aria-hidden="true">Ownership</p><dl><div><dt class="m-text-4">Inspiration</dt><dd class="m-text">Person holding a torch</dd></div><div><dt class="m-text-4">Meaning</dt><dd class="m-text">We take responsibility for outcomes, not just assigned tasks.</dd></div><div><dt class="m-text-4">At Edish</dt><dd class="m-text">Accountability, initiative and follow-through.</dd></div></dl></div></div>
+        </li>
+        <li class="pr-card" style="--pi:4">
+          <button class="pr-toggle" type="button" aria-expanded="false" aria-controls="pr-more-5"><span class="pr-art" aria-hidden="true"><svg viewBox="0 0 160 120"><circle pathLength="1" class="f" cx="80" cy="60" r="48"/><g class="pr-wheel"><circle pathLength="1" class="" cx="80" cy="60" r="44"/><circle pathLength="1" class="" cx="80" cy="60" r="37"/><line pathLength="1" class="t" x1="90.0" y1="60.0" x2="117.0" y2="60.0"/><line pathLength="1" class="t" x1="89.7" y1="62.6" x2="115.7" y2="69.6"/><line pathLength="1" class="t" x1="88.7" y1="65.0" x2="112.0" y2="78.5"/><line pathLength="1" class="t" x1="87.1" y1="67.1" x2="106.2" y2="86.2"/><line pathLength="1" class="t" x1="85.0" y1="68.7" x2="98.5" y2="92.0"/><line pathLength="1" class="t" x1="82.6" y1="69.7" x2="89.6" y2="95.7"/><line pathLength="1" class="t" x1="80.0" y1="70.0" x2="80.0" y2="97.0"/><line pathLength="1" class="t" x1="77.4" y1="69.7" x2="70.4" y2="95.7"/><line pathLength="1" class="t" x1="75.0" y1="68.7" x2="61.5" y2="92.0"/><line pathLength="1" class="t" x1="72.9" y1="67.1" x2="53.8" y2="86.2"/><line pathLength="1" class="t" x1="71.3" y1="65.0" x2="48.0" y2="78.5"/><line pathLength="1" class="t" x1="70.3" y1="62.6" x2="44.3" y2="69.6"/><line pathLength="1" class="t" x1="70.0" y1="60.0" x2="43.0" y2="60.0"/><line pathLength="1" class="t" x1="70.3" y1="57.4" x2="44.3" y2="50.4"/><line pathLength="1" class="t" x1="71.3" y1="55.0" x2="48.0" y2="41.5"/><line pathLength="1" class="t" x1="72.9" y1="52.9" x2="53.8" y2="33.8"/><line pathLength="1" class="t" x1="75.0" y1="51.3" x2="61.5" y2="28.0"/><line pathLength="1" class="t" x1="77.4" y1="50.3" x2="70.4" y2="24.3"/><line pathLength="1" class="t" x1="80.0" y1="50.0" x2="80.0" y2="23.0"/><line pathLength="1" class="t" x1="82.6" y1="50.3" x2="89.6" y2="24.3"/><line pathLength="1" class="t" x1="85.0" y1="51.3" x2="98.5" y2="28.0"/><line pathLength="1" class="t" x1="87.1" y1="52.9" x2="106.2" y2="33.8"/><line pathLength="1" class="t" x1="88.7" y1="55.0" x2="112.0" y2="41.5"/><line pathLength="1" class="t" x1="89.7" y1="57.4" x2="115.7" y2="50.4"/><circle pathLength="1" class="a" cx="120.15" cy="65.29" r="1.6"/><circle pathLength="1" class="a" cx="117.42" cy="75.5" r="1.6"/><circle pathLength="1" class="a" cx="112.13" cy="84.65" r="1.6"/><circle pathLength="1" class="a" cx="104.65" cy="92.13" r="1.6"/><circle pathLength="1" class="a" cx="95.5" cy="97.42" r="1.6"/><circle pathLength="1" class="a" cx="85.29" cy="100.15" r="1.6"/><circle pathLength="1" class="a" cx="74.71" cy="100.15" r="1.6"/><circle pathLength="1" class="a" cx="64.5" cy="97.42" r="1.6"/><circle pathLength="1" class="a" cx="55.35" cy="92.13" r="1.6"/><circle pathLength="1" class="a" cx="47.87" cy="84.65" r="1.6"/><circle pathLength="1" class="a" cx="42.58" cy="75.5" r="1.6"/><circle pathLength="1" class="a" cx="39.85" cy="65.29" r="1.6"/><circle pathLength="1" class="a" cx="39.85" cy="54.71" r="1.6"/><circle pathLength="1" class="a" cx="42.58" cy="44.5" r="1.6"/><circle pathLength="1" class="a" cx="47.87" cy="35.35" r="1.6"/><circle pathLength="1" class="a" cx="55.35" cy="27.87" r="1.6"/><circle pathLength="1" class="a" cx="64.5" cy="22.58" r="1.6"/><circle pathLength="1" class="a" cx="74.71" cy="19.85" r="1.6"/><circle pathLength="1" class="a" cx="85.29" cy="19.85" r="1.6"/><circle pathLength="1" class="a" cx="95.5" cy="22.58" r="1.6"/><circle pathLength="1" class="a" cx="104.65" cy="27.87" r="1.6"/><circle pathLength="1" class="a" cx="112.13" cy="35.35" r="1.6"/><circle pathLength="1" class="a" cx="117.42" cy="44.5" r="1.6"/><circle pathLength="1" class="a" cx="120.15" cy="54.71" r="1.6"/><circle pathLength="1" class="" cx="80" cy="60" r="10"/><circle pathLength="1" class="a" cx="80" cy="60" r="4"/></g><path pathLength="1" class="t" d="M28 112H132M40 112V106H120V112"/></svg></span><span class="pr-top"><span class="pr-num m-text-4">05</span><span class="pr-name m-text-6">Reliability</span><span class="pr-plus" aria-hidden="true"></span></span><span class="pr-say m-text">Earn trust</span></button>
+          <div class="pr-more" id="pr-more-5"><div class="pr-more__in"><p class="pr-more__name m-text-6" aria-hidden="true">Reliability</p><dl><div><dt class="m-text-4">Inspiration</dt><dd class="m-text">Ashoka Chakra</dd></div><div><dt class="m-text-4">Meaning</dt><dd class="m-text">We build trust through consistency and dependable delivery.</dd></div><div><dt class="m-text-4">At Edish</dt><dd class="m-text">Predictable delivery, continuity and transparent reporting.</dd></div></dl></div></div>
+        </li>
+        <li class="pr-card" style="--pi:5">
+          <button class="pr-toggle" type="button" aria-expanded="false" aria-controls="pr-more-6"><span class="pr-art" aria-hidden="true"><svg viewBox="0 0 160 120"><path pathLength="1" class="f" transform="translate(34 46) rotate(0) scale(1.25)" d="M0 6H9C9 0 17 0 17 6H26V15C32 15 32 23 26 23V32H17C17 26 9 26 9 32H0Z"/><path pathLength="1" class="f" transform="translate(66.5 46) rotate(0) scale(1.25)" d="M0 6H9C9 0 17 0 17 6H26V15C32 15 32 23 26 23V32H17C17 26 9 26 9 32H0Z"/><path pathLength="1" class="f" transform="translate(34 86) rotate(0) scale(1.25)" d="M0 6H9C9 0 17 0 17 6H26V15C32 15 32 23 26 23V32H17C17 26 9 26 9 32H0Z"/><g class="pr-lift"><path pathLength="1" class="f a2" transform="translate(86 70) rotate(14) scale(1.25)" d="M0 6H9C9 0 17 0 17 6H26V15C32 15 32 23 26 23V32H17C17 26 9 26 9 32H0Z"/></g><path pathLength="1" class="t" d="M74 106c6 4 14 4 20 -2"/><circle pathLength="1" class="a" cx="124" cy="34" r="2"/><circle pathLength="1" class="a" cx="132" cy="46" r="1.4"/></svg></span><span class="pr-top"><span class="pr-num m-text-4">06</span><span class="pr-name m-text-6">Curiosity</span><span class="pr-plus" aria-hidden="true"></span></span><span class="pr-say m-text">Keep moving forward</span></button>
+          <div class="pr-more" id="pr-more-6"><div class="pr-more__in"><p class="pr-more__name m-text-6" aria-hidden="true">Curiosity</p><dl><div><dt class="m-text-4">Inspiration</dt><dd class="m-text">Interlocking puzzle pieces</dd></div><div><dt class="m-text-4">Meaning</dt><dd class="m-text">We continuously question, explore and discover better ways forward.</dd></div><div><dt class="m-text-4">At Edish</dt><dd class="m-text">Experimentation, learning and continuous improvement.</dd></div></dl></div></div>
+        </li>
+    </ol>
+    <div class="pr-foot">
+      <p class="pr-message m-text-6"><span><b>Precision</b> in how we work.</span> <span><b>Foresight</b> in how we think.</span> <span><b>Mastery</b> in what we create.</span> <span><b>Ownership</b> in what we undertake.</span> <span><b>Reliability</b> in what we deliver.</span> <span><b>Curiosity</b> in how we evolve.</span></p>
+      <div class="pr-close">
+        <p class="m-text-6">Culture is not a story we tell. It is how the work gets done.</p>
         <a class="m-btn" href="#contact"><span class="m-btn__label">Talk to us</span></a>
       </div>
     </div>
@@ -1407,16 +1591,14 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
         <p class="m-text-6">Built around your ambitions. Designed to evolve with your business.</p>
       </div>
     </div>
-    <div class="wk-view">
-      <ol class="wk-track" data-items=":scope > li">
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 1</h3><p class="m-text-5">Understand</p><p class="m-text wk-time">Requirement &amp; assessment</p><p class="m-text">We learn your business objectives, functions, technology needs, processes and skills, and how you expect the operation to run.</p><div class="wk-stair" data-lv="1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 2</h3><p class="m-text-5">Design</p><p class="m-text wk-time">Structure &amp; location</p><p class="m-text">We recommend the engagement model, location, organisation structure, specialist partners and governance that fit.</p><div class="wk-stair" data-lv="2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 3</h3><p class="m-text-5">Build</p><p class="m-text wk-time">People, partners &amp; setup</p><p class="m-text">We recruit and onboard the right people and put the processes, infrastructure and operational systems around them.</p><div class="wk-stair" data-lv="3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 4</h3><p class="m-text-5">Operate</p><p class="m-text wk-time">Governance &amp; performance</p><p class="m-text">We manage performance, continuity, quality, communication, delivery and day-to-day efficiency.</p><div class="wk-stair" data-lv="4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Stage 5</h3><p class="m-text-5">Evolve</p><p class="m-text wk-time">Scale &amp; maturity</p><p class="m-text">We support you as you widen your capabilities, take on more ownership, add new functions and keep maturing as an organisation.</p><div class="wk-stair" data-lv="5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></li>
-      </ol>
+    <div class="st3" data-marks="110.0,-18.5;165.4,-100.5;220.8,-182.5;276.3,-264.5;331.7,-346.5">
+      <div class="st-figure"><svg class="st-svg" viewBox="-40 -440 540 590" aria-hidden="true"><defs><linearGradient id="st-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ece6da"/></linearGradient><linearGradient id="st-top-on" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e3b4"/><stop offset="1" stop-color="#c99a3e"/></linearGradient><linearGradient id="st-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3f62"/><stop offset="1" stop-color="#1d2e48"/></linearGradient><linearGradient id="st-right" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2a43"/><stop offset="1" stop-color="#111c30"/></linearGradient><filter id="st-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter><radialGradient id="st-glow"><stop offset="0" stop-color="#f8e2a8"/><stop offset=".45" stop-color="#cca04a"/><stop offset="1" stop-color="#cca04a" stop-opacity="0"/></radialGradient></defs><path class="st-shadow" d="M-43.3 5.0 L173.2 130.0 L493.6 -55.0 L277.1 -180.0Z"/><g class="st-steps"><g class="st-step" data-i="4" style="--si:4"><path class="st-right" d="M441.7 -65.0 L386.2 -33.0 L386.2 -283.0 L441.7 -315.0Z"/><path class="st-front" d="M221.7 -128.0 L386.2 -33.0 L386.2 -283.0 L221.7 -378.0Z"/><path class="st-top" d="M277.1 -410.0 L441.7 -315.0 L386.2 -283.0 L221.7 -378.0Z"/><path class="st-top-on" d="M277.1 -410.0 L441.7 -315.0 L386.2 -283.0 L221.7 -378.0Z"/><path class="st-edge" d="M221.7 -378.0L386.2 -283.0L441.7 -315.0"/><g transform="matrix(0.8660 0.5 0 1 221.7 -378.0)"><text class="st-num" x="16" y="21">05</text><text class="st-name" x="16" y="41">Evolve</text></g></g><g class="st-step" data-i="3" style="--si:3"><path class="st-right" d="M386.2 -33.0 L330.8 -1.0 L330.8 -201.0 L386.2 -233.0Z"/><path class="st-front" d="M166.3 -96.0 L330.8 -1.0 L330.8 -201.0 L166.3 -296.0Z"/><path class="st-top" d="M221.7 -328.0 L386.2 -233.0 L330.8 -201.0 L166.3 -296.0Z"/><path class="st-top-on" d="M221.7 -328.0 L386.2 -233.0 L330.8 -201.0 L166.3 -296.0Z"/><path class="st-edge" d="M166.3 -296.0L330.8 -201.0L386.2 -233.0"/><g transform="matrix(0.8660 0.5 0 1 166.3 -296.0)"><text class="st-num" x="16" y="21">04</text><text class="st-name" x="16" y="41">Operate</text></g></g><g class="st-step" data-i="2" style="--si:2"><path class="st-right" d="M330.8 -1.0 L275.4 31.0 L275.4 -119.0 L330.8 -151.0Z"/><path class="st-front" d="M110.9 -64.0 L275.4 31.0 L275.4 -119.0 L110.9 -214.0Z"/><path class="st-top" d="M166.3 -246.0 L330.8 -151.0 L275.4 -119.0 L110.9 -214.0Z"/><path class="st-top-on" d="M166.3 -246.0 L330.8 -151.0 L275.4 -119.0 L110.9 -214.0Z"/><path class="st-edge" d="M110.9 -214.0L275.4 -119.0L330.8 -151.0"/><g transform="matrix(0.8660 0.5 0 1 110.9 -214.0)"><text class="st-num" x="16" y="21">03</text><text class="st-name" x="16" y="41">Build</text></g></g><g class="st-step" data-i="1" style="--si:1"><path class="st-right" d="M275.4 31.0 L220.0 63.0 L220.0 -37.0 L275.4 -69.0Z"/><path class="st-front" d="M55.4 -32.0 L220.0 63.0 L220.0 -37.0 L55.4 -132.0Z"/><path class="st-top" d="M110.9 -164.0 L275.4 -69.0 L220.0 -37.0 L55.4 -132.0Z"/><path class="st-top-on" d="M110.9 -164.0 L275.4 -69.0 L220.0 -37.0 L55.4 -132.0Z"/><path class="st-edge" d="M55.4 -132.0L220.0 -37.0L275.4 -69.0"/><g transform="matrix(0.8660 0.5 0 1 55.4 -132.0)"><text class="st-num" x="16" y="21">02</text><text class="st-name" x="16" y="41">Design</text></g></g><g class="st-step" data-i="0" style="--si:0"><path class="st-right" d="M220.0 63.0 L164.5 95.0 L164.5 45.0 L220.0 13.0Z"/><path class="st-front" d="M0.0 0.0 L164.5 95.0 L164.5 45.0 L0.0 -50.0Z"/><path class="st-top" d="M55.4 -82.0 L220.0 13.0 L164.5 45.0 L0.0 -50.0Z"/><path class="st-top-on" d="M55.4 -82.0 L220.0 13.0 L164.5 45.0 L0.0 -50.0Z"/><path class="st-edge" d="M0.0 -50.0L164.5 45.0L220.0 13.0"/><g transform="matrix(0.8660 0.5 0 1 0.0 -50.0)"><text class="st-num" x="16" y="21">01</text><text class="st-name" x="16" y="41">Understand</text></g></g></g><path class="st-trail" pathLength="1" d="M110.0 -18.5 L165.4 -100.5 L220.8 -182.5 L276.3 -264.5 L331.7 -346.5"/><path class="st-trail-on" pathLength="1" d="M110.0 -18.5 L165.4 -100.5 L220.8 -182.5 L276.3 -264.5 L331.7 -346.5"/><g class="st-marker" style="--mx:110.0px;--my:-18.5px"><ellipse class="st-ripple" rx="36" ry="21"/><ellipse class="st-ripple st-ripple--2" rx="36" ry="21"/><ellipse class="st-orb-shadow" rx="11" ry="6.4"/><g class="st-jump"><g class="st-bob"><circle class="st-halo" cy="-22" r="24"/><circle class="st-dot" cy="-22" r="9"/></g></g></g></svg></div>
+      <div class="st-side">
+        <div class="st-tabs" role="tablist" aria-label="Stages"><button class="st-tab" type="button" role="tab" id="st-tab-0" aria-controls="st-panel-0" aria-selected="true" tabindex="0" data-i="0"><span class="m-text-4">01</span>Understand</button><button class="st-tab" type="button" role="tab" id="st-tab-1" aria-controls="st-panel-1" aria-selected="false" tabindex="-1" data-i="1"><span class="m-text-4">02</span>Design</button><button class="st-tab" type="button" role="tab" id="st-tab-2" aria-controls="st-panel-2" aria-selected="false" tabindex="-1" data-i="2"><span class="m-text-4">03</span>Build</button><button class="st-tab" type="button" role="tab" id="st-tab-3" aria-controls="st-panel-3" aria-selected="false" tabindex="-1" data-i="3"><span class="m-text-4">04</span>Operate</button><button class="st-tab" type="button" role="tab" id="st-tab-4" aria-controls="st-panel-4" aria-selected="false" tabindex="-1" data-i="4"><span class="m-text-4">05</span>Evolve</button></div>
+        <div class="st-panels"><div class="st-panel" role="tabpanel" id="st-panel-0" aria-labelledby="st-tab-0"><p class="st-stage m-text-4">Stage 1</p><h3 class="st-title">Understand</h3><p class="st-label m-text">Requirement &amp; assessment</p><p class="m-text">We learn your business objectives, functions, technology needs, processes and skills, and how you expect the operation to run.</p></div><div class="st-panel" role="tabpanel" id="st-panel-1" aria-labelledby="st-tab-1" hidden><p class="st-stage m-text-4">Stage 2</p><h3 class="st-title">Design</h3><p class="st-label m-text">Structure &amp; location</p><p class="m-text">We recommend the engagement model, location, organisation structure, specialist partners and governance that fit.</p></div><div class="st-panel" role="tabpanel" id="st-panel-2" aria-labelledby="st-tab-2" hidden><p class="st-stage m-text-4">Stage 3</p><h3 class="st-title">Build</h3><p class="st-label m-text">People, partners &amp; setup</p><p class="m-text">We recruit and onboard the right people and put the processes, infrastructure and operational systems around them.</p></div><div class="st-panel" role="tabpanel" id="st-panel-3" aria-labelledby="st-tab-3" hidden><p class="st-stage m-text-4">Stage 4</p><h3 class="st-title">Operate</h3><p class="st-label m-text">Governance &amp; performance</p><p class="m-text">We manage performance, continuity, quality, communication, delivery and day-to-day efficiency.</p></div><div class="st-panel" role="tabpanel" id="st-panel-4" aria-labelledby="st-tab-4" hidden><p class="st-stage m-text-4">Stage 5</p><h3 class="st-title">Evolve</h3><p class="st-label m-text">Scale &amp; maturity</p><p class="m-text">We support you as you widen your capabilities, take on more ownership, add new functions and keep maturing as an organisation.</p></div></div>
+        <div class="st-progress" aria-hidden="true"><span></span></div>
+      </div>
     </div>
-    <div class="wk-progress" aria-hidden="true"><span></span></div>
   </div>
 </section>
 
@@ -1657,6 +1839,134 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   }));
 })();
 </script>
+<script data-module="section-script:reveals">
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = [];
+  const group = (selector, attr) => document.querySelectorAll(selector).forEach((el, i) => { el.setAttribute(attr, ''); el.style.setProperty('--ri', i % 3); items.push(el); });
+  const map = document.querySelector('#india .ia-map');
+  if (map) {
+    map.setAttribute('data-reveal-map', '');
+    map.querySelector('.ia-land path')?.setAttribute('pathLength', '1');
+    map.querySelectorAll('.ia-pins li').forEach((li, i) => li.style.setProperty('--ri', i));
+    items.push(map);
+  }
+  const check = () => {
+    for (let i = items.length - 1; i >= 0; i--) {
+      if (items[i].getBoundingClientRect().top < innerHeight * .88) { items[i].classList.add('is-in'); items.splice(i, 1); }
+    }
+    if (!items.length) { removeEventListener('scroll', check); clearInterval(timer); }
+  };
+  addEventListener('scroll', check, { passive: true });
+  addEventListener('resize', check);
+  const timer = setInterval(check, 700);
+  check();
+})();
+</script>
+<script data-module="section-script:principles">
+(() => {
+  const cards = [...document.querySelectorAll('#culture .pr-card')];
+  cards.forEach(card => {
+    const button = card.querySelector('.pr-toggle');
+    button.addEventListener('click', () => {
+      const open = !card.hasAttribute('data-open');
+      card.toggleAttribute('data-open', open);
+      button.setAttribute('aria-expanded', String(open));
+    });
+  });
+  const grid = document.querySelector('#culture .pr-grid');
+  if (!grid || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  grid.setAttribute('data-armed', '');
+  let timer;
+  const reveal = () => {
+    if (grid.getBoundingClientRect().top < innerHeight * .85) { grid.classList.add('is-in'); removeEventListener('scroll', reveal); clearInterval(timer); }
+  };
+  addEventListener('scroll', reveal, { passive: true });
+  timer = setInterval(reveal, 700);
+  reveal();
+})();
+</script>
+<script data-module="section-script:approach">
+(() => {
+  const root = document.querySelector('#approach .st3');
+  if (!root) return;
+  const steps = [...root.querySelectorAll('.st-step')].sort((a, b) => a.dataset.i - b.dataset.i);
+  const tabs = [...root.querySelectorAll('.st-tab')];
+  const panels = [...root.querySelectorAll('.st-panel')];
+  const marker = root.querySelector('.st-marker');
+  const bar = root.querySelector('.st-progress span');
+  const marks = root.dataset.marks.split(';').map(pair => pair.split(',').map(Number));
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0, timer = null, auto = !calm, started = false;
+  const select = (i, focus) => {
+    current = i;
+    steps.forEach((step, k) => step.toggleAttribute('data-active', k === i));
+    tabs.forEach((tab, k) => { tab.setAttribute('aria-selected', String(k === i)); tab.tabIndex = k === i ? 0 : -1; });
+    panels.forEach((panel, k) => { panel.hidden = k !== i; });
+    marker.style.setProperty('--mx', marks[i][0] + 'px');
+    marker.style.setProperty('--my', marks[i][1] + 'px');
+    root.style.setProperty('--prog', i / (steps.length - 1));
+    root.classList.remove('is-hop'); void root.offsetWidth; root.classList.add('is-hop');
+    if (focus) tabs[i].focus();
+    if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+  };
+  const stop = () => { auto = false; clearInterval(timer); timer = null; root.removeAttribute('data-cycling'); };
+  steps.forEach((step, i) => step.addEventListener('click', () => { stop(); select(i); }));
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => { stop(); select(i); });
+    tab.addEventListener('keydown', event => {
+      const move = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+      if (!move) return;
+      event.preventDefault(); stop(); select((current + move + tabs.length) % tabs.length, true);
+    });
+  });
+  select(0);
+  const visible = () => { const box = root.getBoundingClientRect(); return box.top < innerHeight * .85 && box.bottom > innerHeight * .15; };
+  const cycle = () => {
+    if (!auto || timer) return;
+    root.setAttribute('data-cycling', '');
+    select(current);
+    timer = setInterval(() => { if (visible() && !document.hidden) select((current + 1) % steps.length); }, 4200);
+  };
+  if (!calm) root.setAttribute('data-armed', '');
+  const check = () => {
+    if (!visible()) return;
+    root.classList.add('is-in');
+    if (!started) { started = true; setTimeout(cycle, 1800); }
+  };
+  addEventListener('scroll', check, { passive: true });
+  setInterval(check, 800);
+  check();
+})();
+</script>
+<script data-module="section-script:image-scroll">
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = [...document.querySelectorAll('#industries .in-photo, #capabilities .ds-duo .ds-panel')];
+  if (!items.length) return;
+  items.forEach(el => el.setAttribute('data-scroll-img', ''));
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  let queued = false;
+  const update = () => {
+    queued = false;
+    const vh = innerHeight;
+    items.forEach(el => {
+      const box = el.getBoundingClientRect();
+      const grid = el.closest('.in-grid, .ds-duo').getBoundingClientRect();
+      const lag = clamp((box.left - grid.left) / Math.max(grid.width, 1), 0, 1) * .34;
+      const raw = (vh - box.top) / (vh * .62);
+      const p = clamp((raw - lag) / (1 - lag), 0, 1);
+      const par = clamp((box.top + box.height / 2 - vh / 2) / (vh / 2 + box.height / 2), -1, 1);
+      el.style.setProperty('--p', p.toFixed(3));
+      el.style.setProperty('--par', par.toFixed(3));
+    });
+  };
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+  addEventListener('scroll', queue, { passive: true });
+  addEventListener('resize', queue);
+  update();
+})();
+</script>
 <script data-module="section-script:india">
 (() => {
   const map = document.querySelector('#india .ia-map');
@@ -1849,36 +2159,6 @@ motionKit.scene('capabilities', () => {
       '--capabilities-y': `${centreY - (tile.offsetTop + tile.offsetHeight / 2)}px`,
       '--capabilities-s': Math.min(1, 210 / tile.offsetWidth, 240 / tile.offsetHeight)
     }));
-  });
-});
-</script>
-<script data-module="scene-script:growth">
-motionKit.scene('growth', () => {
-  const section = document.getElementById('approach');
-  const stage = section.querySelector('.wk-stage');
-  const view = section.querySelector('.wk-view');
-  const track = section.querySelector('.wk-track');
-  section.setAttribute('data-scrubbed', '');
-  motionKit.measure(() => {
-    const pad = parseFloat(getComputedStyle(view).paddingLeft) || 0;
-    const distance = Math.max(0, track.offsetWidth - (view.clientWidth - pad * 2));
-    motionKit.set(section, { '--growth-distance': `${distance}px`, '--wk-height': `${stage.offsetHeight + distance}px` });
-  });
-  const leaning = () => Math.atan(new DOMMatrixReadOnly(getComputedStyle(track).transform).c) * 180 / Math.PI;
-  let last = null, lean = null;
-  motionKit.track(section, 'top 0%', 'bottom 100%', progress => {
-    const now = performance.now(), y = scrollY;
-    if (last && progress !== last.progress && now > last.now) {
-      const velocity = (y - last.y) / (now - last.now) * 1000;
-      const to = Math.max(-9, Math.min(9, velocity / -260)), from = leaning();
-      lean?.cancel();
-      lean = track.animate([
-        { transform: `skewX(${from}deg)`, easing: 'cubic-bezier(0.25, 1, 0.5, 1)' },
-        { transform: `skewX(${from + (to - from) * 0.673}deg)`, offset: 0.237, easing: 'cubic-bezier(0.25, 1, 0.5, 1)' },
-        { transform: 'skewX(0deg)' }
-      ], { duration: 590 });
-    }
-    last = { now, y, progress };
   });
 });
 </script>
