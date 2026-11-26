@@ -1,11 +1,11 @@
-# Edish Connect — Where Engineering Meets Inspiration
+# Edish — Where Engineering Meets Inspiration
 
-> **An Engineering Growth Company**  
+> **Global Capability Partner**  
 > We partner with engineering leaders to build product, platform, and AI capability inside their organizations — not to staff a project and step away.
 
 ## Overview
 
-Edish Connect's web platform built with custom CSS scroll-driven animations, responsive layout architecture, and zero runtime overhead.
+Edish's web platform built with custom CSS scroll-driven animations, responsive layout architecture, and zero runtime overhead.
 
 - **Main page**: `index.html` (pure HTML5 + CSS Scroll-Driven Animations)
 - **Alternative GSAP build**: `index.gsap.html` (powered by GSAP 3.13.0, ScrollTrigger, and Lenis smooth scrolling)
@@ -41,6 +41,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Copyright & Credits
 
-- Code: © 2026 Edish Connect. All rights reserved.
+- Code: © 2026 Edish. All rights reserved.
 - Photography: Free to use under the [Unsplash License](https://unsplash.com/license), see full attributions in [CREDITS.md](CREDITS.md)
 - Typography: [Geist](https://fonts.google.com/specimen/Geist) (SIL Open Font License 1.1)
