@@ -246,6 +246,11 @@ main { overflow-x: clip; }
 #navigation .menu__links a { display: block; padding: 6px 0; font-size: clamp(40px, 12vw, 64px); line-height: 1; }
 #navigation .menu__cta { margin-top: 32px; }
 @media (max-width: 1360px) { #navigation .nav__line { display: none; } }
+@media (min-width: 901px) and (max-width: 1180px) {
+  #navigation .nav__bar { gap: 16px; }
+  #navigation .nav__links { gap: 15px; }
+  #navigation .nav__links .m-link { font-size: 14px; }
+}
 @media (max-width: 900px) {
   #navigation .nav__links, #navigation .nav__cta { display: none; }
   #navigation .nav__menu { display: inline-grid; margin-left: auto; }
@@ -497,13 +502,20 @@ main { overflow-x: clip; }
 <style data-module="section:brief">
 @layer sections {
 /* Industries: six image-led cards */
-#industries .in-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 20px); }
-#industries .in-card { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-content: start; padding-bottom: 6px; }
+#industries .mb-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); overflow: hidden; }
+#industries .mb-head { position: relative; display: grid; grid-template-columns: 1fr; gap: 16px 48px; align-items: start; padding: 18px 0 clamp(28px, 3.6vw, 48px); }
+#industries .mb-head .m-text-5 { color: var(--color-6); max-width: 680px; }
+#industries .mb-head .m-text-3 { font-size: clamp(36px, 4.6vw, 72px); }
+#industries .in-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 1.8vw, 24px); }
+#industries .in-card { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; align-content: start; padding-bottom: 12px; border-bottom: 1px solid color-mix(in srgb, var(--color-5) 35%, transparent); }
 #industries .in-photo { grid-column: 1 / -1; aspect-ratio: 10 / 7; overflow: hidden; margin-bottom: 10px; background: var(--color-4); }
 #industries .in-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.55) contrast(1.04); transition: transform .8s cubic-bezier(.2, .7, .2, 1), filter .5s; }
-#industries .in-num { padding-top: .35em; color: var(--color-7); }
+#industries .in-num { padding-top: .3em; color: var(--color-7); }
 #industries .in-card h3 { font-size: clamp(19px, 1.6vw, 23px); }
 #industries .in-card .m-text { grid-column: 2; color: var(--color-6); }
+#industries .in-scope { grid-column: 2; margin-top: 6px; padding-top: 8px; border-top: 1px solid color-mix(in srgb, var(--color-2) 10%, transparent); font-size: 12px; letter-spacing: .04em; color: var(--color-7); }
+#industries .in-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; margin-top: clamp(28px, 3.6vw, 44px); padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--color-5) 45%, transparent); }
+#industries .in-foot .m-text { color: var(--color-6); max-width: 620px; font-size: 15px; }
 @media (hover: hover) { #industries .in-card:hover .in-photo img { transform: scale(1.04); filter: saturate(.85) contrast(1.04); } }
 @media (max-width: 960px) { #industries .in-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { #industries .in-grid { grid-template-columns: 1fr; } }
@@ -796,22 +808,21 @@ main { overflow-x: clip; }
 #india .gi-band[data-armed].is-in .gi-hub-ring { animation: gi-pulse 2.6s ease-out infinite; }
 @keyframes gi-draw { to { stroke-dashoffset: 0; } }
 @keyframes gi-pulse { 0% { transform: scale(.4); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
-/* What we build: the gallery belongs to pillar 01 */
-#capabilities .ds-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; max-width: 920px; padding-bottom: clamp(36px, 4.5vw, 64px); }
+/* Shared section eyebrow kicker */
+.m-kicker { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 12px; color: var(--color-7); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.m-kicker::before { content: ""; flex: none; width: 6px; height: 6px; rotate: 45deg; background: var(--color-5); }
+
+/* What we build: Offerings collage belongs strictly to Pillar 01 & Pillar 02 */
+#capabilities .ds-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; max-width: 920px; padding-bottom: clamp(36px, 4.5vw, 64px); align-items: start; }
 #capabilities .ds-intro .m-text { color: var(--color-6); }
+#capabilities .ds-intro__foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding-top: 6px; }
+#capabilities .ds-intro__foot span { font-size: 14px; color: var(--color-6); }
 #capabilities .ds-pillars { grid-template-columns: 1fr; gap: clamp(56px, 7vw, 96px); padding-top: 0; }
 #capabilities .ds-phead { display: grid; grid-template-columns: auto 1fr; gap: 6px 22px; align-items: end; padding-top: 20px; border-top: 3px solid var(--color-5); margin-bottom: clamp(20px, 2.4vw, 32px); }
 #capabilities .ds-pnum { grid-row: span 2; font-size: clamp(56px, 7vw, 104px); line-height: .78; font-weight: 500; letter-spacing: -.06em; color: var(--color-5); }
 #capabilities .ds-phead h3 { font-size: clamp(28px, 3.2vw, 46px); line-height: 1; letter-spacing: -.045em; }
 #capabilities .ds-phead .m-text { color: var(--color-6); max-width: 640px; }
-#capabilities .ds-grid { grid-template-areas: "run run lift mark court court" "run run swim swim court court" "run run swim swim kit kit" "i1 i1 i2 i2 i3 i3" "i4 i4 i5 i5 i6 i6" "note note note note link link"; }
-#capabilities .ds-tile--i1 { grid-area: i1; }
-#capabilities .ds-tile--i2 { grid-area: i2; }
-#capabilities .ds-tile--i3 { grid-area: i3; }
-#capabilities .ds-tile--i4 { grid-area: i4; }
-#capabilities .ds-tile--i5 { grid-area: i5; }
-#capabilities .ds-tile--i6 { grid-area: i6; }
-#capabilities .ds-tile--i1 { scroll-margin-top: 96px; }
+#capabilities .ds-grid { grid-template-areas: "run run lift mark court court" "run run swim swim court court" "run run swim swim kit kit" "note note note link kit kit"; }
 #capabilities .ds-pillar .ds-more { margin-top: 20px; }
 #capabilities .ds-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.3vw, 18px); }
 #capabilities .ds-duo .ds-panel { margin: 0; }
@@ -819,7 +830,7 @@ main { overflow-x: clip; }
 @media (max-width: 860px) {
   #capabilities .ds-intro, #capabilities .ds-duo { grid-template-columns: 1fr; }
   #capabilities .ds-pnum { align-self: start; font-size: 56px; }
-  #capabilities .ds-grid { grid-template-areas: "run run" "run run" "lift mark" "swim swim" "kit link" "court court" "i1 i2" "i3 i4" "i5 i6" "note note"; }
+  #capabilities .ds-grid { grid-template-areas: "run run" "run run" "lift mark" "swim swim" "kit link" "court court" "note note"; }
 }
 /* Philosophy orb: copperplate engraving of the Samrat Yantra, Jantar Mantar */
 #hero .op-yantra { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -954,6 +965,104 @@ details[open] > summary .x-plus i, .pr-card[data-open] .x-plus i { transform: ro
   :is(#models, #industries) .mb-head { grid-template-columns: 1fr; }
   :is(#models, #industries) .mb-plans { grid-template-columns: 1fr; }
   :is(#models, #industries) .mb-plan + .mb-plan { border-left: 0; border-top: 1px solid var(--color-5); }
+}
+}
+</style>
+<style data-module="section:case-studies">
+@layer sections {
+#case-studies .cs-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); overflow: hidden; }
+#case-studies .cs-head { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px clamp(24px, 4vw, 56px); align-items: end; padding: 18px 0 clamp(28px, 3.8vw, 48px); }
+#case-studies .cs-head__sub { display: grid; gap: 16px; align-content: end; }
+#case-studies .cs-head__sub .m-text-5 { color: var(--color-6); }
+#case-studies .cs-rule { height: 1px; background: linear-gradient(90deg, var(--color-5), color-mix(in srgb, var(--color-2) 16%, transparent)); transform-origin: 0 50%; transform: scaleX(0); transition: transform 1.1s cubic-bezier(.2, .8, .2, 1); }
+#case-studies .cs-slide.is-in .cs-rule { transform: scaleX(1); }
+#case-studies .cs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.8vw, 22px); align-items: stretch; }
+#case-studies .cs-card {
+  position: relative; min-width: 0; display: flex; flex-direction: column; gap: 18px;
+  padding: clamp(20px, 2.2vw, 28px);
+  background: var(--color-8);
+  border: 1px solid color-mix(in srgb, var(--color-2) 10%, transparent);
+  box-shadow: var(--shadow-1);
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1), box-shadow .45s, border-color .45s;
+}
+#case-studies .cs-card__bar {
+  position: absolute; left: 0; right: 0; top: 0; height: 3px;
+  background: linear-gradient(90deg, var(--color-5), var(--color-7));
+  transform-origin: 0 50%; transform: scaleX(0);
+  transition: transform .95s cubic-bezier(.2, .8, .2, 1) calc(var(--i, 0) * .14s + .15s);
+}
+#case-studies .cs-slide.is-in .cs-card__bar { transform: scaleX(1); }
+#case-studies .cs-card--featured { background: var(--color-3); color: var(--color-1); border-color: var(--color-3); }
+#case-studies .cs-card--featured .cs-card__bar { background: var(--color-5); }
+#case-studies .cs-card--featured :focus-visible { outline-color: var(--color-1); }
+#case-studies .cs-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--color-7); }
+#case-studies .cs-card--featured .cs-meta { color: var(--color-5); }
+#case-studies .cs-pill { padding: 4px 10px; border: 1px solid color-mix(in srgb, var(--color-5) 55%, transparent); border-radius: var(--radius-1); white-space: nowrap; }
+#case-studies .cs-card h3 { margin: 0; font-size: clamp(20px, 1.75vw, 24px); line-height: 1.15; letter-spacing: -.03em; }
+#case-studies .cs-kpis {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 14px 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-2) 12%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-2) 12%, transparent);
+}
+#case-studies .cs-card--featured .cs-kpis { border-color: color-mix(in srgb, var(--color-1) 18%, transparent); }
+#case-studies .cs-kpi { min-width: 0; display: grid; gap: 3px; }
+#case-studies .cs-kpi strong { font-size: clamp(28px, 2.5vw, 38px); line-height: 1; font-weight: 500; letter-spacing: -.045em; font-variant-numeric: tabular-nums; color: var(--color-2); }
+#case-studies .cs-card--featured .cs-kpi strong { color: var(--color-5); }
+#case-studies .cs-card:nth-child(2) { --i: 1; }
+#case-studies .cs-card:nth-child(3) { --i: 2; }
+#case-studies .cs-kpi > span { font-size: 12.5px; line-height: 1.3; color: var(--color-6); }
+#case-studies .cs-card--featured .cs-kpi > span { color: color-mix(in srgb, var(--color-1) 76%, transparent); }
+#case-studies .cs-trace { display: block; width: 100%; height: 28px; overflow: visible; }
+#case-studies .cs-trace__line { fill: none; stroke: var(--color-5); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1.05; stroke-dashoffset: 1.05; transition: stroke-dashoffset .85s cubic-bezier(.5, 0, .2, 1) calc(var(--i, 0) * .1s + .15s); }
+#case-studies .cs-trace__dots circle { fill: var(--color-1); stroke: var(--color-5); stroke-width: 1.8; transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform .4s cubic-bezier(.3, 1.6, .5, 1) calc(var(--i, 0) * .1s + .45s); }
+#case-studies .cs-card--featured .cs-trace__dots circle { fill: var(--color-3); }
+#case-studies .cs-slide.is-in .cs-trace__line { stroke-dashoffset: 0; }
+#case-studies .cs-slide.is-in .cs-trace__dots circle { transform: scale(1); }
+#case-studies .cs-specs { display: grid; gap: 12px; margin: 0; }
+#case-studies .cs-specs > div { display: grid; gap: 3px; }
+#case-studies .cs-specs dt { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--color-7); }
+#case-studies .cs-card--featured .cs-specs dt { color: var(--color-5); }
+#case-studies .cs-specs dd { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--color-6); }
+#case-studies .cs-card--featured .cs-specs dd { color: color-mix(in srgb, var(--color-1) 82%, transparent); }
+#case-studies .cs-more { margin-top: auto; border-top: 1px solid color-mix(in srgb, var(--color-5) 55%, transparent); }
+#case-studies .cs-more summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 13px 0 2px; cursor: pointer; font-size: 13.5px; font-weight: 500; color: var(--color-2); }
+#case-studies .cs-more summary::-webkit-details-marker { display: none; }
+#case-studies .cs-card--featured .cs-more summary { color: var(--color-1); }
+#case-studies .cs-card--featured .x-plus { --x-c: #cca04a; --x-ink: #ffffff; }
+#case-studies .cs-card--featured details[open] > summary .x-plus { border-color: var(--color-5); }
+#case-studies .cs-card--featured summary:hover .x-plus i { background: var(--color-3); }
+#case-studies .cs-more__body { display: grid; gap: 12px; padding-top: 12px; animation: cs-unfold .35s cubic-bezier(.2, .7, .2, 1); }
+@keyframes cs-unfold { from { opacity: 0; translate: 0 -6px; } to { opacity: 1; translate: 0 0; } }
+#case-studies .cs-checks { display: grid; gap: 8px; }
+#case-studies .cs-checks li { position: relative; padding-left: 16px; font-size: 13.5px; line-height: 1.45; color: var(--color-6); }
+#case-studies .cs-card--featured .cs-checks li { color: color-mix(in srgb, var(--color-1) 82%, transparent); }
+#case-studies .cs-checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; border-radius: 50%; background: var(--color-5); }
+#case-studies .cs-tagnote { font-size: 12px; font-style: italic; color: var(--color-6); }
+#case-studies .cs-card--featured .cs-tagnote { color: color-mix(in srgb, var(--color-5) 85%, transparent); }
+#case-studies .cs-foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 18px 28px;
+  margin-top: clamp(28px, 3.6vw, 44px); padding: 20px 24px;
+  background: var(--color-4); border-left: 3px solid var(--color-5);
+}
+#case-studies .cs-foot__copy { display: grid; gap: 4px; max-width: 680px; }
+#case-studies .cs-status { display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--color-7); }
+#case-studies .cs-status i { width: 8px; height: 8px; border-radius: 50%; background: var(--color-5); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-5) 24%, transparent); }
+#case-studies .cs-foot .m-text { font-size: 14.5px; color: var(--color-6); }
+@media (hover: hover) {
+  #case-studies .cs-card:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--color-5) 55%, transparent); box-shadow: var(--shadow-2); }
+}
+@media (max-width: 1024px) {
+  #case-studies .cs-head { grid-template-columns: 1fr; align-items: start; }
+  #case-studies .cs-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  #case-studies .cs-foot { padding: 18px; }
+  #case-studies .cs-meta { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #case-studies .cs-rule, #case-studies .cs-card__bar { transform: scaleX(1); transition: none; }
+  #case-studies .cs-trace__line { stroke-dashoffset: 0; transition: none; }
+  #case-studies .cs-trace__dots circle { transform: scale(1); transition: none; }
 }
 }
 </style>
@@ -1224,8 +1333,9 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
     <a class="nav__logo brand-lockup" href="#hero" aria-label="Edish, back to the top"><svg class="brand-lockup__svg" viewBox="0 0 860 182" aria-hidden="true"><rect x="0" y="0" width="100" height="22" class="bl-ink"/><rect x="0" y="80" width="76" height="22" class="bl-ink"/><rect x="0" y="160" width="100" height="22" class="bl-ink"/><rect x="137" y="0" width="23" height="182" fill="#CCA04A"/><text x="224" y="98" font-family="Geist, &quot;Geist Fallback&quot;, system-ui, sans-serif" font-size="94" font-weight="700" letter-spacing="14" class="bl-ink">EDISH</text><text x="226" y="166" font-family="Geist, &quot;Geist Fallback&quot;, system-ui, sans-serif" font-size="29" font-weight="500" letter-spacing="7.5" class="bl-sub">GLOBAL CAPABILITY PARTNER</text></svg></a>
     <nav aria-label="Main">
       <ul class="nav__links" data-items=":scope > li">
-        <li><a class="m-link" href="#capabilities">What we build</a></li>
+        <li><a class="m-link" href="#capabilities">Offerings</a></li>
         <li><a class="m-link" href="#industries">Industries</a></li>
+        <li><a class="m-link" href="#case-studies">Case studies</a></li>
         <li><a class="m-link" href="#models">How we build</a></li>
         <li><a class="m-link" href="#council">Expert Council</a></li>
       </ul>
@@ -1238,8 +1348,9 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
     <button class="m-iconbtn menu__close" type="button"><span class="sr-only">Close the menu</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav aria-label="Menu">
       <ul class="menu__links" data-items=":scope > li">
-        <li><a class="m-text-3" href="#capabilities">What we build</a></li>
+        <li><a class="m-text-3" href="#capabilities">Offerings</a></li>
         <li><a class="m-text-3" href="#industries">Industries</a></li>
+        <li><a class="m-text-3" href="#case-studies">Case studies</a></li>
         <li><a class="m-text-3" href="#models">How we build</a></li>
         <li><a class="m-text-3" href="#council">Expert Council</a></li>
       </ul>
@@ -1308,10 +1419,12 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
 
 <section id="capabilities" class="l-sec" data-section="capabilities" aria-labelledby="capabilities-title">
   <div class="ds-slide m-slide">
+    <p class="m-kicker m-text-4">Offerings</p>
     <h2 class="ds-title m-text-3" id="capabilities-title" style="--len:36" data-motion="streak"><span>The</span> <span>capabilities</span> <span class="ds-break" aria-hidden="true"></span><span>behind</span> <span>your</span> <span>growth.</span></h2>
     <div class="ds-intro">
       <p class="m-text">Every business needs a different mix of capabilities to move ahead. We work out with you which ones, set them up, and scale the teams and expertise your plans rely on.</p>
       <p class="m-text">Engineering is the foundation, and specialist business functions sit alongside it.</p>
+      <p class="ds-intro__foot"><span>Looking by sector context?</span><a class="m-link" href="#industries">Explore the industries we build for</a></p>
     </div>
     <div class="ds-pillars">
       <div class="ds-pillar ds-pillar--eng">
@@ -1323,12 +1436,6 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
           <figure class="ds-tile ds-tile--swim" style="--capabilities-tilt: -6deg"><img src="https://images.unsplash.com/photo-1633250391894-397930e3f5f2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="A person testing an app on a phone in front of code" width="600" height="400" loading="lazy"><figcaption class="m-badge">Quality engineering</figcaption></figure>
           <figure class="ds-tile ds-tile--kit" style="--capabilities-tilt: 3deg"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Server racks in a data centre" width="600" height="400" loading="lazy"><figcaption class="m-badge">Cloud &amp; platform</figcaption></figure>
           <figure class="ds-tile ds-tile--court" style="--capabilities-tilt: -10deg"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Charts on an analytics dashboard" width="600" height="400" loading="lazy"><figcaption class="m-badge">Data</figcaption></figure>
-          <figure class="ds-tile ds-tile--i1" id="industries" style="--capabilities-tilt: 4deg"><img src="https://images.unsplash.com/photo-1739036868260-c26b292cd85d?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="An AI processor chip on a circuit board" width="600" height="400" loading="lazy"><figcaption class="m-badge">Technology, software &amp; AI</figcaption></figure>
-          <figure class="ds-tile ds-tile--i2" style="--capabilities-tilt: -5deg"><img src="https://images.unsplash.com/photo-1742934029122-511b3b28e9f3?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="An engineer working at a computer on a factory floor" width="600" height="400" loading="lazy"><figcaption class="m-badge">Manufacturing &amp; industrial</figcaption></figure>
-          <figure class="ds-tile ds-tile--i3" style="--capabilities-tilt: 7deg"><img src="https://images.unsplash.com/photo-1762381157166-f51ac99ab412?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Wind turbines and solar panels across farmland" width="600" height="400" loading="lazy"><figcaption class="m-badge">Energy, utilities &amp; infrastructure</figcaption></figure>
-          <figure class="ds-tile ds-tile--i4" style="--capabilities-tilt: -3deg"><img src="https://images.unsplash.com/photo-1732690233982-1d4567384ea1?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="A scientist in gloves operating a laboratory instrument" width="600" height="400" loading="lazy"><figcaption class="m-badge">Life sciences, pharma &amp; MedTech</figcaption></figure>
-          <figure class="ds-tile ds-tile--i5" style="--capabilities-tilt: 6deg"><img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="An electric vehicle plugged in to charge" width="600" height="400" loading="lazy"><figcaption class="m-badge">Automotive, mobility &amp; EV</figcaption></figure>
-          <figure class="ds-tile ds-tile--i6" style="--capabilities-tilt: -7deg"><img src="https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="A smartphone held over a card reader to make a contactless payment" width="600" height="400" loading="lazy"><figcaption class="m-badge">Financial services &amp; FinTech</figcaption></figure>
           <a class="ds-tile ds-tile--link" href="#models" style="--capabilities-tilt: 6deg"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See how you can work with us</span></a>
           <p class="ds-note m-text-6">Any of these can take the form of a few specialists, a dedicated team or a centre of your own.</p>
         </div>
@@ -1367,6 +1474,64 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
         </details>
         <p class="ds-caveat m-text">These functions are delivered with qualified experts, vetted professional firms and strategic delivery partners. Where the work is regulated, such as tax or legal advice, the specialist firm stays responsible for it.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="industries" class="l-sec" data-section="industries" aria-labelledby="industries-title">
+  <div class="mb-slide m-slide-3">
+    <div class="mb-head">
+      <p class="m-kicker m-text-4">Industries</p>
+      <h2 class="m-text-3" id="industries-title" data-motion="streak">Different industries, different challenges, one capability partner.</h2>
+      <p class="m-text-5">Every industry brings its own engineering standards, regulatory constraints and operating rhythm. We configure talent and specialist oversight around your sector.</p>
+    </div>
+    <div class="in-grid" data-items=":scope > *" data-motion="rise" data-enter="86%">
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1739036868260-c26b292cd85d?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An AI processor chip on a circuit board" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">01</span>
+        <h3 class="m-text-6">Technology, software &amp; AI</h3>
+        <p class="m-text">Products, platforms and intelligent systems built for global scale.</p>
+        <p class="in-scope">Product • Platform &amp; Cloud • AI / Data</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1742934029122-511b3b28e9f3?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An engineer working at a computer on a factory floor" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">02</span>
+        <h3 class="m-text-6">Manufacturing &amp; industrial</h3>
+        <p class="m-text">Connected operations, industrial telemetry and ERP workflows.</p>
+        <p class="in-scope">Industrial SaaS • QA • Supply Operations</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1762381157166-f51ac99ab412?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="Wind turbines and solar panels across farmland" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">03</span>
+        <h3 class="m-text-6">Energy, utilities &amp; infrastructure</h3>
+        <p class="m-text">Resilient grid data systems and capital asset engineering.</p>
+        <p class="in-scope">Data Pipelines • Asset Telemetry • Compliance</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1732690233982-1d4567384ea1?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A scientist in gloves operating a laboratory instrument" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">04</span>
+        <h3 class="m-text-6">Life sciences, pharma &amp; MedTech</h3>
+        <p class="m-text">Validated systems, audit trails and dependable clinical workflows.</p>
+        <p class="in-scope">Validation QA • Data Governance • Regulatory Ops</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="An electric vehicle plugged in to charge" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">05</span>
+        <h3 class="m-text-6">Automotive, mobility &amp; EV</h3>
+        <p class="m-text">Connected vehicle ecosystems, embedded software and HIL validation.</p>
+        <p class="in-scope">Embedded SW • Telemetry Cloud • Test Labs</p>
+      </article>
+      <article class="in-card">
+        <figure class="in-photo"><img src="https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?auto=format&amp;fit=crop&amp;w=800&amp;h=560&amp;q=75" alt="A smartphone held over a card reader to make a contactless payment" width="800" height="560" loading="lazy"></figure>
+        <span class="in-num m-text-4">06</span>
+        <h3 class="m-text-6">Financial services &amp; FinTech</h3>
+        <p class="m-text">Secure cloud infrastructure backed by chartered finance governance.</p>
+        <p class="in-scope">Cloud Security • Finance &amp; Tax • Risk &amp; Audit</p>
+      </article>
+    </div>
+    <div class="in-foot">
+      <p class="m-text">Sector-specific compliance, domain hiring and leadership structures adapt to your regulatory environment.</p>
+      <a class="m-link" href="#case-studies">See how this looks in practice</a>
     </div>
   </div>
 </section>
@@ -1608,6 +1773,116 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   </div>
 </section>
 
+<section id="case-studies" class="l-sec" data-section="case-studies" aria-labelledby="cases-title">
+  <div class="cs-slide m-slide" data-cases-anim>
+    <header class="cs-head">
+      <div>
+        <p class="m-kicker m-text-4">Representative engagements</p>
+        <h2 class="m-text-3" id="cases-title" data-motion="streak">Proof built quietly, function by function.</h2>
+      </div>
+      <div class="cs-head__sub">
+        <p class="m-text-5">Illustrative client dossiers reflecting our live operating structures. Client-approved published case studies are currently being finalised.</p>
+        <div class="cs-rule" aria-hidden="true"></div>
+      </div>
+    </header>
+    <div class="cs-grid" data-items=":scope > *" data-motion="rise" data-enter="86%">
+      <article class="cs-card">
+        <span class="cs-card__bar" aria-hidden="true"></span>
+        <div class="cs-meta"><span>01 · EU Industrial SaaS</span><span class="cs-pill">Dedicated Team → ODC</span></div>
+        <h3 class="m-text-6">Scaling a multi-tenant telemetry platform from 4 to 22 specialists</h3>
+        <div class="cs-kpis">
+          <div class="cs-kpi"><strong><span data-count="22">22</span></strong><span>Specialists placed · Bengaluru</span></div>
+          <div class="cs-kpi"><strong><span data-count="9">9</span> wks</strong><span>To first production pod</span></div>
+        </div>
+        <svg class="cs-trace" viewBox="0 0 240 28" aria-hidden="true">
+          <path class="cs-trace__line" pathLength="1" d="M6 23 L64 20 L122 14 L180 9 L234 4"/>
+          <g class="cs-trace__dots"><circle cx="6" cy="23" r="3"/><circle cx="64" cy="20" r="3"/><circle cx="122" cy="14" r="3"/><circle cx="180" cy="9" r="3"/><circle cx="234" cy="4" r="3.5"/></g>
+        </svg>
+        <dl class="cs-specs">
+          <div><dt>Context</dt><dd>Fragmented contractor churn stalled core backend releases and delayed automated regression coverage across European industrial accounts.</dd></div>
+          <div><dt>What we built</dt><dd>Integrated product, TypeScript/Go, AWS DevOps and automated QA pods operating inside the client’s engineering cadence.</dd></div>
+        </dl>
+        <details class="cs-more">
+          <summary><span>Build blueprint &amp; governance</span><span class="x-plus" aria-hidden="true"><span>Inspect</span><i></i></span></summary>
+          <div class="cs-more__body">
+            <ul class="cs-checks">
+              <li>Technical assessment &amp; hiring panels calibrated with the client CTO before commitment</li>
+              <li>Transitioned smoothly from an initial 6-person pod to a 22-seat ODC in 3 phases</li>
+              <li>Weekly velocity, defect escape &amp; retention visibility under written escalation rules</li>
+            </ul>
+            <p class="cs-tagnote">Representative dossier · Client-approved publication in review</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="cs-card cs-card--featured">
+        <span class="cs-card__bar" aria-hidden="true"></span>
+        <div class="cs-meta"><span>02 · UK Wealth &amp; FinTech</span><span class="cs-pill">ODC + Expert Council</span></div>
+        <h3 class="m-text-6">Unifying cloud engineering and chartered finance controls under one lead</h3>
+        <div class="cs-kpis">
+          <div class="cs-kpi"><strong><span data-count="14">14</span></strong><span>Engineers &amp; CAs · Pune &amp; Bengaluru</span></div>
+          <div class="cs-kpi"><strong><span data-count="6">6</span> wks</strong><span>To joint governance sign-off</span></div>
+        </div>
+        <svg class="cs-trace" viewBox="0 0 240 28" aria-hidden="true">
+          <path class="cs-trace__line" pathLength="1" d="M6 22 L64 19 L122 15 L180 8 L234 5"/>
+          <g class="cs-trace__dots"><circle cx="6" cy="22" r="3"/><circle cx="64" cy="19" r="3"/><circle cx="122" cy="15" r="3"/><circle cx="180" cy="8" r="3"/><circle cx="234" cy="5" r="3.5"/></g>
+        </svg>
+        <dl class="cs-specs">
+          <div><dt>Context</dt><dd>Needed SOC2-aligned cloud platform delivery alongside chartered financial close and UK/India cross-border reconciliation controls.</dd></div>
+          <div><dt>What we built</dt><dd>Platform engineering pod paired with vetted chartered accountants and risk specialists coordinated through Edish Expert Council.</dd></div>
+        </dl>
+        <details class="cs-more">
+          <summary><span>Build blueprint &amp; governance</span><span class="x-plus" aria-hidden="true"><span>Inspect</span><i></i></span></summary>
+          <div class="cs-more__body">
+            <ul class="cs-checks">
+              <li>Edish leads day-to-day execution while partner CAs retain regulated statutory responsibility</li>
+              <li>Pre-agreed segregation of duties, monthly control packs and security reviews</li>
+              <li>Consolidated reporting dashboard shared with UK CFO and Engineering VP</li>
+            </ul>
+            <p class="cs-tagnote">Representative dossier · Client-approved publication in review</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="cs-card">
+        <span class="cs-card__bar" aria-hidden="true"></span>
+        <div class="cs-meta"><span>03 · North American EV Tier-1</span><span class="cs-pill">Build-Operate-Transfer</span></div>
+        <h3 class="m-text-6">Standing up a 36-engineer connected mobility and validation hub</h3>
+        <div class="cs-kpis">
+          <div class="cs-kpi"><strong><span data-count="36">36</span></strong><span>Engineers across 3 pods · Chennai</span></div>
+          <div class="cs-kpi"><strong><span data-count="14">14</span> mo</strong><span>Planned entity readiness</span></div>
+        </div>
+        <svg class="cs-trace" viewBox="0 0 240 28" aria-hidden="true">
+          <path class="cs-trace__line" pathLength="1" d="M6 24 L64 21 L122 16 L180 10 L234 4"/>
+          <g class="cs-trace__dots"><circle cx="6" cy="24" r="3"/><circle cx="64" cy="21" r="3"/><circle cx="122" cy="16" r="3"/><circle cx="180" cy="10" r="3"/><circle cx="234" cy="4" r="3.5"/></g>
+        </svg>
+        <dl class="cs-specs">
+          <div><dt>Context</dt><dd>OEM embedded telemetry and hardware-in-the-loop verification backlog exceeded domestic hiring capacity by three quarters.</dd></div>
+          <div><dt>What we built</dt><dd>IP-ringfenced BOT engineering studio built across embedded software, telemetry cloud and HIL validation ahead of subsidiary setup.</dd></div>
+        </dl>
+        <details class="cs-more">
+          <summary><span>Build blueprint &amp; governance</span><span class="x-plus" aria-hidden="true"><span>Inspect</span><i></i></span></summary>
+          <div class="cs-more__body">
+            <ul class="cs-checks">
+              <li>Co-designed hiring bar, lab hardware controls and India local compliance from day one</li>
+              <li>Dedicated principal leads groomed internally for post-transfer GCC leadership</li>
+              <li>Structured quarter-by-quarter handover criteria with clean entity transfer readiness</li>
+            </ul>
+            <p class="cs-tagnote">Representative dossier · Client-approved publication in review</p>
+          </div>
+        </details>
+      </article>
+    </div>
+    <aside class="cs-foot">
+      <div class="cs-foot__copy">
+        <span class="cs-status"><i aria-hidden="true"></i>Active publication pipeline</span>
+        <p class="m-text">We publish full client case studies only with explicit client sign-off. Anonymised technical walkthroughs and reference calls are arranged directly during discovery.</p>
+      </div>
+      <a class="m-btn" href="#contact"><span class="m-btn__label">Request a walkthrough</span></a>
+    </aside>
+  </div>
+</section>
+
 <section id="faq" class="l-sec" data-section="faq" aria-labelledby="faq-title">
   <div class="fq-slide m-slide-3">
     <div class="fq-head">
@@ -1670,8 +1945,9 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       <p class="m-text">We build global capabilities in India across engineering and specialist business functions, from a handful of experts to a full capability centre. Where Engineering Meets Execution and Inspiration.</p>
       <nav aria-label="Footer">
         <ul data-items=":scope > li">
-          <li><a class="m-link" href="#capabilities">What we build</a></li>
+          <li><a class="m-link" href="#capabilities">Offerings</a></li>
           <li><a class="m-link" href="#industries">Industries</a></li>
+          <li><a class="m-link" href="#case-studies">Case studies</a></li>
           <li><a class="m-link" href="#models">How we build</a></li>
           <li><a class="m-link" href="#council">Expert Council</a></li>
           <li><a class="m-link" href="#culture">Our culture</a></li>
@@ -2106,7 +2382,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
 <script data-module="section-script:image-scroll">
 (() => {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const items = [...document.querySelectorAll('#capabilities .ds-grid2 > .ds-tile:not(.ds-tile--link)')];
+  const items = [...document.querySelectorAll('#capabilities .ds-grid2 > .ds-tile:not(.ds-tile--link), #industries .in-photo')];
   if (!items.length) return;
   items.forEach(el => el.setAttribute('data-scroll-img', ''));
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -2116,7 +2392,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
     const vh = innerHeight;
     items.forEach(el => {
       const box = el.getBoundingClientRect();
-      const grid = el.closest('.ds-grid2').getBoundingClientRect();
+      const grid = (el.closest('.ds-grid2, .in-grid') || el).getBoundingClientRect();
       const lag = clamp((box.left - grid.left) / Math.max(grid.width, 1), 0, 1) * .34;
       const raw = (vh - box.top) / (vh * .62);
       const p = clamp((raw - lag) / (1 - lag), 0, 1);
@@ -2129,6 +2405,45 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   addEventListener('scroll', queue, { passive: true });
   addEventListener('resize', queue);
   update();
+})();
+</script>
+<script data-module="section-script:case-studies">
+(() => {
+  const slide = document.querySelector('#case-studies .cs-slide');
+  if (!slide) return;
+  const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = [...slide.querySelectorAll('[data-count]')];
+  let animated = false;
+  const run = () => {
+    if (animated) return;
+    animated = true;
+    slide.classList.add('is-in');
+    if (rm) return;
+    counters.forEach((el, idx) => {
+      const target = Number(el.dataset.count);
+      if (!Number.isFinite(target) || target <= 0) return;
+      const start = performance.now() + idx * 70;
+      const dur = 900;
+      const step = now => {
+        if (now < start) return requestAnimationFrame(step);
+        const t = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = String(Math.round(target * eased));
+        if (t < 1) requestAnimationFrame(step); else el.textContent = String(target);
+      };
+      el.textContent = '0';
+      requestAnimationFrame(step);
+    });
+  };
+  if (rm || slide.getBoundingClientRect().top < innerHeight * .9) {
+    run();
+  } else {
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { io.disconnect(); run(); }
+    }, { threshold: .03, rootMargin: '0px 0px -4% 0px' });
+    io.observe(slide);
+  }
+  slide.querySelectorAll('.cs-more').forEach(d => d.addEventListener('toggle', () => window.refreshScroll?.()));
 })();
 </script>
 <script data-module="section-script:india">
